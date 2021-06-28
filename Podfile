@@ -6,6 +6,8 @@ target 'core' do
   use_frameworks!
 
   # Pods for core
+  pod 'Alamofire'
+  pod 'RxAlamofire'
 
   target 'coreTests' do
     inherit! :search_paths
