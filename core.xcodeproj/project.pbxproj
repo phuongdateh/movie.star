@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,7 @@
 		A4C42DDF2689E1E3008680BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4C42DDD2689E1E3008680BA /* LaunchScreen.storyboard */; };
 		A4C42DEA2689E1E3008680BA /* coreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C42DE92689E1E3008680BA /* coreTests.swift */; };
 		A4C42DF52689E1E3008680BA /* coreUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C42DF42689E1E3008680BA /* coreUITests.swift */; };
+		A4C6C940268A226200B53794 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C6C93F268A226200B53794 /* Network.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		A4C42DF02689E1E3008680BA /* coreUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = coreUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4C42DF42689E1E3008680BA /* coreUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coreUITests.swift; sourceTree = "<group>"; };
 		A4C42DF62689E1E3008680BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4C6C93F268A226200B53794 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		B060CD236155EC638B1AC5C7 /* Pods-core-coreUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-core-coreUITests.release.xcconfig"; path = "Target Support Files/Pods-core-coreUITests/Pods-core-coreUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B27213B3D9F95AE14C44817F /* Pods_coreTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_coreTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C458A5AFEAAC8E025573CCE5 /* Pods-core.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-core.debug.xcconfig"; path = "Target Support Files/Pods-core/Pods-core.debug.xcconfig"; sourceTree = "<group>"; };
@@ -126,6 +128,8 @@
 		A4C42DD12689E1E1008680BA /* core */ = {
 			isa = PBXGroup;
 			children = (
+				A4C6C93E268A21C200B53794 /* Network */,
+				A4C6C93C268A21B200B53794 /* App */,
 				A4C42DD22689E1E1008680BA /* AppDelegate.swift */,
 				A4C42DD42689E1E1008680BA /* SceneDelegate.swift */,
 				A4C42DD62689E1E1008680BA /* ViewController.swift */,
@@ -155,6 +159,21 @@
 			path = coreUITests;
 			sourceTree = "<group>";
 		};
+		A4C6C93C268A21B200B53794 /* App */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		A4C6C93E268A21C200B53794 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A4C6C93F268A226200B53794 /* Network.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		CEB6EB5F28641B4A42A320AB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,7 +184,6 @@
 				264C565F9C38370FAB24B41C /* Pods-coreTests.debug.xcconfig */,
 				5FB5371933895AA899AB3A3B /* Pods-coreTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -409,6 +427,7 @@
 			files = (
 				A4C42DD72689E1E1008680BA /* ViewController.swift in Sources */,
 				A4C42DD32689E1E1008680BA /* AppDelegate.swift in Sources */,
+				A4C6C940268A226200B53794 /* Network.swift in Sources */,
 				A4C42DD52689E1E1008680BA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -586,15 +605,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G9K8DPHN84;
+				DEVELOPMENT_TEAM = FFFW2FHT2N;
 				INFOPLIST_FILE = core/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = phuong.doan.core;
+				PRODUCT_BUNDLE_IDENTIFIER = care.revival.Revival;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -606,15 +627,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G9K8DPHN84;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = FFFW2FHT2N;
 				INFOPLIST_FILE = core/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = phuong.doan.core;
+				PRODUCT_BUNDLE_IDENTIFIER = care.revival.Revival;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "iOS-Adhoc-phuong.doan";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
