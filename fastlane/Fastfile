@@ -30,7 +30,7 @@ platform :ios do
   desc "Build and distribute the application"
   lane :build_and_distribute do
     # test the application
-    test_scan
+    # test_scan
     # get the last commit message
     change_log_message = changelog_from_git_commits(commits_count: 1)
 
