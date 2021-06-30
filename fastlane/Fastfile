@@ -50,7 +50,7 @@ platform :ios do
     # upload_symbols_to_crashlytics(dsym_path: "./core.app.dSYM.zip")
     
     appcenter_upload(
-      api_token: "5d0eed30-6b39-46aa-8405-4f434ec5be45",
+      api_token: "13ed159e43d0b83ac1c0ec6d90cc24466d8cdd82",
       owner_name: "phuong.doan-iOS",
       app_name: "TestUpBuild",
       file: "core.ipa",
