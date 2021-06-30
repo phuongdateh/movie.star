@@ -41,12 +41,12 @@ platform :ios do
     # build and archive the application
     gym
     # distribute the app via Firebase Distribution
-    firebase_app_distribution(app: "1:741306211691:ios:fc623fa0eca85b7134402e",
-        release_notes: "#{change_log_message}",
-        debug: true,
-        groups: "testing")
+    # firebase_app_distribution(app: "1:741306211691:ios:fc623fa0eca85b7134402e",
+    #     release_notes: "#{change_log_message}",
+    #     debug: true,
+    #     groups: "testing")
 
-    # upload dsyms to Firebase Crashlytics
-    upload_symbols_to_crashlytics(dsym_path: "./core.app.dSYM.zip")
+    # # upload dsyms to Firebase Crashlytics
+    # upload_symbols_to_crashlytics(dsym_path: "./core.app.dSYM.zip")
   end
 end
