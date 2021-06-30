@@ -48,5 +48,16 @@ platform :ios do
 
     # # upload dsyms to Firebase Crashlytics
     # upload_symbols_to_crashlytics(dsym_path: "./core.app.dSYM.zip")
+    
+    appcenter_upload(
+      api_token: "5d0eed30-6b39-46aa-8405-4f434ec5be45",
+      owner_name: "phuong.doan-iOS",
+      app_name: "TestUpBuild",
+      file: "core.ipa",
+      destinations: "*",
+      destination_type: "group",
+      notify_testers: true,
+      release_notes: "#{change_log_message}"
+      )
   end
 end
