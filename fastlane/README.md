@@ -26,6 +26,11 @@ Description of what the lane does
 fastlane ios test_scan
 ```
 
+### ios build_and_distribute
+```
+fastlane ios build_and_distribute
+```
+Build and distribute the application
 
 ----
 

@@ -143,6 +143,8 @@ GEM
       xcodeproj (>= 1.13.0, < 2.0.0)
       xcpretty (~> 0.3.0)
       xcpretty-travis-formatter (>= 0.0.3)
+    fastlane-plugin-appcenter (1.11.1)
+    fastlane-plugin-firebase_app_distribution (0.2.9)
     ffi (1.15.3)
     fourflusher (2.3.1)
     fuzzy_match (2.0.4)
@@ -207,8 +209,6 @@ GEM
     naturally (2.2.1)
     netrc (0.11.0)
     nokogiri (1.11.7-arm64-darwin)
-      racc (~> 1.4)
-    nokogiri (1.11.7-x86_64-darwin)
       racc (~> 1.4)
     os (1.1.1)
     plist (3.6.0)
@@ -278,6 +278,8 @@ DEPENDENCIES
   CFPropertyList
   cocoapods
   fastlane
+  fastlane-plugin-appcenter
+  fastlane-plugin-firebase_app_distribution
   slather
 
 BUNDLED WITH
