@@ -22,4 +22,8 @@ platform :ios do
       podfile: "Podfile",
       use_bundle_exec: false)
   end
+
+  lane :test_scan do 
+    scan
+  end
 end

@@ -1,6 +1,9 @@
 # app_identifier("[[APP_IDENTIFIER]]") # The bundle identifier of your app
 # apple_id("[[APPLE_ID]]") # Your Apple email address
 
+app_identifier "care.revival.Revival" # The bundle identifier of your app
+apple_id "phuong.doan@siliconprime.com" # Your Apple email address 
+team_id "FFFW2FHT2N" # Developer Portal Team ID
 
 # For more information about the Appfile, see:
 #     https://docs.fastlane.tools/advanced/#appfile

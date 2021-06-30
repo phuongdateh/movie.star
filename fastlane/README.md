@@ -21,6 +21,11 @@ or alternatively using `brew install fastlane`
 fastlane ios install_pods
 ```
 Description of what the lane does
+### ios test_scan
+```
+fastlane ios test_scan
+```
+
 
 ----
 
