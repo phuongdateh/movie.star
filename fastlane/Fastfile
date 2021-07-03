@@ -1,0 +1,63 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Description of what the lane does"
+  lane :install_pods do
+    cocoapods(
+      podfile: "Podfile",
+      use_bundle_exec: false)
+  end
+
+  lane :test_scan do 
+    scan
+  end
+
+  desc "Build and distribute the application"
+  lane :build_and_distribute do
+    # test the application
+    # test_scan
+    # get the last commit message
+    change_log_message = changelog_from_git_commits(commits_count: 1)
+
+    # install the certificate and provisioning profile
+    match(type: "adhoc", 
+          readonly: false)
+
+    # build and archive the application
+    gym
+    # distribute the app via Firebase Distribution
+    # firebase_app_distribution(app: "1:741306211691:ios:fc623fa0eca85b7134402e",
+    #     release_notes: "#{change_log_message}",
+    #     debug: true,
+    #     groups: "testing")
+
+    # # upload dsyms to Firebase Crashlytics
+    # upload_symbols_to_crashlytics(dsym_path: "./core.app.dSYM.zip")
+    
+    appcenter_upload(
+      api_token: "13ed159e43d0b83ac1c0ec6d90cc24466d8cdd82",
+      owner_name: "phuong.doan-iOS",
+      app_name: "TestUpBuild",
+      file: "core.ipa",
+      destinations: "*",
+      destination_type: "group",
+      notify_testers: true,
+      release_notes: "#{change_log_message}"
+      )
+  end
+end

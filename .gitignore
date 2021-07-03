@@ -1,0 +1,10 @@
+
+Podfile.lock
+Pods/
+core.xcodeproj/xcuserdata
+vendor/
+reports/
+build/
+core.app.dSYM.zip
+core.ipa
+fastlane/report.xml

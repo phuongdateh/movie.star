@@ -7,13 +7,4 @@ target 'core' do
 
   # Pods for core
 
-  target 'coreTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'coreUITests' do
-    # Pods for testing
-  end
-
 end
