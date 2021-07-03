@@ -3,11 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		478B64A84663A447408AF5B6 /* Pods_core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 199B18C147FF78456429D04A /* Pods_core.framework */; };
+		A41E748526909592006E7D0F /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41E748426909592006E7D0F /* Network.swift */; };
+		A41E74872690964B006E7D0F /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41E74862690964B006E7D0F /* NetworkProvider.swift */; };
 		A43813D5268CAD5B0055DF76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43813D4268CAD5B0055DF76 /* AppDelegate.swift */; };
 		A43813D7268CAD5B0055DF76 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43813D6268CAD5B0055DF76 /* SceneDelegate.swift */; };
 		A43813D9268CAD5B0055DF76 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43813D8268CAD5B0055DF76 /* ViewController.swift */; };
@@ -18,6 +20,8 @@
 
 /* Begin PBXFileReference section */
 		199B18C147FF78456429D04A /* Pods_core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A41E748426909592006E7D0F /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		A41E74862690964B006E7D0F /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		A43813D1268CAD5B0055DF76 /* core.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = core.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A43813D4268CAD5B0055DF76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A43813D6268CAD5B0055DF76 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +46,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A41E7482269094EA006E7D0F /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				A41E7483269094F9006E7D0F /* Network */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		A41E7483269094F9006E7D0F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A41E748426909592006E7D0F /* Network.swift */,
+				A41E74862690964B006E7D0F /* NetworkProvider.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		A41E748826909728006E7D0F /* App */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		A43813C8268CAD5B0055DF76 = {
 			isa = PBXGroup;
 			children = (
@@ -63,6 +91,8 @@
 		A43813D3268CAD5B0055DF76 /* core */ = {
 			isa = PBXGroup;
 			children = (
+				A41E748826909728006E7D0F /* App */,
+				A41E7482269094EA006E7D0F /* Core */,
 				A43813D4268CAD5B0055DF76 /* AppDelegate.swift */,
 				A43813D6268CAD5B0055DF76 /* SceneDelegate.swift */,
 				A43813D8268CAD5B0055DF76 /* ViewController.swift */,
@@ -102,6 +132,7 @@
 				A43813CD268CAD5B0055DF76 /* Sources */,
 				A43813CE268CAD5B0055DF76 /* Frameworks */,
 				A43813CF268CAD5B0055DF76 /* Resources */,
+				1648AB85CC8AE1C8386906D8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -180,6 +211,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		1648AB85CC8AE1C8386906D8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-core/Pods-core-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-core/Pods-core-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-core/Pods-core-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -189,7 +237,9 @@
 			files = (
 				A43813D9268CAD5B0055DF76 /* ViewController.swift in Sources */,
 				A43813D5268CAD5B0055DF76 /* AppDelegate.swift in Sources */,
+				A41E748526909592006E7D0F /* Network.swift in Sources */,
 				A43813D7268CAD5B0055DF76 /* SceneDelegate.swift in Sources */,
+				A41E74872690964B006E7D0F /* NetworkProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

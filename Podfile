@@ -6,5 +6,7 @@ target 'core' do
   use_frameworks!
 
   # Pods for core
+  pod 'Alamofire'
+  pod 'RxAlamofire'
 
 end
