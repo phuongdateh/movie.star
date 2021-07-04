@@ -12,27 +12,42 @@ import RxAlamofire
 
 class Network<T: Decodable> {
     private let endPoint: String
+    private let headers: [String: String]
+    private let parameters: [String: Any]
     private let scheduler: ConcurrentDispatchQueueScheduler
 
-    init(_ endPoint: String) {
+    init(_ endPoint: String,
+         headers: [String: String],
+         parameters: [String: Any]) {
         self.endPoint = endPoint
+        self.headers = headers
+        self.parameters = parameters
         self.scheduler = ConcurrentDispatchQueueScheduler(qos: DispatchQoS(qosClass: DispatchQoS.QoSClass.background, relativePriority: 1))
     }
 
-    func getItems(_ path: String,
-                  header: [String: String],
-                  parameters: [String: Any]?) -> Observable<[T]> {
+    func getItems(_ path: String) -> Observable<[T]> {
         let absolutePath = "\(endPoint)/\(path)"
         return RxAlamofire
             .data(.get,
                   absolutePath,
-                  parameters: parameters ,
-                  headers: HTTPHeaders(header))
+                  parameters: self.parameters ,
+                  headers: HTTPHeaders(self.headers))
             .debug()
             .observe(on: scheduler)
             .map({ data -> [T] in
                 return try JSONDecoder().decode([T].self, from: data)
             })
+    }
+    
+    func getItem(_ path: String) -> Observable<T> {
+        let absolutePath: String = "\(endPoint)/\(path)"
+        return RxAlamofire
+            .data(.get, absolutePath, parameters: self.parameters, headers: HTTPHeaders(self.headers))
+            .debug()
+            .observe(on: scheduler)
+            .map { data -> T in
+                return try JSONDecoder().decode(T.self, from: data)
+        }
     }
 
     func getItem(_ path: String, itemId: String) -> Observable<T> {

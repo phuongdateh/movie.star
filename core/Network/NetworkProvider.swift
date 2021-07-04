@@ -11,17 +11,17 @@ import RxSwift
 final class NetworkProvider {
     private let baseUrl: String
     private var headers: [String: String]
-    private var parameters: [String: Any]?
+    private var parameters: [String: Any]
     
     init() {
         baseUrl = "https://api.themoviedb.org/3/"
         headers = ["api_key": Constants.apiKey,
                    "language": Constants.language]
+        parameters = [:]
     }
     
-    func getGenres() {
-        // genre/movie/list
+    func makeGenresNetwork() -> GenresNetwork {
+        let network = Network<Genres>(baseUrl, headers: headers, parameters: parameters)
+        return GenresNetwork(network: network)
     }
-    
-    
 }
