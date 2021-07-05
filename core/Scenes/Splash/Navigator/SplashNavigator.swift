@@ -9,7 +9,8 @@ import Foundation
 import UIKit
 
 protocol SplashNavigatorProtocol: AnyObject {
-    
+    func startLogin()
+    func startMainTabbar(with launchOptions: [UIApplication.LaunchOptionsKey: Any]?)
 }
 
 class SplashNavigator: SplashNavigatorProtocol {
@@ -30,5 +31,13 @@ class SplashNavigator: SplashNavigatorProtocol {
         let vc = storyboard.instantiateViewController(ofType: SplashViewController.self)
         vc.viewModel = SplashViewModel(services.makeFetchGenres(), self)
         navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func startLogin() {
+        
+    }
+    
+    func startMainTabbar(with launchOptions: [UIApplication.LaunchOptionsKey : Any]?) {
+        
     }
 }

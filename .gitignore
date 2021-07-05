@@ -2,6 +2,9 @@
 Podfile.lock
 Pods/
 core.xcodeproj/xcuserdata
+core.xcodeproj/xcshareddata
+core.xcworkspace
+xcuserdata
 vendor/
 reports/
 build/

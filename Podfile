@@ -8,5 +8,6 @@ target 'core' do
   # Pods for core
   pod 'Alamofire'
   pod 'RxAlamofire'
+  pod 'RxCocoa'
 
 end
