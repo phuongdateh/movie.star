@@ -28,6 +28,7 @@ class SplashNavigator: SplashNavigatorProtocol {
     func start() {
         // start viewController
         let vc = storyboard.instantiateViewController(ofType: SplashViewController.self)
+        vc.viewModel = SplashViewModel(services.makeFetchGenres(), self)
         navigationController.pushViewController(vc, animated: true)
     }
 }

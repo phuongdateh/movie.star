@@ -9,5 +9,5 @@ import Foundation
 import RxSwift
 
 protocol DomainGenresUseCaseProtocol {
-    func get() -> Observable<Genres>
+    func fetchGenres() -> Observable<Genres>
 }

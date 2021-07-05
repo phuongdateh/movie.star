@@ -31,6 +31,7 @@
 		A4815F192691FD48004107D1 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4815F182691FD48004107D1 /* UITableView.swift */; };
 		A4815F1B2691FDC5004107D1 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4815F1A2691FDC5004107D1 /* SplashViewController.swift */; };
 		A4815F1D2691FE27004107D1 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4815F1C2691FE27004107D1 /* Splash.storyboard */; };
+		A4815F1F26920038004107D1 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4815F1E26920038004107D1 /* SplashViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		A4815F182691FD48004107D1 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		A4815F1A2691FDC5004107D1 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		A4815F1C2691FE27004107D1 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
+		A4815F1E26920038004107D1 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		ACE97803C125677BA06BB32C /* Pods-core.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-core.release.xcconfig"; path = "Target Support Files/Pods-core/Pods-core.release.xcconfig"; sourceTree = "<group>"; };
 		B08AEFCB4B6BCB39E305CEBB /* Pods-core.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-core.debug.xcconfig"; path = "Target Support Files/Pods-core/Pods-core.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -250,6 +252,7 @@
 		A4815F082691EB1C004107D1 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				A4815F1E26920038004107D1 /* SplashViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -445,6 +448,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4815F172691FCDD004107D1 /* UIStoryBoard.swift in Sources */,
+				A4815F1F26920038004107D1 /* SplashViewModel.swift in Sources */,
 				A4815F032691EAA6004107D1 /* ViewModelType.swift in Sources */,
 				A4815EFF2691B1CA004107D1 /* Application.swift in Sources */,
 				A4815F0B2691EDD5004107D1 /* SplashNavigator.swift in Sources */,

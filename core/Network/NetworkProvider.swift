@@ -15,9 +15,9 @@ final class NetworkProvider {
     
     init() {
         baseUrl = "https://api.themoviedb.org/3/"
-        headers = ["api_key": Constants.apiKey,
-                   "language": Constants.language]
-        parameters = [:]
+        headers = [:]
+        parameters = ["api_key": Constants.apiKey,
+                      "language": Constants.language]
     }
     
     func makeGenresNetwork() -> GenresNetwork {

@@ -17,7 +17,7 @@ class NetworkGenresUseCase: DomainGenresUseCaseProtocol {
         self.network = network
     }
     
-    func get() -> Observable<Genres> {
+    func fetchGenres() -> Observable<Genres> {
         return network.fetchGenres()
     }
 }
