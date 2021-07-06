@@ -21,7 +21,9 @@ final class NetworkProvider {
     }
     
     func makeGenresNetwork() -> GenresNetwork {
-        let network = Network<Genres>(baseUrl, headers: headers, parameters: parameters)
+        let network = Network<Genres>(baseUrl,
+                                      headers: headers,
+                                      parameters: parameters)
         return GenresNetwork(network: network)
     }
 }

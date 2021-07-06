@@ -294,6 +294,34 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		A4853FDF2694AE1D00B38D43 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A4853FE02694AE2300B38D43 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A4853FE12694AE2800B38D43 /* Navigator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Navigator;
+			sourceTree = "<group>";
+		};
+		A4853FE22694AE4800B38D43 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		A4B323CC2692C7E700D9DD46 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -306,8 +334,20 @@
 		A4B323D3269356DE00D9DD46 /* Onboard */ = {
 			isa = PBXGroup;
 			children = (
+				A4853FE22694AE4800B38D43 /* New Group */,
+				A4B323D426935E2D00D9DD46 /* Landing */,
 			);
 			path = Onboard;
+			sourceTree = "<group>";
+		};
+		A4B323D426935E2D00D9DD46 /* Landing */ = {
+			isa = PBXGroup;
+			children = (
+				A4853FE12694AE2800B38D43 /* Navigator */,
+				A4853FE02694AE2300B38D43 /* ViewModels */,
+				A4853FDF2694AE1D00B38D43 /* Views */,
+			);
+			path = Landing;
 			sourceTree = "<group>";
 		};
 		B534A3BE4F8D2DF518F59C85 /* Pods */ = {
