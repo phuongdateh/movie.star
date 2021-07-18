@@ -1,16 +1,16 @@
 //
-//  SplashViewController.swift
+//  GetStartedViewController.swift
 //  core
 //
-//  Created by phuong.doan on 7/4/21.
+//  Created by phuong.doan on 7/15/21.
 //
 
 import Foundation
-import UIKit
 import RxSwift
 import RxCocoa
 
-class SplashViewController: ViewController {
+class GetStartedViewController: ViewController {
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

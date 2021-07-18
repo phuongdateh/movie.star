@@ -11,3 +11,4 @@ build/
 core.app.dSYM.zip
 core.ipa
 fastlane/report.xml
+*.xcuserstate

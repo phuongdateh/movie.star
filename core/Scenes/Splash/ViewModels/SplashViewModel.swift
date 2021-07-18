@@ -8,7 +8,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-class SplashViewModel: ViewModelType {
+class SplashViewModel:  ViewModel, ViewModelType {
     
     struct Input {
         let viewWillAppear: Driver<Void>
@@ -23,15 +23,13 @@ class SplashViewModel: ViewModelType {
     }
     
     // MARK: - Init
-    init(_ usecase: DomainGenresUseCaseProtocol,
-         _ navigator: SplashNavigatorProtocol) {
+    init(_ usecase: DomainUseCaseProviderProtocol) {
         self.usecase = usecase
-        self.navigator = navigator
+        super.init(provider: usecase)
     }
     
     // MARK: - Properties
-    private let usecase: DomainGenresUseCaseProtocol
-    private let navigator: SplashNavigatorProtocol
+    private let usecase: DomainUseCaseProviderProtocol
     private let disposeBag = DisposeBag()
     
     // MARK: - Transform
@@ -39,19 +37,6 @@ class SplashViewModel: ViewModelType {
         let activityIndicator = ActivityIndicator()
         let errorTracker = ErrorTracker()
         
-        input.viewWillAppear.flatMapLatest {
-            return self.usecase.fetchGenres()
-                .trackActivity(activityIndicator)
-                .trackError(errorTracker)
-                .asDriverOnErrorJustComplete()
-                .do(onNext: { objc in
-                    print("asdads")
-                })
-        }
-        .asDriver()
-        .drive()
-        .disposed(by: disposeBag)
-
         let _ = errorTracker.asDriver()
         return .init(fetching: activityIndicator.asDriver())
     }
