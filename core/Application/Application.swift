@@ -11,25 +11,25 @@ import UIKit
 final class Application {
     static let shared = Application()
     
-    private let networkUseCaseProvider: DomainUseCaseProviderProtocol?
+    private let service: IUseCaseProvider?
     private let navigator: Navigator
     
     var window: UIWindow?
     
     init() {
-        self.networkUseCaseProvider = NetworkUseCaseProvider()
+        self.service = NetworkUseCaseProvider()
         self.navigator = Navigator.default
     }
     
     func presentInitialScreen(in window: UIWindow?) {
-        guard let window = window, let usecase = networkUseCaseProvider else {
+        guard let window = window, let service = service else {
             return
         }
         self.window = window
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {[weak self] in
-            let viewModel = SplashViewModel(usecase)
-            self?.navigator.show(scene: .splash(viewModel), sender: nil, transition: .root(in: window))
+            let viewModel = SplashViewModel(service)
+            self?.navigator.show(segue: .splash(viewModel), sender: nil, transition: .root(in: window))
         })
     }
 }

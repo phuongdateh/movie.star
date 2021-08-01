@@ -16,7 +16,6 @@ protocol ViewModelType {
 }
 
 class ViewModel: NSObject {
-    let provider: DomainUseCaseProviderProtocol
     
     let loading = ActivityIndicator()
     let headerLoading = ActivityIndicator()
@@ -25,8 +24,7 @@ class ViewModel: NSObject {
     let error = ErrorTracker()
     let serverError = PublishSubject<Error>()
     
-    init(provider: DomainUseCaseProviderProtocol) {
-        self.provider = provider
+    override init() {
         super.init()
         
     }

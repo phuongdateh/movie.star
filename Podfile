@@ -10,6 +10,9 @@ target 'core' do
   pod 'RxAlamofire'
   pod 'RxCocoa'
   
+  # Rx Extensions
+  pod 'RxDataSources'
+  
   # Logging
   pod 'CocoaLumberjack/Swift', '~> 3.0'  # https://github.com/CocoaLumberjack/CocoaLumberjack
   

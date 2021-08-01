@@ -8,6 +8,6 @@
 import Foundation
 import RxSwift
 
-protocol DomainGenresUseCaseProtocol {
+protocol IGenresUseCase {
     func fetchGenres() -> Observable<Genres>
 }

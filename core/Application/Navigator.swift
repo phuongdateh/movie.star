@@ -19,6 +19,7 @@ class Navigator {
     // MARK: - segues list, all app scenes
     enum Scene {
         case splash(SplashViewModel)
+        case getstarted(viewModel: GetStartedViewModel)
     }
     
     enum Transition {
@@ -39,6 +40,14 @@ extension Navigator {
             let storyboard = UIStoryboard(name: "Splash", bundle: nil)
             let vc = storyboard.instantiateViewController(ofType: SplashViewController.self)
             vc.viewModel = viewModel
+            vc.navigator = self
+            let navitaionController = NavigationController(rootViewController: vc)
+            return navitaionController
+        case .getstarted(viewModel: let viewModel):
+            let storyboard = UIStoryboard(name: "GetStarted", bundle: nil)
+            let vc = storyboard.instantiateViewController(ofType: GetStartedViewController.self)
+            vc.viewModel = viewModel
+            vc.navigator = self
             return vc
         }
     }
@@ -59,10 +68,10 @@ extension Navigator {
 }
 
 extension Navigator {
-    func show(scene: Scene,
+    func show(segue: Scene,
               sender: UIViewController?,
               transition: Transition = .navigation(type: .cover(direction: .left))) {
-        if let target = self.get(scene: scene) {
+        if let target = self.get(scene: segue) {
             self.show(target: target, sender: sender, transition: transition)
         }
     }

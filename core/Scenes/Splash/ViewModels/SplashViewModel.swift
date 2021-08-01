@@ -23,13 +23,13 @@ class SplashViewModel:  ViewModel, ViewModelType {
     }
     
     // MARK: - Init
-    init(_ usecase: DomainUseCaseProviderProtocol) {
+    init(_ usecase: IUseCaseProvider) {
         self.usecase = usecase
-        super.init(provider: usecase)
+        
     }
     
     // MARK: - Properties
-    private let usecase: DomainUseCaseProviderProtocol
+    private let usecase: IUseCaseProvider
     private let disposeBag = DisposeBag()
     
     // MARK: - Transform
@@ -39,5 +39,10 @@ class SplashViewModel:  ViewModel, ViewModelType {
         
         let _ = errorTracker.asDriver()
         return .init(fetching: activityIndicator.asDriver())
+    }
+    
+    // MARK: - Methods
+    func toGetStartedViewModel() -> GetStartedViewModel {
+        return GetStartedViewModel(usecase: usecase.makeFetchGenres())
     }
 }

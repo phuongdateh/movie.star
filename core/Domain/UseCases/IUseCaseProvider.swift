@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol DomainUseCaseProviderProtocol {
-    func makeFetchGenres() -> DomainGenresUseCaseProtocol
+protocol IUseCaseProvider {
+    func makeFetchGenres() -> IGenresUseCase
 }

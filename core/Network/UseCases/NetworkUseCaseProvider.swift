@@ -7,14 +7,14 @@
 
 import Foundation
 
-class NetworkUseCaseProvider: DomainUseCaseProviderProtocol {
+class NetworkUseCaseProvider: IUseCaseProvider {
     private let networkProvider: NetworkProvider
     
     init() {
         self.networkProvider = NetworkProvider()
     }
     
-    func makeFetchGenres() -> DomainGenresUseCaseProtocol {
+    func makeFetchGenres() -> IGenresUseCase {
         let usecase = NetworkGenresUseCase(network: networkProvider.makeGenresNetwork())
         return usecase
     }

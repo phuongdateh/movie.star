@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 
 
-class NetworkGenresUseCase: DomainGenresUseCaseProtocol {
+class NetworkGenresUseCase: IGenresUseCase {
     
     private let network: GenresNetwork
     
