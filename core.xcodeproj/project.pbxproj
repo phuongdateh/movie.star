@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		478B64A84663A447408AF5B6 /* Pods_core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 199B18C147FF78456429D04A /* Pods_core.framework */; };
-		A41E748526909592006E7D0F /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41E748426909592006E7D0F /* Network.swift */; };
-		A41E74872690964B006E7D0F /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41E74862690964B006E7D0F /* NetworkProvider.swift */; };
 		A41E748B2690B4C9006E7D0F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41E748A2690B4C9006E7D0F /* Constants.swift */; };
 		A43813D5268CAD5B0055DF76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43813D4268CAD5B0055DF76 /* AppDelegate.swift */; };
 		A43813D9268CAD5B0055DF76 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43813D8268CAD5B0055DF76 /* ViewController.swift */; };
@@ -21,14 +19,8 @@
 		A44D5EE826A4763200D8E87B /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44D5EE726A4763200D8E87B /* NavigationController.swift */; };
 		A44D5EF126A4821800D8E87B /* GetStartedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44D5EF026A4821800D8E87B /* GetStartedViewModel.swift */; };
 		A4815EED269178A4004107D1 /* coreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4815EEC269178A4004107D1 /* coreTests.swift */; };
-		A4815EF52691A956004107D1 /* Genres.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4815EF42691A956004107D1 /* Genres.swift */; };
-		A4815EF82691AA1C004107D1 /* GenresNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4815EF72691AA1C004107D1 /* GenresNetwork.swift */; };
-		A4815EFC2691B004004107D1 /* IGenresUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4815EFB2691B004004107D1 /* IGenresUseCase.swift */; };
 		A4815EFF2691B1CA004107D1 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4815EFE2691B1CA004107D1 /* Application.swift */; };
 		A4815F032691EAA6004107D1 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4815F022691EAA5004107D1 /* ViewModelType.swift */; };
-		A4815F0D2691EF3B004107D1 /* IUseCaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4815F0C2691EF3B004107D1 /* IUseCaseProvider.swift */; };
-		A4815F102691F3D0004107D1 /* NetworkUseCaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4815F0F2691F3D0004107D1 /* NetworkUseCaseProvider.swift */; };
-		A4815F122691F623004107D1 /* NetworkGenresUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4815F112691F623004107D1 /* NetworkGenresUseCase.swift */; };
 		A4815F152691FCA9004107D1 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4815F142691FCA9004107D1 /* UIViewController.swift */; };
 		A4815F172691FCDD004107D1 /* UIStoryBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4815F162691FCDD004107D1 /* UIStoryBoard.swift */; };
 		A4815F192691FD48004107D1 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4815F182691FD48004107D1 /* UITableView.swift */; };
@@ -66,8 +58,6 @@
 
 /* Begin PBXFileReference section */
 		199B18C147FF78456429D04A /* Pods_core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A41E748426909592006E7D0F /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
-		A41E74862690964B006E7D0F /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		A41E748A2690B4C9006E7D0F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A43813D1268CAD5B0055DF76 /* core.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = core.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A43813D4268CAD5B0055DF76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,14 +73,8 @@
 		A4815EEA269178A4004107D1 /* coreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = coreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4815EEC269178A4004107D1 /* coreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coreTests.swift; sourceTree = "<group>"; };
 		A4815EEE269178A4004107D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A4815EF42691A956004107D1 /* Genres.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genres.swift; sourceTree = "<group>"; };
-		A4815EF72691AA1C004107D1 /* GenresNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresNetwork.swift; sourceTree = "<group>"; };
-		A4815EFB2691B004004107D1 /* IGenresUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGenresUseCase.swift; sourceTree = "<group>"; };
 		A4815EFE2691B1CA004107D1 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		A4815F022691EAA5004107D1 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
-		A4815F0C2691EF3B004107D1 /* IUseCaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IUseCaseProvider.swift; sourceTree = "<group>"; };
-		A4815F0F2691F3D0004107D1 /* NetworkUseCaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUseCaseProvider.swift; sourceTree = "<group>"; };
-		A4815F112691F623004107D1 /* NetworkGenresUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkGenresUseCase.swift; sourceTree = "<group>"; };
 		A4815F142691FCA9004107D1 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		A4815F162691FCDD004107D1 /* UIStoryBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryBoard.swift; sourceTree = "<group>"; };
 		A4815F182691FD48004107D1 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
@@ -140,10 +124,6 @@
 		A41E7483269094F9006E7D0F /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				A4815EF62691AA0F004107D1 /* API */,
-				A4815F0E2691F2E3004107D1 /* UseCases */,
-				A41E748426909592006E7D0F /* Network.swift */,
-				A41E74862690964B006E7D0F /* NetworkProvider.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -155,7 +135,6 @@
 				A4AC288626B6E26000FCA700 /* Video */,
 				A4AC287D26B6E1CD00FCA700 /* Home */,
 				A4AC287426B6AA3E00FCA700 /* Tabbar */,
-				A4B323D426935E2D00D9DD46 /* Landing */,
 				A4853FE22694AE4800B38D43 /* GetStarted */,
 				A4815F052691EAF3004107D1 /* Splash */,
 			);
@@ -193,17 +172,16 @@
 		A43813D3268CAD5B0055DF76 /* core */ = {
 			isa = PBXGroup;
 			children = (
-				A44D5EE426A424B000D8E87B /* Manager */,
-				A43813E2268CAD5C0055DF76 /* Info.plist */,
 				A43813D4268CAD5B0055DF76 /* AppDelegate.swift */,
-				A43813DD268CAD5C0055DF76 /* Assets.xcassets */,
 				A4815EFD2691B1B6004107D1 /* Application */,
+				A43813DD268CAD5C0055DF76 /* Assets.xcassets */,
 				A4815F012691EA94004107D1 /* Common */,
 				A41E74892690B4B4006E7D0F /* Constant */,
-				A4815EF92691AE99004107D1 /* Domain */,
 				A4815F132691FC9C004107D1 /* Extensions */,
+				A43813E2268CAD5C0055DF76 /* Info.plist */,
 				A43813DF268CAD5C0055DF76 /* LaunchScreen.storyboard */,
 				A43813DA268CAD5B0055DF76 /* Main.storyboard */,
+				A44D5EE426A424B000D8E87B /* Manager */,
 				A41E7483269094F9006E7D0F /* Network */,
 				A41E748826909728006E7D0F /* Scenes */,
 				A4B323CC2692C7E700D9DD46 /* Utils */,
@@ -219,22 +197,6 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
-		A4815EE226917724004107D1 /* Entries */ = {
-			isa = PBXGroup;
-			children = (
-				A4815EE32691772F004107D1 /* Genres */,
-			);
-			path = Entries;
-			sourceTree = "<group>";
-		};
-		A4815EE32691772F004107D1 /* Genres */ = {
-			isa = PBXGroup;
-			children = (
-				A4815EF42691A956004107D1 /* Genres.swift */,
-			);
-			path = Genres;
-			sourceTree = "<group>";
-		};
 		A4815EEB269178A4004107D1 /* coreTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,32 +204,6 @@
 				A4815EEE269178A4004107D1 /* Info.plist */,
 			);
 			path = coreTests;
-			sourceTree = "<group>";
-		};
-		A4815EF62691AA0F004107D1 /* API */ = {
-			isa = PBXGroup;
-			children = (
-				A4815EF72691AA1C004107D1 /* GenresNetwork.swift */,
-			);
-			path = API;
-			sourceTree = "<group>";
-		};
-		A4815EF92691AE99004107D1 /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				A4815EFA2691AEDC004107D1 /* UseCases */,
-				A4815EE226917724004107D1 /* Entries */,
-			);
-			path = Domain;
-			sourceTree = "<group>";
-		};
-		A4815EFA2691AEDC004107D1 /* UseCases */ = {
-			isa = PBXGroup;
-			children = (
-				A4815EFB2691B004004107D1 /* IGenresUseCase.swift */,
-				A4815F0C2691EF3B004107D1 /* IUseCaseProvider.swift */,
-			);
-			path = UseCases;
 			sourceTree = "<group>";
 		};
 		A4815EFD2691B1B6004107D1 /* Application */ = {
@@ -315,15 +251,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		A4815F0E2691F2E3004107D1 /* UseCases */ = {
-			isa = PBXGroup;
-			children = (
-				A4815F0F2691F3D0004107D1 /* NetworkUseCaseProvider.swift */,
-				A4815F112691F623004107D1 /* NetworkGenresUseCase.swift */,
-			);
-			path = UseCases;
-			sourceTree = "<group>";
-		};
 		A4815F132691FC9C004107D1 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -333,20 +260,6 @@
 				A4B323D12692C88200D9DD46 /* Observable+Ext.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		A4853FDF2694AE1D00B38D43 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		A4853FE02694AE2300B38D43 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		A4853FE22694AE4800B38D43 /* GetStarted */ = {
@@ -486,15 +399,6 @@
 				A4B323CF2692C85800D9DD46 /* ErrorTracker.swift */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		A4B323D426935E2D00D9DD46 /* Landing */ = {
-			isa = PBXGroup;
-			children = (
-				A4853FE02694AE2300B38D43 /* ViewModels */,
-				A4853FDF2694AE1D00B38D43 /* Views */,
-			);
-			path = Landing;
 			sourceTree = "<group>";
 		};
 		B534A3BE4F8D2DF518F59C85 /* Pods */ = {
@@ -680,24 +584,16 @@
 				A4B323D22692C88200D9DD46 /* Observable+Ext.swift in Sources */,
 				A43813D5268CAD5B0055DF76 /* AppDelegate.swift in Sources */,
 				A4AC288526B6E21600FCA700 /* HomeViewModel.swift in Sources */,
-				A41E748526909592006E7D0F /* Network.swift in Sources */,
-				A4815EF52691A956004107D1 /* Genres.swift in Sources */,
-				A41E74872690964B006E7D0F /* NetworkProvider.swift in Sources */,
 				A4AC288E26B6E28E00FCA700 /* VideoViewModel.swift in Sources */,
 				A4AC287C26B6B75700FCA700 /* TabbarViewModel.swift in Sources */,
-				A4815F0D2691EF3B004107D1 /* IUseCaseProvider.swift in Sources */,
 				A41E748B2690B4C9006E7D0F /* Constants.swift in Sources */,
 				A4AC288126B6E1E600FCA700 /* HomeViewController.swift in Sources */,
 				A44D5EF126A4821800D8E87B /* GetStartedViewModel.swift in Sources */,
-				A4815EF82691AA1C004107D1 /* GenresNetwork.swift in Sources */,
 				A4815F1B2691FDC5004107D1 /* SplashViewController.swift in Sources */,
-				A4815EFC2691B004004107D1 /* IGenresUseCase.swift in Sources */,
 				A4B323CE2692C7F600D9DD46 /* ActivityIndicator.swift in Sources */,
 				A44D5EE826A4763200D8E87B /* NavigationController.swift in Sources */,
 				A4AC289726B6E2EB00FCA700 /* ProfileViewModel.swift in Sources */,
-				A4815F102691F3D0004107D1 /* NetworkUseCaseProvider.swift in Sources */,
 				A4815F152691FCA9004107D1 /* UIViewController.swift in Sources */,
-				A4815F122691F623004107D1 /* NetworkGenresUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
