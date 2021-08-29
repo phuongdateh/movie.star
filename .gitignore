@@ -3,7 +3,7 @@ Podfile.lock
 Pods/
 core.xcodeproj/xcuserdata
 core.xcodeproj/xcshareddata
-core.xcworkspace
+core.xcworkspace/xcuserdata
 xcuserdata
 vendor/
 reports/
