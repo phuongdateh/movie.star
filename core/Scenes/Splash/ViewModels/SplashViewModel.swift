@@ -25,6 +25,9 @@ class SplashViewModel:  ViewModel, ViewModelType {
     // MARK: - Init
     init(_ apiService: MovieAPIProtocol) {
         self.apiService = apiService
+        self.apiService.getPopular(page: 1) { result in
+            
+        }
     }
     
     // MARK: - Properties

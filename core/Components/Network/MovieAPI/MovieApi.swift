@@ -9,7 +9,7 @@ import Foundation
 import Moya
 
 enum MovieApi {
-    case popular
+    case popular(pageNumber: Int)
     case upcoming
     case topRated
     case nowPlaying
@@ -25,6 +25,8 @@ extension MovieApi: TargetType {
     
     var path: String {
         switch self {
+        case .popular(pageNumber: _):
+            return "/movie/popular"
         default: return ""
         }
     }
@@ -36,9 +38,15 @@ extension MovieApi: TargetType {
     }
     
     var parameters: [String: Any] {
+        var parameters: [String: Any] = [:]
+        parameters["api_key"] = Configs.Network.apiKey
+        parameters["language"] = Configs.Network.language
         switch self {
+        case let .popular(pageNumber: number):
+            parameters["page"] = number
         default: return [:]
         }
+        return parameters
     }
     
     var task: Task {
