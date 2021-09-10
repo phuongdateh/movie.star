@@ -38,17 +38,12 @@ extension Navigator {
         switch scene {
         case .splash(let viewModel):
             let storyboard = UIStoryboard(name: "Splash", bundle: nil)
-            let vc = storyboard.instantiateViewController(ofType: SplashViewController.self)
-            vc.viewModel = viewModel
-            vc.navigator = self
+            let vc = storyboard.instantiateViewController(ofType: SplashViewController.self, viewModel: viewModel, navigator: self)
             let navitaionController = NavigationController(rootViewController: vc)
             return navitaionController
         case .getstarted(viewModel: let viewModel):
             let storyboard = UIStoryboard(name: "GetStarted", bundle: nil)
-            let vc = storyboard.instantiateViewController(ofType: GetStartedViewController.self)
-            vc.viewModel = viewModel
-            vc.navigator = self
-            return vc
+            return storyboard.instantiateViewController(ofType: GetStartedViewController.self, viewModel: viewModel, navigator: self)
         }
     }
 }
@@ -82,9 +77,9 @@ extension Navigator {
         switch transition {
         case .root(in: let window):
             window.rootViewController = target
-//            UIView.transition(with: window, duration: 0.5, options: .transitionFlipFromLeft, animations: {
-//                window.rootViewController = target
-//            }, completion: nil)
+            UIView.transition(with: window, duration: 0.5, options: .transitionFlipFromLeft, animations: {
+                window.rootViewController = target
+            }, completion: nil)
             return
         default:
             break

@@ -11,24 +11,24 @@ import UIKit
 final class Application {
     static let shared = Application()
     
-    private let service: IUseCaseProvider?
+    private let apiService: MovieAPIProtocol?
     private let navigator: Navigator
     
     var window: UIWindow?
     
     init() {
-        self.service = NetworkUseCaseProvider()
+        self.apiService = MovieAPIService.init()
         self.navigator = Navigator.default
     }
     
     func presentInitialScreen(in window: UIWindow?) {
-        guard let window = window, let service = service else {
+        guard let window = window, let apisevice = apiService else {
             return
         }
         self.window = window
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {[weak self] in
-            let viewModel = SplashViewModel(service)
+            let viewModel = SplashViewModel(apisevice)
             self?.navigator.show(segue: .splash(viewModel), sender: nil, transition: .root(in: window))
         })
     }

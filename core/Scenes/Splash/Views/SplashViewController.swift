@@ -19,6 +19,6 @@ class SplashViewController: ViewController {
     
     override func bindViewModel() {
         guard let viewModel = viewModel as? SplashViewModel else { return }
-        self.navigator.show(segue: .getstarted(viewModel: viewModel.toGetStartedViewModel()), sender: self)
+//        self.navigator.show(segue: .getstarted(viewModel: viewModel.toGetStartedViewModel()), sender: self)
     }
 }
