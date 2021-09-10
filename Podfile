@@ -6,18 +6,20 @@ target 'core' do
   use_frameworks!
 
   # Pods for core
-  pod 'Alamofire'
-  pod 'RxAlamofire'
+  pod 'RxSwift'
   pod 'RxCocoa'
   
   # Rx Extensions
   pod 'RxDataSources'
   
   # Logging
-  pod 'CocoaLumberjack/Swift', '~> 3.0'  # https://github.com/CocoaLumberjack/CocoaLumberjack
+  pod 'CocoaLumberjack/Swift'
   
   # UI
-  pod 'Hero', '~> 1.6'  # https://github.com/lkzhao/Hero
+  pod 'Hero'
+  
+  # Network
+  pod 'Moya'
 
 
 end

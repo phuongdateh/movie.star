@@ -9,11 +9,6 @@ import Foundation
 import  RxSwift
 
 class GetStartedViewModel: ViewModel, ViewModelType {
-    private let usecase: IGenresUseCase
-    
-    init(usecase: IGenresUseCase) {
-        self.usecase = usecase
-    }
     
 }
 
