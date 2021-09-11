@@ -21,4 +21,16 @@ class TabbarViewModel: ViewModel, ViewModelType {
     func transform(input: Input) -> Output {
         return .init()
     }
+    
+    func createHomeViewModel() -> HomeViewModel {
+        return .init()
+    }
+    
+    func createVideoViewModel() -> VideoViewModel {
+        return .init()
+    }
+    
+    func createProfileViewModel() -> ProfileViewModel {
+        return .init()
+    }
 }
