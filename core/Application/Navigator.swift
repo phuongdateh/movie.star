@@ -20,9 +20,11 @@ class Navigator {
     enum Scene {
         case splash(SplashViewModel)
         case getstarted(viewModel: GetStartedViewModel)
+        case tabbar(viewModel: TabbarViewModel)
     }
     
     enum Transition {
+        case tabbar(in: UIWindow)
         case root(in: UIWindow)
         case navigation(type: HeroDefaultAnimationType)
         case customModal(type: HeroDefaultAnimationType)
@@ -44,6 +46,12 @@ extension Navigator {
         case .getstarted(viewModel: let viewModel):
             let storyboard = UIStoryboard(name: "GetStarted", bundle: nil)
             return storyboard.instantiateViewController(ofType: GetStartedViewController.self, viewModel: viewModel, navigator: self)
+        case let .tabbar(viewModel: viewModel):
+            let vc = TabbarViewController.init(nibName: TabbarViewController.reuseID, bundle: nil)
+            vc.viewModel = viewModel
+            vc.navigator = self
+            vc.setupChilds()
+            return vc
         }
     }
 }
