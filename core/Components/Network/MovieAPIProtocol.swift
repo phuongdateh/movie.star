@@ -7,11 +7,10 @@
 
 import Foundation
 import Moya
-
-typealias Completion<T: Decodable> = (Result<T, Error>) -> ()
+import RxSwift
 
 protocol MovieAPIProtocol {
     var provider: MoyaProvider<MovieApi> { get set }
     
-    func getPopular(page: Int, completion: @escaping Completion<MovieResponse>)
+    func getPopular(page: Int) -> Single<MovieResponse>
 }

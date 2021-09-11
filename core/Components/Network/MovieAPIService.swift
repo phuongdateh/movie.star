@@ -7,33 +7,25 @@
 
 import Foundation
 import Moya
+import RxSwift
 
 final class MovieAPIService: MovieAPIProtocol {
     var provider: MoyaProvider<MovieApi>
     
     init() {
-        self.provider = MoyaProvider<MovieApi>(plugins: [NetworkLoggerPlugin()])
+        self.provider = MoyaProvider<MovieApi>(plugins: [NetworkLoggerPlugin(), VerbosePlugin(verbose: true)])
     }
     
-    func getPopular(page: Int = 1, completion: @escaping Completion<MovieResponse>) {
-        self.request(target: .popular(pageNumber: page), completion)
+    func getPopular(page: Int) -> Single<MovieResponse> {
+        return self.request(target: .popular(pageNumber: page), type: MovieResponse.self)
     }
 }
 
 extension MovieAPIProtocol {
-    func request<T: Decodable>(target: MovieApi,_ completion: @escaping Completion<T>) {
-        provider.request(target) { result in
-            switch result {
-            case let .success(response):
-                do {
-                    let results = try JSONDecoder().decode(T.self, from: response.data)
-                    completion(.success(results))
-                } catch {
-                    completion(.failure(error))
-                }
-            case let .failure(error):
-                completion(.failure(error))
-            }
-        }
+    func request<T: Decodable>(target: MovieApi, type: T.Type) -> Single<T>{
+        return provider.rx
+            .request(target)
+            .filterSuccessfulStatusAndRedirectCodes()
+            .map(T.self)
     }
 }

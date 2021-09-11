@@ -19,7 +19,7 @@ target 'core' do
   pod 'Hero'
   
   # Network
-  pod 'Moya'
+  pod 'Moya/RxSwift'
 
 
 end

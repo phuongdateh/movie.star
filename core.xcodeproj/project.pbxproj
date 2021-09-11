@@ -14,6 +14,7 @@
 		00F2B3BE26EB6860001F2497 /* MovieApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F2B3BD26EB6860001F2497 /* MovieApi.swift */; };
 		00F2B3C126EB698E001F2497 /* Configs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F2B3C026EB698E001F2497 /* Configs.swift */; };
 		478B64A84663A447408AF5B6 /* Pods_core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 199B18C147FF78456429D04A /* Pods_core.framework */; };
+		7556A4E926EC5F58004BD99F /* VerbosePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7556A4E826EC5F58004BD99F /* VerbosePlugin.swift */; };
 		A43813D5268CAD5B0055DF76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43813D4268CAD5B0055DF76 /* AppDelegate.swift */; };
 		A43813D9268CAD5B0055DF76 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43813D8268CAD5B0055DF76 /* ViewController.swift */; };
 		A43813DC268CAD5B0055DF76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A43813DA268CAD5B0055DF76 /* Main.storyboard */; };
@@ -69,6 +70,7 @@
 		00F2B3BD26EB6860001F2497 /* MovieApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieApi.swift; sourceTree = "<group>"; };
 		00F2B3C026EB698E001F2497 /* Configs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configs.swift; sourceTree = "<group>"; };
 		199B18C147FF78456429D04A /* Pods_core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7556A4E826EC5F58004BD99F /* VerbosePlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbosePlugin.swift; sourceTree = "<group>"; };
 		A43813D1268CAD5B0055DF76 /* core.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = core.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A43813D4268CAD5B0055DF76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A43813D8268CAD5B0055DF76 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 		00C0E3D126E8F96500CD560C /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				7556A4E726EC5F4E004BD99F /* Plugin */,
 				00F2B3BC26EB6854001F2497 /* MovieAPI */,
 				00C0E3D226E8F99000CD560C /* MovieAPIProtocol.swift */,
 				00C0E3D426E8F9D900CD560C /* MovieAPIService.swift */,
@@ -199,6 +202,14 @@
 				00F2B3C026EB698E001F2497 /* Configs.swift */,
 			);
 			path = Configs;
+			sourceTree = "<group>";
+		};
+		7556A4E726EC5F4E004BD99F /* Plugin */ = {
+			isa = PBXGroup;
+			children = (
+				7556A4E826EC5F58004BD99F /* VerbosePlugin.swift */,
+			);
+			path = Plugin;
 			sourceTree = "<group>";
 		};
 		A41E748826909728006E7D0F /* Scenes */ = {
@@ -650,6 +661,7 @@
 				A4B323D22692C88200D9DD46 /* Observable+Ext.swift in Sources */,
 				00F2B3C126EB698E001F2497 /* Configs.swift in Sources */,
 				A43813D5268CAD5B0055DF76 /* AppDelegate.swift in Sources */,
+				7556A4E926EC5F58004BD99F /* VerbosePlugin.swift in Sources */,
 				A4AC288526B6E21600FCA700 /* HomeViewModel.swift in Sources */,
 				A4AC288E26B6E28E00FCA700 /* VideoViewModel.swift in Sources */,
 				A4AC287C26B6B75700FCA700 /* TabbarViewModel.swift in Sources */,

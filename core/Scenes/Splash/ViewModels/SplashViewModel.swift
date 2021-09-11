@@ -25,9 +25,9 @@ class SplashViewModel:  ViewModel, ViewModelType {
     // MARK: - Init
     init(_ apiService: MovieAPIProtocol) {
         self.apiService = apiService
-        self.apiService.getPopular(page: 1) { result in
-            
-        }
+        self.apiService.getPopular(page: 1).asObservable().subscribe(onNext: { movieResponse in
+            print(movieResponse.totalPages)
+        }).disposed(by: self.disposeBag)
     }
     
     // MARK: - Properties
