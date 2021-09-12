@@ -22,14 +22,40 @@ final class Application {
     }
     
     func presentInitialScreen(in window: UIWindow?) {
-        guard let window = window, let apisevice = apiService else {
+        guard let window = window, let _ = apiService else {
             return
         }
         self.window = window
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {[weak self] in
-            let viewModel = SplashViewModel(apisevice)
-            self?.navigator.show(segue: .splash(viewModel), sender: nil, transition: .root(in: window))
+            if let self = self {
+                if self.isLauchedApp {
+                    self.showTabbar()
+                } else {
+                    self.setAppLauched()
+                    self.showGetStarted()
+                }
+            }
         })
+    }
+    
+    private func showGetStarted() {
+        let viewModel = SplashViewModel(self.apiService!)
+        self.navigator.show(segue: .splash(viewModel), sender: nil, transition: .root(in: window!))
+    }
+    
+    private func showTabbar() {
+        self.navigator.show(segue: .tabbar(viewModel: TabbarViewModel.init()), sender: nil, transition: .tabbar(in: window!))
+    }
+    
+    private func setAppLauched() {
+        UserDefaults.standard.setValue(true, forKey: "isLauchedApp")
+        UserDefaults.standard.synchronize()
+    }
+    
+    private var isLauchedApp: Bool {
+        get {
+            return UserDefaults.standard.bool(forKey: "isLauchedApp")
+        }
     }
 }
