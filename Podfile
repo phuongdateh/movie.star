@@ -20,8 +20,16 @@ target 'core' do
   
   # Network
   pod 'Moya/RxSwift'
-
-
+  
+  # Autolayout
+  pod 'SnapKit'
+  
+  # Loading
+  pod 'NVActivityIndicatorView'
+  
+  # Cache media file while play media using AVPlayerr.
+  pod 'VIMediaCache'
+  
 end
 
 post_install do |installer|
