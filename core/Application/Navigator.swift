@@ -83,7 +83,7 @@ extension Navigator {
                       sender: UIViewController?,
                       transition: Transition) {
         switch transition {
-        case .root(in: let window):
+        case .root(in: let window), .tabbar(in: let window):
             window.rootViewController = target
             UIView.transition(with: window, duration: 0.5, options: .transitionFlipFromLeft, animations: {
                 window.rootViewController = target
