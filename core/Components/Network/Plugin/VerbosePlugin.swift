@@ -14,7 +14,7 @@ struct VerbosePlugin: PluginType {
     func willSend(_ request: RequestType, target: TargetType) {
         #if DEBUG
         if let urlRequest = request.request {
-            print("[\(urlRequest.curlString)]")
+            print("[⚽️ \(urlRequest.curlString)]")
         }
         #endif
     }
@@ -35,8 +35,10 @@ struct VerbosePlugin: PluginType {
         #if DEBUG
         switch result {
         case .success(let body):
-            if verbose {
-                print("Response:")
+            if verbose,
+               let urlRequest = body.request,
+               let url = urlRequest.url {
+                print("[⚽️ Response: \(url.absoluteString)]")
                 if let json = try? JSONSerialization.jsonObject(with: body.data, options: .mutableContainers) {
                     print(json)
                 } else {
