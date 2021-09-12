@@ -1,5 +1,5 @@
 //
-//  MovieApi.swift
+//  MovieTarget.swift
 //  core
 //
 //  Created by phuong.doand on 10/09/2021.
@@ -8,14 +8,16 @@
 import Foundation
 import Moya
 
-enum MovieApi {
+enum MovieTarget {
     case popular(pageNumber: Int)
     case upcoming
     case topRated
     case nowPlaying
+    case detail(id: Int)
+    case videos(of: Int)
 }
 
-extension MovieApi: TargetType {
+extension MovieTarget: TargetType {
     var baseURL: URL {
         guard let url = URL(string: Configs.Network.baseURL) else {
             fatalError("URL invalid")
@@ -27,6 +29,10 @@ extension MovieApi: TargetType {
         switch self {
         case .popular(pageNumber: _):
             return "/movie/popular"
+        case let .detail(id: movieId):
+            return "\(movieId)"
+        case let .videos(of: movieId):
+            return "movie/\(movieId)/videos"
         default: return ""
         }
     }
@@ -41,10 +47,8 @@ extension MovieApi: TargetType {
         var parameters: [String: Any] = [:]
         parameters["api_key"] = Configs.Network.apiKey
         parameters["language"] = Configs.Network.language
-        switch self {
-        case let .popular(pageNumber: number):
+        if case let .popular(pageNumber: number) = self {
             parameters["page"] = number
-        default: return [:]
         }
         return parameters
     }

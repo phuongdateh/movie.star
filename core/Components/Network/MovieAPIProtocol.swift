@@ -7,10 +7,14 @@
 
 import Foundation
 import Moya
-import RxSwift
+
+typealias CompletionResult<T: Decodable> = (Result<T, Error>) -> ()
 
 protocol MovieAPIProtocol {
-    var provider: MoyaProvider<MovieApi> { get set }
+    var provider: MoyaProvider<MovieTarget> { get set }
     
-    func getPopular(page: Int) -> Single<MovieResponse>
+    func getPopular(page: Int,_ completion: @escaping CompletionResult<MovieResponse>)
+    func getMovieDetail(_ movieId: Int,_ comepletion: @escaping CompletionResult<MovieDetail>)
+    func getViedeos(_ movieId: Int,_ comepletion: @escaping CompletionResult<VideoResults>)
 }
+ 
