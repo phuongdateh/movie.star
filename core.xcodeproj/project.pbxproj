@@ -309,7 +309,6 @@
 		A43813D3268CAD5B0055DF76 /* core */ = {
 			isa = PBXGroup;
 			children = (
-				00EA996426EE057A003DCA4E /* ThirdParty */,
 				A4815EFD2691B1B6004107D1 /* Application */,
 				A4815F012691EA94004107D1 /* Common */,
 				00C0E3CE26E8F90F00CD560C /* Components */,
@@ -320,6 +319,7 @@
 				00F2B3B626EB6794001F2497 /* Models */,
 				00C0E3D026E8F92800CD560C /* Resources */,
 				A41E748826909728006E7D0F /* Scenes */,
+				00EA996426EE057A003DCA4E /* ThirdParty */,
 				A4B323CC2692C7E700D9DD46 /* Utils */,
 			);
 			path = core;
