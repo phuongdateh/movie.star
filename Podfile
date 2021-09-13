@@ -29,6 +29,11 @@ target 'core' do
   
   # Cache media file while play media using AVPlayerr.
   pod 'VIMediaCache'
+
+  # Youtube https://github.com/0xced/XCDYouTubeKit/pull/526#issuecomment-868208997
+  pod 'XCDYouTubeKit', :git => 'https://github.com/dpwilhelmsen/XCDYouTubeKit', :branch => 'hotfix/fix-get-video-info-error'
+
+  
   
 end
 
