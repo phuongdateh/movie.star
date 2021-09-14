@@ -16,6 +16,7 @@
 		006FD95726F09A1600169CDD /* YoutubeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006FD95626F09A1600169CDD /* YoutubeService.swift */; };
 		006FD95D26F0A0AE00169CDD /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006FD95B26F0A0AE00169CDD /* VideoTableViewCell.swift */; };
 		006FD95E26F0A0AE00169CDD /* VideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006FD95C26F0A0AE00169CDD /* VideoTableViewCell.xib */; };
+		006FD96026F0B42300169CDD /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006FD95F26F0B42300169CDD /* UIImageView.swift */; };
 		00C0E3D326E8F99000CD560C /* MovieAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C0E3D226E8F99000CD560C /* MovieAPIProtocol.swift */; };
 		00C0E3D526E8F9D900CD560C /* MovieAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C0E3D426E8F9D900CD560C /* MovieAPIService.swift */; };
 		00EA995F26EDB668003DCA4E /* MovieDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EA995E26EDB668003DCA4E /* MovieDetail.swift */; };
@@ -85,6 +86,7 @@
 		006FD95626F09A1600169CDD /* YoutubeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeService.swift; sourceTree = "<group>"; };
 		006FD95B26F0A0AE00169CDD /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
 		006FD95C26F0A0AE00169CDD /* VideoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoTableViewCell.xib; sourceTree = "<group>"; };
+		006FD95F26F0B42300169CDD /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		00C0E3D226E8F99000CD560C /* MovieAPIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieAPIProtocol.swift; sourceTree = "<group>"; };
 		00C0E3D426E8F9D900CD560C /* MovieAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieAPIService.swift; sourceTree = "<group>"; };
 		00EA995E26EDB668003DCA4E /* MovieDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetail.swift; sourceTree = "<group>"; };
@@ -412,6 +414,7 @@
 			children = (
 				A4815F142691FCA9004107D1 /* UIViewController.swift */,
 				A4815F162691FCDD004107D1 /* UIStoryBoard.swift */,
+				006FD95F26F0B42300169CDD /* UIImageView.swift */,
 				A4815F182691FD48004107D1 /* UITableView.swift */,
 			);
 			path = Extensions;
@@ -725,6 +728,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4815F172691FCDD004107D1 /* UIStoryBoard.swift in Sources */,
+				006FD96026F0B42300169CDD /* UIImageView.swift in Sources */,
 				00EA997D26EE05BF003DCA4E /* BMTimeSlider.swift in Sources */,
 				00EA997C26EE05BF003DCA4E /* BMSubtitles.swift in Sources */,
 				A4815F1F26920038004107D1 /* SplashViewModel.swift in Sources */,

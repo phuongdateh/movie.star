@@ -17,6 +17,8 @@ class VideoTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        thumbnailImageView.contentMode = .scaleAspectFit
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -25,12 +27,13 @@ class VideoTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    var video: VideoCategory!
+    var category: VideoCategory!
     
-    func bind(video: VideoCategory) {
-        titleLbl.text = video.video.name
-        YoutubeService.shared.getVideo(by: video.video.key) { _ in
-            
+    func bind(category: VideoCategory) {
+        titleLbl.text = category.video.name
+        thumbnailImageView.downloadImage(with: .youtube(category.video.key))
+        YoutubeService.shared.getVideo(by: category.video.key) { video in
+            print("==================== \(video?.video.title)")
         }
     }
 }

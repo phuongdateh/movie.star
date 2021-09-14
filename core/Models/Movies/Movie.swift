@@ -10,11 +10,13 @@ import Foundation
 struct Movie: Decodable {
     let id: Int
     let originalTitle: String
+    let backdropPath: String
 }
 
 extension Movie {
     enum CodingKeys: String, CodingKey {
         case id
         case originalTitle = "original_title"
+        case backdropPath = "backdrop_path"
     }
 }

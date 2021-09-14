@@ -25,6 +25,8 @@ target 'core' do
 
   # Youtube https://github.com/0xced/XCDYouTubeKit/pull/526#issuecomment-868208997
   pod 'XCDYouTubeKit', :git => 'https://github.com/dpwilhelmsen/XCDYouTubeKit', :branch => 'hotfix/fix-get-video-info-error'
+  
+  pod 'SDWebImage'
 
   
   

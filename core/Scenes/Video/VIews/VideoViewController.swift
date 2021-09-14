@@ -88,7 +88,7 @@ extension VideoViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(ofType: VideoTableViewCell.self, at: indexPath)
         cell.selectionStyle = .none
-        cell.bind(video: viewModel.videos[indexPath.row])
+        cell.bind(category: viewModel.videos[indexPath.row])
         return cell
     }
     
