@@ -6,21 +6,8 @@
 //
 
 import Foundation
-import RxSwift
-import RxCocoa
 
-class TabbarViewModel: ViewModel, ViewModelType {
-    struct Input {
-        
-    }
-    
-    struct Output {
-        
-    }
-    
-    func transform(input: Input) -> Output {
-        return .init()
-    }
+class TabbarViewModel: ViewModel {
     
     func createHomeViewModel() -> HomeViewModel {
         return .init()

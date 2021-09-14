@@ -6,22 +6,7 @@
 //
 
 import Foundation
-import  RxSwift
 
-class GetStartedViewModel: ViewModel, ViewModelType {
+class GetStartedViewModel: ViewModel {
     
-}
-
-extension GetStartedViewModel {
-    struct Input {
-        
-    }
-    
-    struct Output {
-        
-    }
-    
-    func transform(input: Input) -> Output {
-        return Output()
-    }
 }

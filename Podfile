@@ -5,13 +5,6 @@ target 'core' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for core
-  pod 'RxSwift'
-  pod 'RxCocoa'
-  
-  # Rx Extensions
-  pod 'RxDataSources'
-  
   # Logging
   pod 'CocoaLumberjack/Swift'
   
@@ -19,7 +12,7 @@ target 'core' do
   pod 'Hero'
   
   # Network
-  pod 'Moya/RxSwift'
+  pod 'Moya'
   
   # Autolayout
   pod 'SnapKit'

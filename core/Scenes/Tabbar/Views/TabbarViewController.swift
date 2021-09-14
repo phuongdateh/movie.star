@@ -14,22 +14,25 @@ class TabbarViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-            
+        
     }
     
     func setupChilds() {
         guard let viewModel = viewModel as? TabbarViewModel else { return }
-        guard let homeVC = HomeViewController.fromNib(ofType: HomeViewController.self, viewModel: viewModel.createHomeViewModel(), navigator: self.navigator) else { return }
+        let homeVC = HomeViewController.fromNib(ofType: HomeViewController.self)
+        homeVC.set(viewModel: viewModel.createHomeViewModel(), navigator: self.navigator)
         homeVC.tabBarItem.image = UIImage(named: "home_ic")
         homeVC.tabBarItem.title = "Home"
         let homeNav = UINavigationController(rootViewController: homeVC)
         
-        guard let videoVC = VideoViewController.fromNib(ofType: VideoViewController.self, viewModel: viewModel.createHomeViewModel(), navigator: self.navigator) else { return }
+        let videoVC = VideoViewController.fromNib(ofType: VideoViewController.self)
+        videoVC.set(viewModel: viewModel.createVideoViewModel(), navigator: self.navigator)
         videoVC.tabBarItem.image = UIImage(named: "home_ic")
         videoVC.tabBarItem.title = "Video"
         let videoNav = UINavigationController(rootViewController: videoVC)
         
-        guard let profileVC = ProfileViewController.fromNib(ofType: ProfileViewController.self, viewModel: viewModel.createProfileViewModel(), navigator: self.navigator) else { return }
+        let profileVC = ProfileViewController.fromNib(ofType: ProfileViewController.self)
+        profileVC.set(viewModel: viewModel.createProfileViewModel(), navigator: self.navigator)
         profileVC.tabBarItem.image = UIImage(named: "home_ic")
         profileVC.tabBarItem.title = "Profile"
         let profileNav = UINavigationController(rootViewController: profileVC)

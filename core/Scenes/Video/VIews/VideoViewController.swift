@@ -10,7 +10,7 @@ import XCDYouTubeKit
 import SnapKit
 import AVKit
 
-class VideoViewController: ViewController {
+class VideoViewController: ViewController<VideoViewModel> {
 
     var player: BMPlayer!
     @IBOutlet weak var playerView: UIView!

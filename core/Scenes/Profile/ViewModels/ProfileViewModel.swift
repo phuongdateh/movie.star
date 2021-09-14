@@ -7,20 +7,6 @@
 
 import Foundation
 
-class ProfileViewModel: ViewModel, ViewModelType {
+class ProfileViewModel: ViewModel {
     
-}
-
-extension ProfileViewModel {
-    struct Input {
-        
-    }
-    
-    struct Output {
-        
-    }
-
-    func transform(input: Input) -> Output {
-        return Output()
-    }
 }

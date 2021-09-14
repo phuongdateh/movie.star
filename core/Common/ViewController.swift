@@ -6,30 +6,29 @@
 //
 
 import UIKit
-import RxSwift
 
-class ViewController: UIViewController, Navigatable {
+class ViewController<VM: ViewModel>: UIViewController, Navigatable {
     
     var navigator: Navigator!
-    var viewModel: ViewModel?
-    
-    let disposeBag = DisposeBag()
-
-    
-//    init(viewModel: ViewModel?, navigator: Navigator) {
-//        self.navigator = navigator
-//        self.viewModel = viewModel
-//        super.init(nibName: nil, bundle: nil)
-//    }
-//    
-//    required init?(coder: NSCoder) {
-//        super.init(nibName: nil, bundle: nil)
-//    }
+    var viewModel: VM!
     
     var navigationTitle: String = "" {
         didSet {
             navigationItem.title = navigationTitle
         }
+    }
+    
+    func set(viewModel: VM, navigator: Navigator) {
+        self.viewModel = viewModel
+        self.navigator = navigator
+    }
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
