@@ -45,7 +45,8 @@ final class Application {
     }
     
     private func showTabbar() {
-        self.navigator.show(segue: .tabbar(viewModel: TabbarViewModel.init()), sender: nil, transition: .tabbar(in: window!))
+        let viewModel = TabbarViewModel(apiService: self.apiService!)
+        self.navigator.show(segue: .tabbar(viewModel: viewModel), sender: nil, transition: .tabbar(in: window!))
     }
     
     private func setAppLauched() {

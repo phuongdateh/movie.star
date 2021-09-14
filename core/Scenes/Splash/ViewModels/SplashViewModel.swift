@@ -18,6 +18,6 @@ class SplashViewModel:  ViewModel {
     
     // MARK: - Methods
     func createGetStartedViewModel() -> GetStartedViewModel {
-        return .init()
+        return .init(apiService: self.apiService)
     }
 }

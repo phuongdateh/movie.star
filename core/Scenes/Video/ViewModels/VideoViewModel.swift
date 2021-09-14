@@ -8,5 +8,11 @@
 import Foundation
 
 class VideoViewModel: ViewModel {
+    let apiSerivice: MovieAPIProtocol
+    
+    init(_ apiSerivice: MovieAPIProtocol) {
+        self.apiSerivice = apiSerivice
+    }
+    
     
 }
