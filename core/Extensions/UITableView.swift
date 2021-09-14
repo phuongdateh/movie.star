@@ -11,6 +11,10 @@ import UIKit
 extension UITableViewCell: Reusable { }
 
 extension UITableView {
+    func registerCell<T: UITableViewCell>(ofType cellType: T.Type) {
+        self.register(UINib(nibName: T.reuseID, bundle: nil), forCellReuseIdentifier: T.reuseID)
+    }
+    
     func dequeueReusableCell<T>(ofType cellType: T.Type = T.self, at indexPath: IndexPath) -> T where T: UITableViewCell {
         guard let cell = dequeueReusableCell(withIdentifier: cellType.reuseID,
                                              for: indexPath) as? T else {

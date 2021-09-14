@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VideoViewController" customModule="core" customModuleProvider="target">
             <connections>
-                <outlet property="playerView" destination="VaU-8P-cMJ" id="26A-lM-GoQ"/>
+                <outlet property="tableView" destination="VMk-iY-244" id="VGT-RQ-TxP"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,20 +20,18 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VaU-8P-cMJ">
-                    <rect key="frame" x="0.0" y="44" width="414" height="200"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VMk-iY-244">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="200" id="1On-nS-M4u"/>
-                    </constraints>
-                </view>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="VaU-8P-cMJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="CFj-JZ-ghB"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="VaU-8P-cMJ" secondAttribute="trailing" id="WYr-Uz-LWF"/>
-                <constraint firstItem="VaU-8P-cMJ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="oyg-iY-08m"/>
+                <constraint firstItem="VMk-iY-244" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="7S7-FA-dWX"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="VMk-iY-244" secondAttribute="trailing" id="Kbm-Sf-c7w"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="VMk-iY-244" secondAttribute="bottom" id="W1l-aw-abf"/>
+                <constraint firstItem="VMk-iY-244" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="pm6-bP-VI9"/>
             </constraints>
             <point key="canvasLocation" x="139" y="116"/>
         </view>

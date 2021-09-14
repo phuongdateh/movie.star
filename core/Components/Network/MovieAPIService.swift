@@ -13,7 +13,7 @@ final class MovieAPIService: MovieAPIProtocol {
     var provider: MoyaProvider<MovieTarget>
     
     init() {
-        self.provider = MoyaProvider<MovieTarget>(plugins: [NetworkLoggerPlugin(), VerbosePlugin(verbose: true)])
+        self.provider = MoyaProvider<MovieTarget>(plugins: [VerbosePlugin(verbose: true)])
     }
     
     func getPopular(page: Int, _ completion: @escaping CompletionResult<MovieResponse>) {
