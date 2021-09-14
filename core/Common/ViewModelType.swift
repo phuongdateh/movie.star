@@ -6,23 +6,8 @@
 //
 
 import Foundation
-import RxSwift
-
-protocol ViewModelType {
-    associatedtype Input
-    associatedtype Output
-    
-    func transform(input: Input) -> Output
-}
 
 class ViewModel: NSObject {
-    
-    let loading = ActivityIndicator()
-    let headerLoading = ActivityIndicator()
-    let footerLoading = ActivityIndicator()
-    
-    let error = ErrorTracker()
-    let serverError = PublishSubject<Error>()
     
     override init() {
         super.init()
@@ -30,7 +15,6 @@ class ViewModel: NSObject {
     }
     
     deinit {
-        logDebug("\(type(of: self)): Deinited")
-        logResourcesCount()
+        print("\(type(of: self)): Deinited")
     }
 }

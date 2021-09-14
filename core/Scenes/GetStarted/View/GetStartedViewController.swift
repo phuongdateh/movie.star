@@ -6,10 +6,9 @@
 //
 
 import Foundation
-import RxSwift
-import RxCocoa
+import UIKit
 
-class GetStartedViewController: ViewController {
+class GetStartedViewController: ViewController<GetStartedViewModel> {
     
     @IBOutlet weak var getStartedButton: UIButton!
     
@@ -24,9 +23,10 @@ class GetStartedViewController: ViewController {
     }
     
     override func bindViewModel() {
-        guard let viewModel = self.viewModel as? GetStartedViewModel else { return }
-        self.getStartedButton.rx.tap.subscribe(onNext: {[unowned self] in
-            self.navigator.show(segue: .tabbar(viewModel: TabbarViewModel.init()), sender: self)
-        }).disposed(by: disposeBag)
+        
+        
+    }
+    @IBAction func getStartedButtonAction(_ sender: UIButton) {
+        self.navigator.show(segue: .tabbar(viewModel: TabbarViewModel.init()), sender: self)
     }
 }

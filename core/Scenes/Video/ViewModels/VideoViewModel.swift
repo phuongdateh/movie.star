@@ -7,20 +7,6 @@
 
 import Foundation
 
-class VideoViewModel: ViewModel, ViewModelType {
+class VideoViewModel: ViewModel {
     
-}
-
-extension VideoViewModel {
-    struct Input {
-        
-    }
-    
-    struct Output {
-        
-    }
-    
-    func transform(input: Input) -> Output {
-        return Output()
-    }
 }

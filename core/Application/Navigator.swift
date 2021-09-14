@@ -40,12 +40,15 @@ extension Navigator {
         switch scene {
         case .splash(let viewModel):
             let storyboard = UIStoryboard(name: "Splash", bundle: nil)
-            let vc = storyboard.instantiateViewController(ofType: SplashViewController.self, viewModel: viewModel, navigator: self)
+            let vc = storyboard.instantiateViewController(ofType: SplashViewController.self)
+            vc.set(viewModel: viewModel, navigator: self)
             let navitaionController = NavigationController(rootViewController: vc)
             return navitaionController
         case .getstarted(viewModel: let viewModel):
             let storyboard = UIStoryboard(name: "GetStarted", bundle: nil)
-            return storyboard.instantiateViewController(ofType: GetStartedViewController.self, viewModel: viewModel, navigator: self)
+            let vc = storyboard.instantiateViewController(ofType: GetStartedViewController.self)
+            vc.set(viewModel: viewModel, navigator: self)
+            return vc
         case let .tabbar(viewModel: viewModel):
             let vc = TabbarViewController.init(nibName: TabbarViewController.reuseID, bundle: nil)
             vc.viewModel = viewModel

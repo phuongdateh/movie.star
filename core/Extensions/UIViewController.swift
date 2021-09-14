@@ -21,10 +21,7 @@ extension Reusable {
 extension UIViewController: Reusable {}
 
 extension UIViewController {
-    static func fromNib<T: UIViewController>(ofType: T.Type, viewModel: ViewModel?, navigator: Navigator) ->  ViewController? {
-        let vc = T.init(nibName: T.reuseID, bundle: nil) as? ViewController
-        vc?.viewModel = viewModel
-        vc?.navigator = navigator
-        return vc
+    class func fromNib<T: UIViewController>(ofType: T.Type) -> T {
+        return T.init(nibName: T.reuseID, bundle: nil)
     }
 }

@@ -7,18 +7,16 @@
 
 import Foundation
 import UIKit
-import RxSwift
-import RxCocoa
 
-class SplashViewController: ViewController {
+class SplashViewController: ViewController<SplashViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
     }
     
     override func bindViewModel() {
-        guard let viewModel = viewModel as? SplashViewModel else { return }
         self.navigator.show(segue: .getstarted(viewModel: viewModel.createGetStartedViewModel()), sender: self)
     }
 }

@@ -5,13 +5,6 @@ target 'core' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for core
-  pod 'RxSwift'
-  pod 'RxCocoa'
-  
-  # Rx Extensions
-  pod 'RxDataSources'
-  
   # Logging
   pod 'CocoaLumberjack/Swift'
   
@@ -19,9 +12,22 @@ target 'core' do
   pod 'Hero'
   
   # Network
-  pod 'Moya/RxSwift'
+  pod 'Moya'
+  
+  # Autolayout
+  pod 'SnapKit'
+  
+  # Loading
+  pod 'NVActivityIndicatorView'
+  
+  # Cache media file while play media using AVPlayerr.
+  pod 'VIMediaCache'
 
+  # Youtube https://github.com/0xced/XCDYouTubeKit/pull/526#issuecomment-868208997
+  pod 'XCDYouTubeKit', :git => 'https://github.com/dpwilhelmsen/XCDYouTubeKit', :branch => 'hotfix/fix-get-video-info-error'
 
+  
+  
 end
 
 post_install do |installer|
