@@ -18,7 +18,7 @@ class VideoTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        thumbnailImageView.contentMode = .scaleAspectFit
+        thumbnailImageView.contentMode = .scaleAspectFill
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -32,8 +32,5 @@ class VideoTableViewCell: UITableViewCell {
     func bind(category: VideoCategory) {
         titleLbl.text = category.video.name
         thumbnailImageView.downloadImage(with: .youtube(category.video.key))
-        YoutubeService.shared.getVideo(by: category.video.key) { video in
-            print("==================== \(video?.video.title)")
-        }
     }
 }

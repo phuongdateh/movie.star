@@ -17,6 +17,9 @@
 		006FD95D26F0A0AE00169CDD /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006FD95B26F0A0AE00169CDD /* VideoTableViewCell.swift */; };
 		006FD95E26F0A0AE00169CDD /* VideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006FD95C26F0A0AE00169CDD /* VideoTableViewCell.xib */; };
 		006FD96026F0B42300169CDD /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006FD95F26F0B42300169CDD /* UIImageView.swift */; };
+		006FD96526F0BA5100169CDD /* VideoPlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006FD96326F0BA5100169CDD /* VideoPlayingViewController.swift */; };
+		006FD96626F0BA5100169CDD /* VideoPlayingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006FD96426F0BA5100169CDD /* VideoPlayingViewController.xib */; };
+		006FD96926F0BA5D00169CDD /* VideoPlayingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006FD96826F0BA5D00169CDD /* VideoPlayingViewModel.swift */; };
 		00C0E3D326E8F99000CD560C /* MovieAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C0E3D226E8F99000CD560C /* MovieAPIProtocol.swift */; };
 		00C0E3D526E8F9D900CD560C /* MovieAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C0E3D426E8F9D900CD560C /* MovieAPIService.swift */; };
 		00EA995F26EDB668003DCA4E /* MovieDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EA995E26EDB668003DCA4E /* MovieDetail.swift */; };
@@ -87,6 +90,9 @@
 		006FD95B26F0A0AE00169CDD /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
 		006FD95C26F0A0AE00169CDD /* VideoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoTableViewCell.xib; sourceTree = "<group>"; };
 		006FD95F26F0B42300169CDD /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		006FD96326F0BA5100169CDD /* VideoPlayingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayingViewController.swift; sourceTree = "<group>"; };
+		006FD96426F0BA5100169CDD /* VideoPlayingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoPlayingViewController.xib; sourceTree = "<group>"; };
+		006FD96826F0BA5D00169CDD /* VideoPlayingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayingViewModel.swift; sourceTree = "<group>"; };
 		00C0E3D226E8F99000CD560C /* MovieAPIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieAPIProtocol.swift; sourceTree = "<group>"; };
 		00C0E3D426E8F9D900CD560C /* MovieAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieAPIService.swift; sourceTree = "<group>"; };
 		00EA995E26EDB668003DCA4E /* MovieDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetail.swift; sourceTree = "<group>"; };
@@ -186,6 +192,32 @@
 				006FD95C26F0A0AE00169CDD /* VideoTableViewCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		006FD96126F0BA2700169CDD /* VideoPlaying */ = {
+			isa = PBXGroup;
+			children = (
+				006FD96726F0BA5400169CDD /* ViewModels */,
+				006FD96226F0BA3000169CDD /* View */,
+			);
+			path = VideoPlaying;
+			sourceTree = "<group>";
+		};
+		006FD96226F0BA3000169CDD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				006FD96326F0BA5100169CDD /* VideoPlayingViewController.swift */,
+				006FD96426F0BA5100169CDD /* VideoPlayingViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		006FD96726F0BA5400169CDD /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				006FD96826F0BA5D00169CDD /* VideoPlayingViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		00C0E3CE26E8F90F00CD560C /* Components */ = {
@@ -306,6 +338,7 @@
 		A41E748826909728006E7D0F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				006FD96126F0BA2700169CDD /* VideoPlaying */,
 				A4AC288F26B6E2C100FCA700 /* Profile */,
 				A4AC288626B6E26000FCA700 /* Video */,
 				A4AC287D26B6E1CD00FCA700 /* Home */,
@@ -662,6 +695,7 @@
 				A43813E1268CAD5C0055DF76 /* LaunchScreen.storyboard in Resources */,
 				A43813DE268CAD5C0055DF76 /* Assets.xcassets in Resources */,
 				006FD95E26F0A0AE00169CDD /* VideoTableViewCell.xib in Resources */,
+				006FD96626F0BA5100169CDD /* VideoPlayingViewController.xib in Resources */,
 				006FD94B26F080E700169CDD /* SplashViewController.xib in Resources */,
 				A43813DC268CAD5B0055DF76 /* Main.storyboard in Resources */,
 				A4AC287A26B6ABE000FCA700 /* TabbarViewController.xib in Resources */,
@@ -731,6 +765,7 @@
 				006FD96026F0B42300169CDD /* UIImageView.swift in Sources */,
 				00EA997D26EE05BF003DCA4E /* BMTimeSlider.swift in Sources */,
 				00EA997C26EE05BF003DCA4E /* BMSubtitles.swift in Sources */,
+				006FD96526F0BA5100169CDD /* VideoPlayingViewController.swift in Sources */,
 				A4815F1F26920038004107D1 /* SplashViewModel.swift in Sources */,
 				00F2B3B926EB67A8001F2497 /* MovieResponse.swift in Sources */,
 				A4815F032691EAA6004107D1 /* ViewModelType.swift in Sources */,
@@ -742,6 +777,7 @@
 				00EA997526EE05BF003DCA4E /* BMPlayerProtocols.swift in Sources */,
 				006FD94E26F0812C00169CDD /* GetStartedViewController.swift in Sources */,
 				00EA997926EE05BF003DCA4E /* BMPlayer.swift in Sources */,
+				006FD96926F0BA5D00169CDD /* VideoPlayingViewModel.swift in Sources */,
 				00EA996126EDB70A003DCA4E /* Video.swift in Sources */,
 				A43813D9268CAD5B0055DF76 /* ViewController.swift in Sources */,
 				A4AC287926B6ABE000FCA700 /* TabbarViewController.swift in Sources */,

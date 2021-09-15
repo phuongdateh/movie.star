@@ -21,6 +21,7 @@ class Navigator {
         case splash(SplashViewModel)
         case getstarted(viewModel: GetStartedViewModel)
         case tabbar(viewModel: TabbarViewModel)
+        case videoPlaying(viewModel: VideoPlayingViewModel)
     }
     
     enum Transition {
@@ -52,6 +53,11 @@ extension Navigator {
             vc.viewModel = viewModel
             vc.navigator = self
             vc.setupChilds()
+            return vc
+        case let .videoPlaying(viewModel: viewModel):
+            let vc = VideoPlayingViewController.fromNib(ofType: VideoPlayingViewController.self)
+            vc.viewModel = viewModel
+            vc.navigator = self
             return vc
         }
     }
@@ -98,9 +104,9 @@ extension Navigator {
             fatalError("You need to pass in a sender for .navigation or .modal transitions")
         }
         
-        if let navigationController = sender.navigationController {
+        if let nav = sender as? UINavigationController {
             // push root controller on navigation stack
-            navigationController.pushViewController(target, animated: true)
+            nav.pushViewController(target, animated: false)
             return
         }
         
@@ -109,6 +115,7 @@ extension Navigator {
             if let nav = sender.navigationController {
                 // push controller to navigation stack
                 nav.hero.navigationAnimationType = .autoReverse(presenting: type)
+                target.hidesBottomBarWhenPushed = true
                 nav.pushViewController(target, animated: true)
             }
         case .customModal(let type):
@@ -122,6 +129,7 @@ extension Navigator {
             // present modally
             DispatchQueue.main.async {
                 let nav = NavigationController(rootViewController: target)
+                nav.modalPresentationStyle = .fullScreen
                 sender.present(nav, animated: true, completion: nil)
             }
         case .detail:

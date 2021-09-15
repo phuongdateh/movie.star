@@ -70,3 +70,9 @@ class VideoViewModel: ViewModel {
         }
     }
 }
+
+extension VideoViewModel {
+    func createVideoPlayingViewModel(_ category: VideoCategory) -> VideoPlayingViewModel {
+        return .init(category: category)
+    }
+}
