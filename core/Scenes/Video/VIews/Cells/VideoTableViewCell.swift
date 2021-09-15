@@ -19,6 +19,15 @@ class VideoTableViewCell: UITableViewCell {
         // Initialization code
         
         thumbnailImageView.contentMode = .scaleAspectFill
+        
+        movieImageView.contentMode = .scaleAspectFill
+        movieImageView.layer.cornerRadius = 25
+        
+        titleLbl.font = UIFont(name: AppFont.regular.name, size: 14)
+        titleLbl.textColor = UIColor.black
+        
+        subInfoLbl.font = UIFont(name: AppFont.medium.name, size: 12)
+        subInfoLbl.textColor = UIColor.gray
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -32,5 +41,7 @@ class VideoTableViewCell: UITableViewCell {
     func bind(category: VideoCategory) {
         titleLbl.text = category.video.name
         thumbnailImageView.downloadImage(with: .youtube(category.video.key))
+        movieImageView.downloadImage(with: .tmdb(category.movie.backdropPath ?? category.movie.posterPath ?? ""))
+        subInfoLbl.text = "Release Dates: " + (category.movie.releaseDate ?? "")
     }
 }

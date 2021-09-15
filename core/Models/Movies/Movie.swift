@@ -10,7 +10,9 @@ import Foundation
 struct Movie: Decodable {
     let id: Int
     let originalTitle: String
-    let backdropPath: String
+    let backdropPath: String?
+    let posterPath: String?
+    let releaseDate: String?
 }
 
 extension Movie {
@@ -18,5 +20,7 @@ extension Movie {
         case id
         case originalTitle = "original_title"
         case backdropPath = "backdrop_path"
+        case posterPath = "poster_path"
+        case releaseDate = "release_date"
     }
 }
