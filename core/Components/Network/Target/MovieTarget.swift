@@ -30,7 +30,7 @@ extension MovieTarget: TargetType {
         case .popular(pageNumber: _):
             return "/movie/popular"
         case let .detail(id: movieId):
-            return "\(movieId)"
+            return "movie/\(movieId)"
         case let .videos(of: movieId):
             return "movie/\(movieId)/videos"
         default: return ""
@@ -49,6 +49,8 @@ extension MovieTarget: TargetType {
         parameters["language"] = Configs.Network.language
         if case let .popular(pageNumber: number) = self {
             parameters["page"] = number
+        } else if case .detail(id: _) = self {
+            parameters["append_to_response"] = "videos,images"
         }
         return parameters
     }

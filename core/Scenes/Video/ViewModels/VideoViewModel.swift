@@ -27,11 +27,12 @@ class VideoViewModel: ViewModel {
             case let .success(movieResponse):
                 if movieResponse.movies.isEmpty == false {
                     movieResponse.movies.forEach { movie in
-                        self.getVideos(of: movie)
+//                        self.getVideos(of: movie)
+                        self.getDetailMovie(of: movie)
                     }
                 }
             case let .failure(error):
-                print("Get MovieFail: \(error.localizedDescription)")
+                print("❌ Get MovieFail: \(error.localizedDescription)")
             }
         }
     }
@@ -43,7 +44,21 @@ class VideoViewModel: ViewModel {
                 guard let self = self else { return }
                 self.tranformToVideoCategories(movie: movie, videoResults: videoResults)
             case let .failure(error):
-                print("Get Videos of: \(movie.originalTitle) fail: \(error.localizedDescription)")
+                print("❌ Get Videos of: \(movie.originalTitle) fail: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    private func getDetailMovie(of movie: Movie) {
+        self.apiSerivice.getMovieDetail(movie.id) {[weak self] result in
+            switch result {
+            case let .success(detail):
+                guard let self = self else { return }
+                if let videoResults = detail.videos {
+                    self.tranformToVideoCategories(movie: movie, videoResults: videoResults)
+                }
+            case let .failure(error):
+                print("❌ Movie detail: \(error.localizedDescription) of: \(movie.id)")
             }
         }
     }
