@@ -19,18 +19,12 @@ class VideoPlayingViewController: ViewController<VideoPlayingViewModel> {
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.isNavigationBarHidden = true
-        
-    }
-    
     override func bindViewModel() {
         self.setupPlayer()
         var streamURL: URL!
         
         YoutubeService.shared.getVideo(by: viewModel.category.video.key) { video in
-            print("VideoPlayingViewController: \(video!.video.title)")
+            print("VideoPlayingViewController: \(video?.video.title)")
             guard let youtobeVideo = video else { return }
             let video = youtobeVideo.video
 //            if let url = video.streamURLs[XCDYouTubeVideoQuality.HD720.rawValue]  {
@@ -58,12 +52,13 @@ class VideoPlayingViewController: ViewController<VideoPlayingViewModel> {
     
     func setupPlayer() {
         player = BMPlayer()
-        view.addSubview(player)
+        playerView.addSubview(player)
         player.snp.makeConstraints { (make) in
-            make.top.equalTo(self.view).offset(44)
-            make.left.right.equalTo(self.view)
-            // Note here, the aspect ratio 16:9 priority is lower than 1000 on the line, because the 4S iPhone aspect ratio is not 16:9
-            make.height.equalTo(player.snp.width).multipliedBy(9.0/16.0).priority(750)
+//            make.top.equalTo(self.view.safeAreaInsets.bottom).offset(44)
+//            make.left.right.equalTo(self.view)
+//            // Note here, the aspect ratio 16:9 priority is lower than 1000 on the line, because the 4S iPhone aspect ratio is not 16:9
+//            make.height.equalTo(player.snp.width).multipliedBy(9.0/16.0).priority(750)
+            make.edges.equalToSuperview()
         }
         // Back button event
         player.backBlock = { [unowned self] (isFullScreen) in

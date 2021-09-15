@@ -128,9 +128,8 @@ extension Navigator {
         case .modal:
             // present modally
             DispatchQueue.main.async {
-                let nav = NavigationController(rootViewController: target)
-                nav.modalPresentationStyle = .fullScreen
-                sender.present(nav, animated: true, completion: nil)
+                target.modalPresentationStyle = .fullScreen
+                sender.present(target, animated: true, completion: nil)
             }
         case .detail:
             DispatchQueue.main.async {

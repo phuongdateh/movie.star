@@ -17,6 +17,7 @@ class VideoTableViewCell: UITableViewCell {
     @IBOutlet weak var runtimeLbl: UILabel!
     @IBOutlet weak var runtimeView: UIView!
     
+    @IBOutlet weak var playButtonView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -27,7 +28,7 @@ class VideoTableViewCell: UITableViewCell {
         movieImageView.layer.cornerRadius = 25
         
         titleLbl.font = UIFont(name: AppFont.regular.name, size: 14)
-        titleLbl.textColor = UIColor.black
+        titleLbl.textColor = UIColor.white
         
         subInfoLbl.font = UIFont(name: AppFont.medium.name, size: 12)
         subInfoLbl.textColor = UIColor.gray
@@ -37,6 +38,9 @@ class VideoTableViewCell: UITableViewCell {
         runtimeLbl.font = UIFont(name: AppFont.medium.name, size: 10)
         runtimeLbl.textColor = UIColor.white
         runtimeLbl.text = ""
+        runtimeView.alpha = 0
+        
+        playButtonView.layer.cornerRadius = playButtonView.frame.width / 2
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

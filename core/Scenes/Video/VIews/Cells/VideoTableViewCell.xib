@@ -12,10 +12,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="503" id="KGk-i7-Jjw" customClass="VideoTableViewCell" customModule="core" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="620" height="429"/>
+            <rect key="frame" x="0.0" y="0.0" width="620" height="439"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="620" height="429"/>
+                <rect key="frame" x="0.0" y="0.0" width="620" height="439"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ln4-4U-e0T">
@@ -64,8 +64,23 @@
                                     <constraint firstAttribute="bottom" secondItem="Dxo-K9-ic3" secondAttribute="bottom" constant="5" id="h8f-HW-nJs"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pT2-XG-MeL">
+                                <rect key="frame" x="15" y="288" width="46" height="46"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play_ic" translatesAutoresizingMaskIntoConstraints="NO" id="gpl-l8-3Xt">
+                                        <rect key="frame" x="5" y="5" width="36" height="36"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="gpl-l8-3Xt" firstAttribute="top" secondItem="pT2-XG-MeL" secondAttribute="top" constant="5" id="TM8-xq-Mdf"/>
+                                    <constraint firstAttribute="trailing" secondItem="gpl-l8-3Xt" secondAttribute="trailing" constant="5" id="bgb-FM-ldF"/>
+                                    <constraint firstItem="gpl-l8-3Xt" firstAttribute="leading" secondItem="pT2-XG-MeL" secondAttribute="leading" constant="5" id="lnI-cf-LsC"/>
+                                    <constraint firstAttribute="bottom" secondItem="gpl-l8-3Xt" secondAttribute="bottom" constant="5" id="rza-OG-Erx"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="jcn-F8-Y5B" firstAttribute="bottom" secondItem="Pla-U0-dHL" secondAttribute="bottom" constant="-10" id="0Zd-e2-1vZ"/>
                             <constraint firstItem="Ej4-HD-S2v" firstAttribute="top" secondItem="Pla-U0-dHL" secondAttribute="bottom" constant="15" id="1j1-0b-k2e"/>
@@ -73,7 +88,9 @@
                             <constraint firstItem="Weq-jf-h7j" firstAttribute="top" secondItem="Pla-U0-dHL" secondAttribute="bottom" constant="15" id="2eE-bR-es0"/>
                             <constraint firstAttribute="trailing" secondItem="Weq-jf-h7j" secondAttribute="trailing" constant="15" id="5N1-4T-PHg"/>
                             <constraint firstAttribute="trailing" secondItem="Pla-U0-dHL" secondAttribute="trailing" id="7D2-na-eKl"/>
+                            <constraint firstItem="pT2-XG-MeL" firstAttribute="leading" secondItem="Pla-U0-dHL" secondAttribute="leading" constant="15" id="Aia-mf-9u2"/>
                             <constraint firstItem="Pla-U0-dHL" firstAttribute="top" secondItem="Ln4-4U-e0T" secondAttribute="top" id="K7B-yC-H8j"/>
+                            <constraint firstItem="pT2-XG-MeL" firstAttribute="bottom" secondItem="Pla-U0-dHL" secondAttribute="bottom" constant="-15" id="KwV-ki-8Al"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Ej4-HD-S2v" secondAttribute="bottom" constant="15" id="LVJ-ak-Sop"/>
                             <constraint firstItem="Pla-U0-dHL" firstAttribute="leading" secondItem="Ln4-4U-e0T" secondAttribute="leading" id="NGe-A3-MQA"/>
                             <constraint firstItem="Weq-jf-h7j" firstAttribute="leading" secondItem="Ej4-HD-S2v" secondAttribute="trailing" constant="10" id="OwL-XQ-t3l"/>
@@ -84,17 +101,28 @@
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="UHs-ED-Zcz" secondAttribute="bottom" id="xUB-po-qVe"/>
                         </constraints>
                     </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bNJ-wp-Jhx">
+                        <rect key="frame" x="0.0" y="429" width="620" height="10"/>
+                        <color key="backgroundColor" red="0.19215686274509802" green="0.19215686274509802" blue="0.20784313725490194" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="10" id="hjU-7s-y5r"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Ln4-4U-e0T" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="24h-6y-8nL"/>
                     <constraint firstItem="Ln4-4U-e0T" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="DOo-lJ-9lz"/>
                     <constraint firstAttribute="trailing" secondItem="Ln4-4U-e0T" secondAttribute="trailing" id="MfC-Mq-PeW"/>
-                    <constraint firstAttribute="bottom" secondItem="Ln4-4U-e0T" secondAttribute="bottom" id="ejg-vq-Ja1"/>
+                    <constraint firstAttribute="bottom" secondItem="bNJ-wp-Jhx" secondAttribute="bottom" id="WTb-Kq-zrk"/>
+                    <constraint firstAttribute="bottom" secondItem="Ln4-4U-e0T" secondAttribute="bottom" constant="10" id="ejg-vq-Ja1"/>
+                    <constraint firstAttribute="trailing" secondItem="bNJ-wp-Jhx" secondAttribute="trailing" id="kDd-Bp-CNh"/>
+                    <constraint firstItem="bNJ-wp-Jhx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ySw-aR-Tah"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="movieImageView" destination="Ej4-HD-S2v" id="UZ5-WV-JNe"/>
+                <outlet property="playButtonView" destination="pT2-XG-MeL" id="ROK-Ga-K8j"/>
                 <outlet property="runtimeLbl" destination="Dxo-K9-ic3" id="buh-Lf-OJh"/>
                 <outlet property="runtimeView" destination="jcn-F8-Y5B" id="E1i-09-WTi"/>
                 <outlet property="subInfoLbl" destination="UHs-ED-Zcz" id="3YW-OL-cnb"/>
@@ -105,6 +133,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="play_ic" width="36" height="36"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
