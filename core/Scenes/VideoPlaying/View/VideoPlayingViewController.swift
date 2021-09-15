@@ -14,9 +14,16 @@ class VideoPlayingViewController: ViewController<VideoPlayingViewModel> {
 
     @IBOutlet weak var playerView: UIView!
     
+    @IBOutlet weak var closeButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    }
+    
+    override func makeUI() {
+        closeButton.layer.cornerRadius = closeButton.frame.height / 2
+        closeButton.setTitle(nil, for: .normal)
+        closeButton.tintColor = .white
     }
     
     override func bindViewModel() {
@@ -42,7 +49,7 @@ class VideoPlayingViewController: ViewController<VideoPlayingViewModel> {
                 streamURL = video.streamURL
             }
             
-            let asset = BMPlayerResource(url: streamURL,
+            let asset = BMPlayerResource(url: video.streamURL!,
                                          name: video.title)
             self.player.setVideo(resource: asset)
         }
@@ -67,15 +74,9 @@ class VideoPlayingViewController: ViewController<VideoPlayingViewModel> {
         }
     }
     
-    @IBAction func test(_ sender: Any) {
-        
-        self.dismiss(animated: true) {
-            
-        }
+    @IBAction func closeButtonTouchUpInside(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
-    
-    
-    
 }
 
 extension UITabBarController {
