@@ -10,7 +10,7 @@ import UIKit
 import NVActivityIndicatorView
 
 
-@objc public protocol BMPlayerControlViewDelegate: class {
+@objc public protocol BMPlayerControlViewDelegate: AnyObject {
     /**
      call when control view choose a definition
      

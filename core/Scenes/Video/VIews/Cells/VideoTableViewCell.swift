@@ -14,6 +14,9 @@ class VideoTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var subInfoLbl: UILabel!
     
+    @IBOutlet weak var runtimeLbl: UILabel!
+    @IBOutlet weak var runtimeView: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -28,6 +31,12 @@ class VideoTableViewCell: UITableViewCell {
         
         subInfoLbl.font = UIFont(name: AppFont.medium.name, size: 12)
         subInfoLbl.textColor = UIColor.gray
+        
+        runtimeView.layer.cornerRadius = 5
+        runtimeView.backgroundColor = UIColor.black
+        runtimeLbl.font = UIFont(name: AppFont.medium.name, size: 10)
+        runtimeLbl.textColor = UIColor.white
+        runtimeLbl.text = ""
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -41,7 +50,16 @@ class VideoTableViewCell: UITableViewCell {
     func bind(category: VideoCategory) {
         titleLbl.text = category.video.name
         thumbnailImageView.downloadImage(with: .youtube(category.video.key))
-        movieImageView.downloadImage(with: .tmdb(category.movie.backdropPath ?? category.movie.posterPath ?? ""))
-        subInfoLbl.text = "Release Dates: " + (category.movie.releaseDate ?? "")
+        movieImageView.downloadImage(with: .tmdb(category.movieDetail.backdropPath ?? category.movieDetail.posterPath ?? ""))
+        subInfoLbl.text = "Release Dates: " + (category.movieDetail.releaseDate ?? "")
     }
 }
+
+extension Int {
+    func convertHourMinuteStr() -> String {
+        let hourStr: String = "\((self % 3600) / 60)"
+        let minuteStr: String = "\((self % 3600) % 60)"
+        return "\(hourStr) : \(minuteStr)"
+    }
+}
+

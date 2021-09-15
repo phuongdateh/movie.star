@@ -18,7 +18,7 @@ class VideoViewModel: ViewModel {
         self.getMovie()
     }
     
-    private var currentPage: Int = 300
+    private var currentPage: Int = 1
     
     private func getMovie() {
         apiSerivice.getPopular(page: currentPage) {[weak self] result in
@@ -37,26 +37,24 @@ class VideoViewModel: ViewModel {
         }
     }
     
-    private func getVideos(of movie: Movie) {
-        self.apiSerivice.getViedeos(movie.id) {[weak self] result in
-            switch result {
-            case let .success(videoResults):
-                guard let self = self else { return }
-                self.tranformToVideoCategories(movie: movie, videoResults: videoResults)
-            case let .failure(error):
-                print("❌ Get Videos of: \(movie.originalTitle) fail: \(error.localizedDescription)")
-            }
-        }
-    }
+//    private func getVideos(of movie: Movie) {
+//        self.apiSerivice.getViedeos(movie.id) {[weak self] result in
+//            switch result {
+//            case let .success(videoResults):
+//                guard let self = self else { return }
+////                self.tranformToVideoCategories(movie: movie, videoResults: videoResults)
+//            case let .failure(error):
+//                print("❌ Get Videos of: \(movie.originalTitle) fail: \(error.localizedDescription)")
+//            }
+//        }
+//    }
     
     private func getDetailMovie(of movie: Movie) {
         self.apiSerivice.getMovieDetail(movie.id) {[weak self] result in
             switch result {
             case let .success(detail):
                 guard let self = self else { return }
-                if let videoResults = detail.videos {
-                    self.tranformToVideoCategories(movie: movie, videoResults: videoResults)
-                }
+                self.tranformToVideoCategories(detail)
             case let .failure(error):
                 print("❌ Movie detail: \(error.localizedDescription) of: \(movie.id)")
             }
@@ -75,12 +73,14 @@ class VideoViewModel: ViewModel {
     
     var totalVideos: Int = 0
     
-    private func tranformToVideoCategories(movie: Movie, videoResults: VideoResults) {
-        self.totalVideos += videoResults.results.count
-        print("TotalVideosTMDB: \(self.totalVideos)")
-        if videoResults.results.isEmpty == false {
-            videoResults.results.forEach { video in
-                self.videos.append(VideoCategory.init(movie: movie, video: video))
+    private func tranformToVideoCategories(_ movieDetail: MovieDetail) {
+        if let videos = movieDetail.videos {
+            self.totalVideos += videos.results.count
+            print("TotalVideosTMDB: \(self.totalVideos)")
+            if videos.results.isEmpty == false {
+                videos.results.forEach { video in
+                    self.videos.append(VideoCategory(movieDetail: movieDetail, video: video))
+                }
             }
         }
     }

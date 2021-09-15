@@ -8,6 +8,6 @@
 import Foundation
 
 struct VideoCategory {
-    let movie: Movie
+    let movieDetail: MovieDetail
     let video: Video
 }

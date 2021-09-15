@@ -11,7 +11,7 @@ import SnapKit
 import MediaPlayer
 
 /// BMPlayerDelegate to obserbe player state
-public protocol BMPlayerDelegate : class {
+public protocol BMPlayerDelegate : AnyObject {
     func bmPlayer(player: BMPlayer, playerStateDidChange state: BMPlayerState)
     func bmPlayer(player: BMPlayer, loadedTimeDidChange loadedDuration: TimeInterval, totalDuration: TimeInterval)
     func bmPlayer(player: BMPlayer, playTimeDidChange currentTime : TimeInterval, totalTime: TimeInterval)

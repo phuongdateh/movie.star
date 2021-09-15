@@ -50,9 +50,8 @@ open class BMPlayerManager {
     open var cacheManeger = VIResourceLoaderManager()
     
     
-    internal static func asset(for resouce: BMPlayerResourceDefinition) -> AVURLAsset {
-        let asset = BMPlayerManager.shared.cacheManeger.playerItem(with: resouce.url)
-        return asset!.asset as! AVURLAsset
+    static func asset(for resouce: BMPlayerResourceDefinition) -> AVURLAsset {
+        return AVURLAsset.init(url: resouce.url)
     }
     
     /**

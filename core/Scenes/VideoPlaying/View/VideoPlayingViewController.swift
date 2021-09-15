@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 import XCDYouTubeKit
+import AVKit
 
 class VideoPlayingViewController: ViewController<VideoPlayingViewModel> {
 
@@ -27,14 +28,15 @@ class VideoPlayingViewController: ViewController<VideoPlayingViewModel> {
     override func bindViewModel() {
         self.setupPlayer()
         var streamURL: URL!
+        
         YoutubeService.shared.getVideo(by: viewModel.category.video.key) { video in
             print("VideoPlayingViewController: \(video!.video.title)")
             guard let youtobeVideo = video else { return }
             let video = youtobeVideo.video
-            if let url = video.streamURLs[XCDYouTubeVideoQuality.HD720.rawValue]  {
-                streamURL = url
-            }
-            else if let url = video.streamURLs[XCDYouTubeVideoQuality.medium360.rawValue] {
+//            if let url = video.streamURLs[XCDYouTubeVideoQuality.HD720.rawValue]  {
+//                streamURL = url
+//            }
+            if let url = video.streamURLs[XCDYouTubeVideoQuality.medium360.rawValue] {
                 streamURL = url
             }
             else if let url = video.streamURLs[XCDYouTubeVideoQuality.small240.rawValue] {
@@ -42,11 +44,12 @@ class VideoPlayingViewController: ViewController<VideoPlayingViewModel> {
             }
             else if let urlDict = video.streamURLs.first {
                 streamURL = urlDict.value
+            } else {
+                streamURL = video.streamURL
             }
-
-            let asset = BMPlayerResource(url: video.streamURL!,
-                                         name: video.title)
             
+            let asset = BMPlayerResource(url: streamURL,
+                                         name: video.title)
             self.player.setVideo(resource: asset)
         }
     }
