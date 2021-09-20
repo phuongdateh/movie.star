@@ -14,19 +14,19 @@ class VideoPlayingViewController: ViewController<VideoPlayingViewModel> {
 
     @IBOutlet weak var playerView: UIView!
     
-    @IBOutlet weak var closeButton: UIButton!
+    private var movieDetail: MovieDetail!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
     
     override func makeUI() {
-        closeButton.layer.cornerRadius = closeButton.frame.height / 2
-        closeButton.setTitle(nil, for: .normal)
-        closeButton.tintColor = .white
+        
     }
     
     override func bindViewModel() {
+        self.movieDetail = viewModel.category.movieDetail
         self.setupPlayer()
         var streamURL: URL!
         
@@ -53,87 +53,69 @@ class VideoPlayingViewController: ViewController<VideoPlayingViewModel> {
                                          name: video.title)
             self.player.setVideo(resource: asset)
         }
+        
+        self.updateView()
     }
     
     var player: BMPlayer!
     
     func setupPlayer() {
-        player = BMPlayer()
-        playerView.addSubview(player)
+        player = BMPlayer(customControlView: BMPlayerCustomControlView.init())
+        view.addSubview(player)
         player.snp.makeConstraints { (make) in
-//            make.top.equalTo(self.view.safeAreaInsets.bottom).offset(44)
-//            make.left.right.equalTo(self.view)
-//            // Note here, the aspect ratio 16:9 priority is lower than 1000 on the line, because the 4S iPhone aspect ratio is not 16:9
-//            make.height.equalTo(player.snp.width).multipliedBy(9.0/16.0).priority(750)
-            make.edges.equalToSuperview()
+            if #available(iOS 11, *) {
+                make.top.equalTo(view.safeAreaLayoutGuide.snp.topMargin)
+            } else {
+                make.top.equalTo(view.snp.top)
+            }
+            make.left.right.equalTo(self.view)
+            // Note here, the aspect ratio 16:9 priority is lower than 1000 on the line, because the 4S iPhone aspect ratio is not 16:9
+            make.height.equalTo(player.snp.width).multipliedBy(9.0/16.0).priority(750)
         }
         // Back button event
         player.backBlock = { [unowned self] (isFullScreen) in
             if isFullScreen == true { return }
-            let _ = self.navigationController?.popViewController(animated: true)
+            self.dismiss(animated: true, completion: nil)
         }
+        player.delegate = self
     }
     
-    @IBAction func closeButtonTouchUpInside(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+    private func updateView() {
+        
     }
 }
 
-extension UITabBarController {
-
-    /**
-     Show or hide the tab bar.
-     - Parameter hidden: `true` if the bar should be hidden.
-     - Parameter animated: `true` if the action should be animated.
-     - Parameter transitionCoordinator: An optional `UIViewControllerTransitionCoordinator` to perform the animation
-        along side with. For example during a push on a `UINavigationController`.
-     */
-    func setTabBar(hidden: Bool,
-                   animated: Bool = true,
-                   along transitionCoordinator: UIViewControllerTransitionCoordinator? = nil) {
-        guard isTabBarHidden != hidden else { return }
-
-        let offsetY = hidden ? tabBar.frame.height : -tabBar.frame.height
-        let endFrame = tabBar.frame.offsetBy(dx: 0, dy: offsetY)
-        let vc: UIViewController? = viewControllers?[selectedIndex]
-        var newInsets: UIEdgeInsets? = vc?.additionalSafeAreaInsets
-        let originalInsets = newInsets
-        newInsets?.bottom -= offsetY
-
-        /// Helper method for updating child view controller's safe area insets.
-        func set(childViewController cvc: UIViewController?, additionalSafeArea: UIEdgeInsets) {
-            cvc?.additionalSafeAreaInsets = additionalSafeArea
-            cvc?.view.setNeedsLayout()
-        }
-
-        // Update safe area insets for the current view controller before the animation takes place when hiding the bar.
-        if hidden, let insets = newInsets { set(childViewController: vc, additionalSafeArea: insets) }
-
-        guard animated else {
-            tabBar.frame = endFrame
-            return
-        }
-
-        // Perform animation with coordinato if one is given. Update safe area insets _after_ the animation is complete,
-        // if we're showing the tab bar.
-        weak var tabBarRef = self.tabBar
-        if let tc = transitionCoordinator {
-            tc.animateAlongsideTransition(in: self.view, animation: { _ in tabBarRef?.frame = endFrame }) { context in
-                if !hidden, let insets = context.isCancelled ? originalInsets : newInsets {
-                    set(childViewController: vc, additionalSafeArea: insets)
-                }
-            }
-        } else {
-            UIView.animate(withDuration: 0.3, animations: { tabBarRef?.frame = endFrame }) { didFinish in
-                if !hidden, didFinish, let insets = newInsets {
-                    set(childViewController: vc, additionalSafeArea: insets)
-                }
-            }
-        }
+extension VideoPlayingViewController: BMPlayerDelegate {
+    func bmPlayer(player: BMPlayer, playerStateDidChange state: BMPlayerState) {
+        
     }
-
-    /// `true` if the tab bar is currently hidden.
-    var isTabBarHidden: Bool {
-        return !tabBar.frame.intersects(view.frame)
+    
+    func bmPlayer(player: BMPlayer, loadedTimeDidChange loadedDuration: TimeInterval, totalDuration: TimeInterval) {
+        
+    }
+    
+    func bmPlayer(player: BMPlayer, playTimeDidChange currentTime: TimeInterval, totalTime: TimeInterval) {
+        
+    }
+    
+    func bmPlayer(player: BMPlayer, playerIsPlaying playing: Bool) {
+        
+    }
+    
+    func bmPlayer(player: BMPlayer, playerOrientChanged isFullscreen: Bool) {
+        player.snp.remakeConstraints { (make) in
+            if #available(iOS 11, *) {
+                make.top.equalTo(view.safeAreaLayoutGuide.snp.topMargin)
+            } else {
+                make.top.equalTo(view.snp.top)
+            }
+            make.left.equalTo(view.snp.left)
+            make.right.equalTo(view.snp.right)
+            if isFullscreen {
+                make.bottom.equalTo(view.snp.bottom)
+            } else {
+                make.height.equalTo(view.snp.width).multipliedBy(9.0/16.0).priority(500)
+            }
+        }
     }
 }

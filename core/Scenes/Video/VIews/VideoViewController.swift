@@ -20,7 +20,8 @@ class VideoViewController: ViewController<VideoViewModel> {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.tabBarController?.setTabBar(hidden: false,animated: true)
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     override func makeUI() {
@@ -28,8 +29,11 @@ class VideoViewController: ViewController<VideoViewModel> {
         tableView.registerCell(ofType: VideoTableViewCell.self)
         tableView.tableHeaderView = UIView()
         tableView.tableFooterView = UIView()
+        tableView.backgroundColor = ColorPalette.background
         tableView.delegate = self
         tableView.dataSource = self
+        
+        view.backgroundColor = ColorPalette.background
     }
     
     override func bindViewModel() {

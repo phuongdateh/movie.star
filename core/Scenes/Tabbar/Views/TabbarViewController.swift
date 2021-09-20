@@ -14,7 +14,10 @@ class TabbarViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+            
+        tabBar.backgroundColor = ColorPalette.darkBlue
+        tabBar.tintColor = ColorPalette.mistyBlue
+        tabBarItem.setTitleTextAttributes([.font: UIFont(name: AppFont.regular.name, size: 10)!], for: .normal)
     }
     
     func setupChilds() {

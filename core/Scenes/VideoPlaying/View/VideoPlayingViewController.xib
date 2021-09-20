@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,14 +11,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VideoPlayingViewController" customModule="core" customModuleProvider="target">
             <connections>
-                <outlet property="closeButton" destination="nor-13-w6r" id="1Ke-BW-qaB"/>
                 <outlet property="playerView" destination="vGP-iU-nN2" id="Z2q-jy-Ila"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="1219"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vGP-iU-nN2">
@@ -28,34 +27,19 @@
                         <constraint firstAttribute="width" secondItem="vGP-iU-nN2" secondAttribute="height" multiplier="16:9" id="D2D-6Z-bjC"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nor-13-w6r">
-                    <rect key="frame" x="5" y="49" width="44" height="44"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="44" id="MeV-me-LVa"/>
-                        <constraint firstAttribute="width" constant="44" id="s66-Db-Jk4"/>
-                    </constraints>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" image="close_ic"/>
-                    <connections>
-                        <action selector="closeButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="Qok-cQ-RKV"/>
-                    </connections>
-                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
-                <constraint firstItem="nor-13-w6r" firstAttribute="top" secondItem="vGP-iU-nN2" secondAttribute="top" constant="5" id="7qs-Bh-L69"/>
-                <constraint firstItem="nor-13-w6r" firstAttribute="leading" secondItem="vGP-iU-nN2" secondAttribute="leading" constant="5" id="9jY-h7-af1"/>
                 <constraint firstItem="vGP-iU-nN2" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Iwq-XO-RdO"/>
                 <constraint firstItem="vGP-iU-nN2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Wbb-n1-XFc"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vGP-iU-nN2" secondAttribute="trailing" id="qAf-Gc-yKT"/>
             </constraints>
-            <point key="canvasLocation" x="26" y="125"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="24.637681159420293" y="232.70089285714283"/>
         </view>
     </objects>
     <resources>
-        <image name="close_ic" width="36" height="36"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

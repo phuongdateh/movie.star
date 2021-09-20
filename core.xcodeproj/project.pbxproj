@@ -49,6 +49,8 @@
 		00F2B3BE26EB6860001F2497 /* MovieTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F2B3BD26EB6860001F2497 /* MovieTarget.swift */; };
 		00F2B3C126EB698E001F2497 /* Configs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F2B3C026EB698E001F2497 /* Configs.swift */; };
 		478B64A84663A447408AF5B6 /* Pods_core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 199B18C147FF78456429D04A /* Pods_core.framework */; };
+		750A5B9226F8921800876196 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750A5B9126F8921800876196 /* ColorPalette.swift */; };
+		750D430D26F3540700668731 /* BMPlayerCustomControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750D430C26F3540700668731 /* BMPlayerCustomControlView.swift */; };
 		7556A4E926EC5F58004BD99F /* VerbosePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7556A4E826EC5F58004BD99F /* VerbosePlugin.swift */; };
 		755845CE26F20CCE0043300B /* VideoPlayingDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755845CD26F20CCE0043300B /* VideoPlayingDetailView.swift */; };
 		755845D026F20CE20043300B /* VideoPlayingDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 755845CF26F20CE20043300B /* VideoPlayingDetailView.xib */; };
@@ -137,6 +139,8 @@
 		00F2B3BD26EB6860001F2497 /* MovieTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTarget.swift; sourceTree = "<group>"; };
 		00F2B3C026EB698E001F2497 /* Configs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configs.swift; sourceTree = "<group>"; };
 		199B18C147FF78456429D04A /* Pods_core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		750A5B9126F8921800876196 /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
+		750D430C26F3540700668731 /* BMPlayerCustomControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMPlayerCustomControlView.swift; sourceTree = "<group>"; };
 		7556A4E826EC5F58004BD99F /* VerbosePlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbosePlugin.swift; sourceTree = "<group>"; };
 		755845CD26F20CCE0043300B /* VideoPlayingDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayingDetailView.swift; sourceTree = "<group>"; };
 		755845CF26F20CE20043300B /* VideoPlayingDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoPlayingDetailView.xib; sourceTree = "<group>"; };
@@ -326,6 +330,7 @@
 				00EA997126EE05BF003DCA4E /* BMSubtitles.swift */,
 				00EA997226EE05BF003DCA4E /* BMTimeSlider.swift */,
 				00EA997326EE05BF003DCA4E /* CacheSupport */,
+				750D430C26F3540700668731 /* BMPlayerCustomControlView.swift */,
 			);
 			path = BMPlayer;
 			sourceTree = "<group>";
@@ -475,6 +480,7 @@
 			children = (
 				A4815EFE2691B1CA004107D1 /* Application.swift */,
 				A44D5EE226A3F14600D8E87B /* Navigator.swift */,
+				750A5B9126F8921800876196 /* ColorPalette.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -873,8 +879,10 @@
 				00EA997826EE05BF003DCA4E /* BMPlayerLayerView.swift in Sources */,
 				0037720426F1888100105A0A /* AppFont.swift in Sources */,
 				006FD95726F09A1600169CDD /* YoutubeService.swift in Sources */,
+				750A5B9226F8921800876196 /* ColorPalette.swift in Sources */,
 				A4AC288E26B6E28E00FCA700 /* VideoViewModel.swift in Sources */,
 				006FD95426F0975200169CDD /* YoutubeVideo.swift in Sources */,
+				750D430D26F3540700668731 /* BMPlayerCustomControlView.swift in Sources */,
 				006FD94A26F080E700169CDD /* SplashViewController.swift in Sources */,
 				A4AC287C26B6B75700FCA700 /* TabbarViewModel.swift in Sources */,
 				A4AC288126B6E1E600FCA700 /* HomeViewController.swift in Sources */,
