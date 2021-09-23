@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VideoPlayingViewController" customModule="core" customModuleProvider="target">
             <connections>
                 <outlet property="playerView" destination="vGP-iU-nN2" id="Z2q-jy-Ila"/>
+                <outlet property="tableView" destination="8f1-wJ-Y0b" id="qFo-Kx-RRq"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -27,13 +28,21 @@
                         <constraint firstAttribute="width" secondItem="vGP-iU-nN2" secondAttribute="height" multiplier="16:9" id="D2D-6Z-bjC"/>
                     </constraints>
                 </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="8f1-wJ-Y0b">
+                    <rect key="frame" x="0.0" y="277" width="414" height="908"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
+                <constraint firstItem="8f1-wJ-Y0b" firstAttribute="top" secondItem="vGP-iU-nN2" secondAttribute="bottom" id="Ct6-v1-X49"/>
                 <constraint firstItem="vGP-iU-nN2" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Iwq-XO-RdO"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="8f1-wJ-Y0b" secondAttribute="bottom" id="QyL-dA-QcK"/>
                 <constraint firstItem="vGP-iU-nN2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Wbb-n1-XFc"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8f1-wJ-Y0b" secondAttribute="trailing" id="ibm-i2-FQO"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vGP-iU-nN2" secondAttribute="trailing" id="qAf-Gc-yKT"/>
+                <constraint firstItem="8f1-wJ-Y0b" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="sic-IY-EbH"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="24.637681159420293" y="232.70089285714283"/>

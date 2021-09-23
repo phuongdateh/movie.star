@@ -18,7 +18,7 @@ class VideoViewModel: ViewModel {
         self.getMovie()
     }
     
-    private var currentPage: Int = 20
+    private var currentPage: Int = 1
     
     private func getMovie() {
         apiSerivice.getPopular(page: currentPage) {[weak self] result in

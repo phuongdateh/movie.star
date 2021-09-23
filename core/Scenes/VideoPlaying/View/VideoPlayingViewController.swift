@@ -13,8 +13,10 @@ import AVKit
 class VideoPlayingViewController: ViewController<VideoPlayingViewModel> {
 
     @IBOutlet weak var playerView: UIView!
+    @IBOutlet weak var tableView: UITableView!
     
     private var movieDetail: MovieDetail!
+    private var isSeemore: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,21 +24,31 @@ class VideoPlayingViewController: ViewController<VideoPlayingViewModel> {
     }
     
     override func makeUI() {
-        
+        tableView.registerCell(ofType: VideoPlayingHeaderTableViewCell.self)
+        tableView.registerCell(ofType: VideoPlayingTableViewCell.self)
+        tableView.tableHeaderView = UIView()
+        tableView.tableFooterView = UIView()
+        tableView.backgroundColor = ColorPalette.background
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
+    private var source: YoutubeVideo?
     override func bindViewModel() {
         self.movieDetail = viewModel.category.movieDetail
         self.setupPlayer()
-        var streamURL: URL!
-        
-        YoutubeService.shared.getVideo(by: viewModel.category.video.key) { video in
-            print("VideoPlayingViewController: \(video?.video.title)")
+        self.playVideo(key: viewModel.category.video.key)
+        self.updateView()
+    }
+    
+    var player: BMPlayer!
+    
+    func playVideo(key: String) {
+        YoutubeService.shared.getVideo(by: key) { video in
             guard let youtobeVideo = video else { return }
-            let video = youtobeVideo.video
-//            if let url = video.streamURLs[XCDYouTubeVideoQuality.HD720.rawValue]  {
-//                streamURL = url
-//            }
+            var streamURL: URL!
+            self.source = youtobeVideo
+            let video = self.source!.video
             if let url = video.streamURLs[XCDYouTubeVideoQuality.medium360.rawValue] {
                 streamURL = url
             }
@@ -49,15 +61,13 @@ class VideoPlayingViewController: ViewController<VideoPlayingViewModel> {
                 streamURL = video.streamURL
             }
             
-            let asset = BMPlayerResource(url: video.streamURL!,
+            let asset = BMPlayerResource(url: streamURL,
                                          name: video.title)
             self.player.setVideo(resource: asset)
+            self.isSeemore = false
+            self.tableView.reloadData()
         }
-        
-        self.updateView()
     }
-    
-    var player: BMPlayer!
     
     func setupPlayer() {
         player = BMPlayer(customControlView: BMPlayerCustomControlView.init())
@@ -82,6 +92,59 @@ class VideoPlayingViewController: ViewController<VideoPlayingViewModel> {
     
     private func updateView() {
         
+    }
+}
+
+extension VideoPlayingViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        if let _ = source {
+            return 2
+        }
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
+            return 1
+        }
+        if let videoResults = movieDetail.videos {
+            return videoResults.results.count
+        }
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(ofType: VideoPlayingHeaderTableViewCell.self, at: indexPath)
+            cell.updateAction = {
+                self.isSeemore = true
+                tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .bottom)
+            }
+            if let source = self.source {
+                cell.binds(source: source,
+                           isSeeMore: self.isSeemore)
+            }
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(ofType: VideoPlayingTableViewCell.self, at: indexPath)
+            cell.selectionStyle = .none
+            cell.configure(video: movieDetail.videos!.results[indexPath.row])
+            return cell
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+            return UITableView.automaticDimension
+        }
+        return 100
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 1 {
+            let video = movieDetail.videos!.results[indexPath.row]
+            self.playVideo(key: video.key)
+        }
     }
 }
 
