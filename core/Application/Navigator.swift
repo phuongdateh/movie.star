@@ -49,7 +49,8 @@ extension Navigator {
             vc.set(viewModel: viewModel, navigator: self)
             return vc
         case let .tabbar(viewModel: viewModel):
-            let vc = TabbarViewController.init(nibName: TabbarViewController.reuseID, bundle: nil)
+            let storyboard = UIStoryboard(name: "Tabbar", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "TabbarViewController") as! TabbarViewController
             vc.viewModel = viewModel
             vc.navigator = self
             vc.setupChilds()

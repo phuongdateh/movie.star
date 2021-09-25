@@ -7,13 +7,14 @@
 
 import Foundation
 import UIKit
+import Firebase
 
 final class Application {
     static let shared = Application()
     
     private let apiService: MovieAPIProtocol?
     private let navigator: Navigator
-    
+    var movieConfigure: MovieConfigure?
     var window: UIWindow?
     
     init() {
@@ -26,9 +27,12 @@ final class Application {
             return
         }
         self.window = window
+        self.setupFirebase()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {[weak self] in
-            if let self = self {
+        FirebaseService.shared.fetchConfigs { [weak self] config in
+            self?.movieConfigure = config
+            DispatchQueue.main.async {[weak self] in
+                guard let self = self else { return }
                 if self.isLauchedApp {
                     self.showTabbar()
                 } else {
@@ -36,7 +40,7 @@ final class Application {
                     self.showGetStarted()
                 }
             }
-        })
+        }
     }
     
     private func showGetStarted() {
@@ -58,5 +62,11 @@ final class Application {
         get {
             return UserDefaults.standard.bool(forKey: "isLauchedApp")
         }
+    }
+}
+
+extension Application {
+    fileprivate func setupFirebase() {
+        FirebaseApp.configure()
     }
 }

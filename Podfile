@@ -27,6 +27,11 @@ target 'core' do
   pod 'XCDYouTubeKit', :git => 'https://github.com/dpwilhelmsen/XCDYouTubeKit', :branch => 'hotfix/fix-get-video-info-error'
   
   pod 'SDWebImage'
+  pod 'FSPagerView'
+  
+  #Firebase
+  pod 'Firebase/Analytics'
+  pod 'Firebase/RemoteConfig'
 
   
   
@@ -41,16 +46,5 @@ post_install do |installer|
         content = File.read(script)
         content.gsub!(/set -e/, "set -e\nKG_FILE=\"#{file}\"\nif [ -f \"$KG_FILE\" ]; then exit 0; fi\nmkdir -p \"#{folder}\"\ntouch \"$KG_FILE\"")
         File.write(script, content)
-    end
-    
-    # Enable tracing resources
-    installer.pods_project.targets.each do |target|
-      if target.name == 'RxSwift'
-        target.build_configurations.each do |config|
-          if config.name == 'Debug'
-            config.build_settings['OTHER_SWIFT_FLAGS'] ||= ['-D', 'TRACE_RESOURCES']
-          end
-        end
-      end
     end
 end

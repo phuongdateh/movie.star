@@ -23,4 +23,8 @@ extension UIImageView {
             self.sd_setImage(with: URL(string: "https://image.tmdb.org/t/p/original\(path)"), placeholderImage: UIImage(named: "placeholder_ic"))
         }
     }
+    
+    func retrivingImage(path: String) {
+        self.sd_setImage(with: URL(string: "https://image.tmdb.org/t/p/w500/\(path)"), placeholderImage: UIImage(named: "placeholder_ic"))
+    }
 }

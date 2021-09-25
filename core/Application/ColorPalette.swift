@@ -20,6 +20,10 @@ struct ColorPalette {
     static var background: UIColor {
         return 0x222222.color
     }
+    
+    static var tabbar: UIColor {
+        return 0x1D1D1D.color
+    }
 }
 
 extension Int {
