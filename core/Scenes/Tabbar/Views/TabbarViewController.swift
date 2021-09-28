@@ -29,19 +29,19 @@ class TabbarViewController: UITabBarController {
     
     func setupChilds() {
         guard let viewModel = viewModel as? TabbarViewModel else { return }
-        let homeVC = HomeViewController.fromNib(ofType: HomeViewController.self)
+        let homeVC = HomeViewController.fromNib()
         homeVC.set(viewModel: viewModel.createHomeViewModel(), navigator: self.navigator)
         homeVC.tabBarItem.image = UIImage(named: "home_ic")
         homeVC.tabBarItem.title = "Home".uppercased()
         let homeNav = UINavigationController(rootViewController: homeVC)
         
-        let videoVC = VideoViewController.fromNib(ofType: VideoViewController.self)
+        let videoVC = VideoViewController.fromNib()
         videoVC.set(viewModel: viewModel.createVideoViewModel(), navigator: self.navigator)
         videoVC.tabBarItem.image = UIImage(named: "video_ic")
         videoVC.tabBarItem.title = "Video".uppercased()
         let videoNav = UINavigationController(rootViewController: videoVC)
         
-        let profileVC = ProfileViewController.fromNib(ofType: ProfileViewController.self)
+        let profileVC = ProfileViewController.fromNib()
         profileVC.set(viewModel: viewModel.createProfileViewModel(), navigator: self.navigator)
         profileVC.tabBarItem.image = UIImage(named: "profile_ic")
         profileVC.tabBarItem.title = "Profile".uppercased()

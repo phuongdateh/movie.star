@@ -9,18 +9,23 @@ import Foundation
 import UIKit
 import FSPagerView
 
+protocol HomeHeaderCellDelegate: AnyObject {
+    func homeHeaderCellDidSelectItem(view: HomeHeaderCell,
+                                     moviedId: Int)
+}
+
 class HomeHeaderCell: UITableViewCell {
     
     @IBOutlet weak var pageView: FSPagerView!
     
     private var viewModel: HomeViewModel!
+    weak var delegate: HomeHeaderCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         self.configureView()
     }
-    
+
     private func configureView() {
         self.backgroundColor = 0x1D1D1D.color
         
@@ -39,7 +44,7 @@ class HomeHeaderCell: UITableViewCell {
             
         })
     }
-    
+
     private func updateView() {
         self.pageView.reloadData()
     }
@@ -54,5 +59,11 @@ extension HomeHeaderCell: FSPagerViewDelegate, FSPagerViewDataSource {
         let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "HomeItemCollectionViewCell", at: index) as! HomeItemCollectionViewCell
         cell.configure(viewModel.cellForRowHeaderView(at: index))
         return cell
+    }
+    
+    func pagerView(_ pagerView: FSPagerView, didSelectItemAt index: Int) {
+        let movieItem = self.viewModel.cellForRowHeaderView(at: index)
+        self.delegate?.homeHeaderCellDidSelectItem(view: self,
+                                                   moviedId: movieItem.id)
     }
 }

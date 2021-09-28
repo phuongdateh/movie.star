@@ -67,6 +67,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         if section == HomeSection.movieBanner.rawValue {
             let cell = tableView.dequeueReusableCell(ofType: HomeHeaderCell.self, at: indexPath)
             cell.selectionStyle = .none
+            cell.delegate = self
             cell.setViewModel(viewModel: self.viewModel)
             return cell
         } else if section == HomeSection.genres.rawValue {

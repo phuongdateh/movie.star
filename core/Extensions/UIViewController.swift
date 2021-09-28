@@ -21,7 +21,11 @@ extension Reusable {
 extension UIViewController: Reusable {}
 
 extension UIViewController {
-    class func fromNib<T: UIViewController>(ofType: T.Type) -> T {
+    private static func fromNib<T: UIViewController>(ofType: T.Type) -> T {
         return T.init(nibName: T.reuseID, bundle: nil)
+    }
+
+    static func fromNib() -> Self {
+        return fromNib(ofType: self)
     }
 }
