@@ -31,6 +31,18 @@ final class MovieAPIService: MovieAPIProtocol {
     func getGenres(_ completion: @escaping CompletionResult<GenreResponse>) {
         self.request(target: .genre, completion)
     }
+    
+    func getTopRated(page: Int, _ completion: @escaping CompletionResult<MovieResponse>) {
+        self.request(target: .topRated(pageNumber: page), completion)
+    }
+    
+    func getUpcomming(page: Int, _ completion: @escaping CompletionResult<MovieResponse>) {
+        self.request(target: .upcoming(pageNumber: page), completion)
+    }
+    
+    func getNowPlaying(page: Int, _ completion: @escaping CompletionResult<MovieResponse>) {
+        self.request(target: .nowPlaying(pageNumber: page), completion)
+    }
 }
 
 extension MovieAPIProtocol {

@@ -10,9 +10,9 @@ import Moya
 
 enum MovieTarget {
     case popular(pageNumber: Int)
-    case upcoming
-    case topRated
-    case nowPlaying
+    case upcoming(pageNumber: Int)
+    case topRated(pageNumber: Int)
+    case nowPlaying(pageNumber: Int)
     case detail(id: Int)
     case videos(of: Int)
     
@@ -31,13 +31,18 @@ extension MovieTarget: TargetType {
         switch self {
         case .popular(pageNumber: _):
             return "/movie/popular"
+        case .topRated(pageNumber: _):
+            return "/movie/top_rated"
+        case .nowPlaying(pageNumber: _):
+            return "/movie/now_playing"
+        case .upcoming(pageNumber: _):
+            return "/movie/upcoming"
         case let .detail(id: movieId):
             return "movie/\(movieId)"
         case let .videos(of: movieId):
             return "movie/\(movieId)/videos"
         case .genre:
             return "/genre/movie/list"
-        default: return ""
         }
     }
     

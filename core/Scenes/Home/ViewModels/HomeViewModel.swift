@@ -76,7 +76,7 @@ class HomeViewModel: ViewModel {
                     }
                 }
             case .nowPlaying:
-                self.apiSerivice.getPopular(page: 1) { result in
+                self.apiSerivice.getNowPlaying(page: 1) { result in
                     switch result {
                     case .success(let response):
                         self.movieSectionItems.append(HomeMovieSectionItem.init(title: config.name,
@@ -86,7 +86,7 @@ class HomeViewModel: ViewModel {
                     }
                 }
             case .topRated:
-                self.apiSerivice.getPopular(page: 1) { result in
+                self.apiSerivice.getTopRated(page: 1) { result in
                     switch result {
                     case .success(let response):
                         let movies = response.movies.sorted(by: { $0.voteAverage > $1.voteAverage})
@@ -97,7 +97,7 @@ class HomeViewModel: ViewModel {
                     }
                 }
             case .upComing:
-                self.apiSerivice.getPopular(page: 1) { result in
+                self.apiSerivice.getUpcomming(page: 1) { result in
                     switch result {
                     case .success(let response):
                         self.movieSectionItems.append(HomeMovieSectionItem.init(title: config.name,
