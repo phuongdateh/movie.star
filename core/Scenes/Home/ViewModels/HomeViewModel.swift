@@ -65,8 +65,8 @@ class HomeViewModel: ViewModel {
                 fatalError()
             }
             switch type {
-            case .popular:
-                self.apiSerivice.getPopular(page: 1) { result in
+            case .upComing:
+                self.apiSerivice.getUpcomming(page: 1) { result in
                     switch result {
                     case .success(let response):
                         self.movieSectionItems.append(HomeMovieSectionItem.init(title: config.name,
@@ -77,6 +77,16 @@ class HomeViewModel: ViewModel {
                 }
             case .nowPlaying:
                 self.apiSerivice.getNowPlaying(page: 1) { result in
+                    switch result {
+                    case .success(let response):
+                        self.movieSectionItems.append(HomeMovieSectionItem.init(title: config.name,
+                                                                                movies: response.movies.sorted(by: {$0.voteCount > $1.voteCount})))
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
+                }
+            case .popular:
+                self.apiSerivice.getPopular(page: 1) { result in
                     switch result {
                     case .success(let response):
                         self.movieSectionItems.append(HomeMovieSectionItem.init(title: config.name,
@@ -92,16 +102,6 @@ class HomeViewModel: ViewModel {
                         let movies = response.movies.sorted(by: { $0.voteAverage > $1.voteAverage})
                         self.movieSectionItems.append(HomeMovieSectionItem.init(title: config.name,
                                                                                 movies: movies))
-                    case .failure(let error):
-                        print(error.localizedDescription)
-                    }
-                }
-            case .upComing:
-                self.apiSerivice.getUpcomming(page: 1) { result in
-                    switch result {
-                    case .success(let response):
-                        self.movieSectionItems.append(HomeMovieSectionItem.init(title: config.name,
-                                                                                movies: response.movies))
                     case .failure(let error):
                         print(error.localizedDescription)
                     }

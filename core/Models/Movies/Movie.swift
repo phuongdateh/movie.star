@@ -14,6 +14,7 @@ struct Movie: Decodable {
     let posterPath: String?
     let releaseDate: String?
     var voteAverage: Double = 0
+    var voteCount: Int = 0
 }
 
 extension Movie {
@@ -24,5 +25,6 @@ extension Movie {
         case posterPath = "poster_path"
         case releaseDate = "release_date"
         case voteAverage = "vote_average"
+        case voteCount = "vote_count"
     }
 }
