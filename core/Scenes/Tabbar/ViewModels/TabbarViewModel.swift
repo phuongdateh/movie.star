@@ -9,12 +9,18 @@ import Foundation
 
 class TabbarViewModel: ViewModel {
     
+    let apiService: MovieAPIProtocol
+    
+    init(apiService: MovieAPIProtocol) {
+        self.apiService = apiService
+    }
+    
     func createHomeViewModel() -> HomeViewModel {
         return .init()
     }
     
     func createVideoViewModel() -> VideoViewModel {
-        return .init()
+        return .init(apiService)
     }
     
     func createProfileViewModel() -> ProfileViewModel {

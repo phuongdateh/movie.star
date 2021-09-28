@@ -2,10 +2,9 @@
 //  GetStartedViewController.swift
 //  core
 //
-//  Created by phuong.doan on 7/15/21.
+//  Created by phuong.doand on 14/09/2021.
 //
 
-import Foundation
 import UIKit
 
 class GetStartedViewController: ViewController<GetStartedViewModel> {
@@ -27,6 +26,6 @@ class GetStartedViewController: ViewController<GetStartedViewModel> {
         
     }
     @IBAction func getStartedButtonAction(_ sender: UIButton) {
-        self.navigator.show(segue: .tabbar(viewModel: TabbarViewModel.init()), sender: self)
+        self.navigator.show(segue: .tabbar(viewModel: self.viewModel.createTabbarViewModel()), sender: self)
     }
 }

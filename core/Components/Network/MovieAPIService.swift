@@ -13,7 +13,7 @@ final class MovieAPIService: MovieAPIProtocol {
     var provider: MoyaProvider<MovieTarget>
     
     init() {
-        self.provider = MoyaProvider<MovieTarget>(plugins: [NetworkLoggerPlugin(), VerbosePlugin(verbose: true)])
+        self.provider = MoyaProvider<MovieTarget>(plugins: [VerbosePlugin(verbose: true)])
     }
     
     func getPopular(page: Int, _ completion: @escaping CompletionResult<MovieResponse>) {
@@ -26,6 +26,10 @@ final class MovieAPIService: MovieAPIProtocol {
     
     func getViedeos(_ movieId: Int, _ completion: @escaping CompletionResult<VideoResults>) {
         self.request(target: .videos(of: movieId), completion)
+    }
+    
+    func getGenres(_ completion: @escaping CompletionResult<GenreResponse>) {
+        self.request(target: .genre, completion)
     }
 }
 

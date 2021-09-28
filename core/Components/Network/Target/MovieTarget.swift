@@ -15,6 +15,8 @@ enum MovieTarget {
     case nowPlaying
     case detail(id: Int)
     case videos(of: Int)
+    
+    case genre
 }
 
 extension MovieTarget: TargetType {
@@ -30,9 +32,11 @@ extension MovieTarget: TargetType {
         case .popular(pageNumber: _):
             return "/movie/popular"
         case let .detail(id: movieId):
-            return "\(movieId)"
+            return "movie/\(movieId)"
         case let .videos(of: movieId):
             return "movie/\(movieId)/videos"
+        case .genre:
+            return "/genre/movie/list"
         default: return ""
         }
     }
@@ -49,6 +53,8 @@ extension MovieTarget: TargetType {
         parameters["language"] = Configs.Network.language
         if case let .popular(pageNumber: number) = self {
             parameters["page"] = number
+        } else if case .detail(id: _) = self {
+            parameters["append_to_response"] = "videos,images"
         }
         return parameters
     }
@@ -56,7 +62,8 @@ extension MovieTarget: TargetType {
     var task: Task {
         switch self {
         default:
-            return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
+            return .requestParameters(parameters: parameters,
+                                      encoding: URLEncoding.queryString)
         }
     }
     

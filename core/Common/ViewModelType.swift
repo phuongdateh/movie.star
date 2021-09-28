@@ -9,6 +9,8 @@ import Foundation
 
 class ViewModel: NSObject {
     
+    var isLoading: Bool = false
+    
     override init() {
         super.init()
         

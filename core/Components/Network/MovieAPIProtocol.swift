@@ -16,5 +16,6 @@ protocol MovieAPIProtocol {
     func getPopular(page: Int,_ completion: @escaping CompletionResult<MovieResponse>)
     func getMovieDetail(_ movieId: Int,_ comepletion: @escaping CompletionResult<MovieDetail>)
     func getViedeos(_ movieId: Int,_ comepletion: @escaping CompletionResult<VideoResults>)
+    func getGenres(_ completion: @escaping CompletionResult<GenreResponse>)
 }
  
