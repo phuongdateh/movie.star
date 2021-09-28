@@ -47,8 +47,19 @@ class HomeViewModel: ViewModel {
         }
     }
     private var actorSectionItems = [HomeActorSectionItem]()
+    private var genres = [Genre]()
     
     func prepareData() {
+        self.apiSerivice.getGenres { result in
+            switch result {
+            case .success(let response):
+                self.genres.append(contentsOf: response.genres)
+                self.didChangeData?()
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        
         self.config.homeConfig.filter({ $0.isActive }).forEach { config in
             guard let type = HomeConfigure.HomeType(rawValue: config.type) else {
                 fatalError()
@@ -149,7 +160,7 @@ extension HomeViewModel {
         if section == HomeSection.movieBanner.rawValue {
             return UIScreen.main.bounds.height * 2 / 3
         } else if section == HomeSection.genres.rawValue {
-            return 100
+            return 205
         } else if section == HomeSection.ads.rawValue,
                   config.isEnableBannerAds {
             return 100
@@ -159,6 +170,10 @@ extension HomeViewModel {
             return 120
         }
         return 0
+    }
+    
+    func cellForRowAtGenre() -> [Genre] {
+        return self.genres
     }
 
     func cellForRowAtMovie(indexPath: IndexPath) -> HomeMovieSectionItem {

@@ -20,8 +20,11 @@ class HomeViewController: ViewController<HomeViewModel> {
         self.registerCells()
         tableView.tableFooterView = UIView()
         tableView.tableHeaderView = UIView()
+        tableView.backgroundColor = ColorPalette.background
         tableView.delegate = self
         tableView.dataSource = self
+        
+        self.view.backgroundColor = ColorPalette.background
     }
     
     private func registerCells() {
@@ -67,6 +70,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         } else if section == HomeSection.genres.rawValue {
             let cell = tableView.dequeueReusableCell(ofType: GenresTableViewCell.self, at: indexPath)
+            cell.selectionStyle = .none
+            cell.configure(viewModel.cellForRowAtGenre())
             return cell
         } else if section == HomeSection.ads.rawValue {
             let cell = tableView.dequeueReusableCell(ofType: NativeAdsTableViewCell.self, at: indexPath)

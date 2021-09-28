@@ -15,6 +15,8 @@ enum MovieTarget {
     case nowPlaying
     case detail(id: Int)
     case videos(of: Int)
+    
+    case genre
 }
 
 extension MovieTarget: TargetType {
@@ -33,6 +35,8 @@ extension MovieTarget: TargetType {
             return "movie/\(movieId)"
         case let .videos(of: movieId):
             return "movie/\(movieId)/videos"
+        case .genre:
+            return "/genre/movie/list"
         default: return ""
         }
     }
@@ -58,7 +62,8 @@ extension MovieTarget: TargetType {
     var task: Task {
         switch self {
         default:
-            return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
+            return .requestParameters(parameters: parameters,
+                                      encoding: URLEncoding.queryString)
         }
     }
     

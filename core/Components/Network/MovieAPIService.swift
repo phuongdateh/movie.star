@@ -27,6 +27,10 @@ final class MovieAPIService: MovieAPIProtocol {
     func getViedeos(_ movieId: Int, _ completion: @escaping CompletionResult<VideoResults>) {
         self.request(target: .videos(of: movieId), completion)
     }
+    
+    func getGenres(_ completion: @escaping CompletionResult<GenreResponse>) {
+        self.request(target: .genre, completion)
+    }
 }
 
 extension MovieAPIProtocol {
