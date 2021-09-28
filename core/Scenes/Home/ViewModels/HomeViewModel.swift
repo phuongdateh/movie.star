@@ -89,8 +89,9 @@ class HomeViewModel: ViewModel {
                 self.apiSerivice.getPopular(page: 1) { result in
                     switch result {
                     case .success(let response):
+                        let movies = response.movies.sorted(by: { $0.voteAverage > $1.voteAverage})
                         self.movieSectionItems.append(HomeMovieSectionItem.init(title: config.name,
-                                                                                movies: response.movies))
+                                                                                movies: movies))
                     case .failure(let error):
                         print(error.localizedDescription)
                     }
@@ -165,7 +166,7 @@ extension HomeViewModel {
                   config.isEnableBannerAds {
             return 100
         } else if section == HomeSection.movieList.rawValue {
-            return 213
+            return 400
         } else if section == HomeSection.actorList.rawValue {
             return 120
         }

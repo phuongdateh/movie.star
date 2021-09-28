@@ -21,6 +21,7 @@ class HomeViewController: ViewController<HomeViewModel> {
         tableView.tableFooterView = UIView()
         tableView.tableHeaderView = UIView()
         tableView.backgroundColor = ColorPalette.background
+        tableView.separatorStyle = .none
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -78,6 +79,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         } else if section == HomeSection.movieList.rawValue {
             let cell = tableView.dequeueReusableCell(ofType: HomeMovieTableViewCell.self, at: indexPath)
+            cell.selectionStyle = .none
+            cell.configure(item: viewModel.cellForRowAtMovie(indexPath: indexPath))
             return cell
         } else if section == HomeSection.actorList.rawValue {
             

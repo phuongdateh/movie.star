@@ -30,6 +30,7 @@ class GenresTableViewCell: UITableViewCell {
         collectionView.collectionViewLayout = layout
         collectionView.backgroundView?.backgroundColor = .clear
         collectionView.backgroundColor = .clear
+        collectionView.showsHorizontalScrollIndicator = false
         collectionView.delegate = self
         collectionView.dataSource = self
     }
