@@ -53,7 +53,7 @@ class HomeViewModel: ViewModel {
         self.apiSerivice.getGenres { result in
             switch result {
             case .success(let response):
-                self.genres.append(contentsOf: response.genres ?? [Genre]())
+                self.genres.append(contentsOf: response.genres)
                 self.didChangeData?()
             case .failure(let error):
                 print(error.localizedDescription)

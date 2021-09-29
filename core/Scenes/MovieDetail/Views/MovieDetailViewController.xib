@@ -12,7 +12,7 @@
         <array key="Proxima Nova Bold.otf">
             <string>ProximaNova-Bold</string>
         </array>
-        <array key="Proxima Nova Regular.otf">
+        <array key="Proxima Nova-Regular.otf">
             <string>ProximaNova-Regular</string>
         </array>
     </customFonts>
@@ -24,8 +24,12 @@
                 <outlet property="detailWrapperView" destination="1nP-Gl-CFB" id="Fa3-44-wwB"/>
                 <outlet property="durationLbl" destination="V9O-IF-PF1" id="aqm-WK-HRf"/>
                 <outlet property="genresLbl" destination="cYZ-nK-LaW" id="9zt-iv-2Dw"/>
+                <outlet property="moreButton" destination="OxX-rK-mOX" id="Eid-KN-ws3"/>
+                <outlet property="moreButtonView" destination="I5Q-3A-bYo" id="KnD-Zu-iCu"/>
+                <outlet property="nativeAdsView" destination="SW0-Ih-pAy" id="xVa-It-6TK"/>
                 <outlet property="originTitleLbl" destination="rsL-Dm-7gh" id="lWE-aK-TUY"/>
                 <outlet property="overlayViewHeightConstraint" destination="2FK-Ev-KLq" id="3RZ-1B-8Pj"/>
+                <outlet property="overviewLbl" destination="Z0i-Qi-TDB" id="dIx-WZ-CjF"/>
                 <outlet property="posterImageView" destination="Ed9-bq-UB8" id="Snu-C2-JHS"/>
                 <outlet property="posterImageViewHeightConstraint" destination="YEU-8V-v3T" id="k2U-87-grb"/>
                 <outlet property="ratingView" destination="oxn-PZ-KPg" id="GzB-ML-d2d"/>
@@ -91,19 +95,19 @@
                                             </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYZ-nK-LaW">
-                                            <rect key="frame" x="195.5" y="84.5" width="203.5" height="17.5"/>
+                                            <rect key="frame" x="195.5" y="226" width="203.5" height="17.5"/>
                                             <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
                                             <color key="textColor" red="0.59607843140000005" green="0.62745098040000002" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V9O-IF-PF1">
-                                            <rect key="frame" x="195.5" y="102" width="203.5" height="17.5"/>
+                                            <rect key="frame" x="195.5" y="243.5" width="203.5" height="17.5"/>
                                             <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
                                             <color key="textColor" red="0.59607843140000005" green="0.62745098040000002" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w5K-iF-gSX">
-                                            <rect key="frame" x="195.5" y="119.5" width="203.5" height="17.5"/>
+                                            <rect key="frame" x="195.5" y="261" width="203.5" height="17.5"/>
                                             <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
                                             <color key="textColor" red="0.59607843140000005" green="0.62745098040000002" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -217,6 +221,9 @@
                                                                     </constraints>
                                                                     <state key="normal" title="Button"/>
                                                                     <buttonConfiguration key="configuration" style="plain" title="More"/>
+                                                                    <connections>
+                                                                        <action selector="moreButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="q9F-ik-fmv"/>
+                                                                    </connections>
                                                                 </button>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ruu-VT-hrz">
                                                                     <rect key="frame" x="236" y="0.0" width="178" height="32"/>
@@ -275,7 +282,7 @@
                                     <constraints>
                                         <constraint firstItem="rsL-Dm-7gh" firstAttribute="top" secondItem="Sk3-fx-LMe" secondAttribute="top" id="1Kf-Hv-eaq"/>
                                         <constraint firstAttribute="trailing" secondItem="V9O-IF-PF1" secondAttribute="trailing" constant="15" id="1gA-M2-9zS"/>
-                                        <constraint firstItem="w5K-iF-gSX" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="Sk3-fx-LMe" secondAttribute="bottom" id="4Y7-Sm-kCl"/>
+                                        <constraint firstItem="w5K-iF-gSX" firstAttribute="bottom" secondItem="Sk3-fx-LMe" secondAttribute="bottom" id="4Y7-Sm-kCl"/>
                                         <constraint firstItem="Sk3-fx-LMe" firstAttribute="width" secondItem="1nP-Gl-CFB" secondAttribute="width" multiplier="2/5" id="869-O2-vGM"/>
                                         <constraint firstItem="V9O-IF-PF1" firstAttribute="leading" secondItem="Sk3-fx-LMe" secondAttribute="trailing" constant="10" id="DKR-Ma-4Cs"/>
                                         <constraint firstItem="04P-w4-QQP" firstAttribute="top" secondItem="Sk3-fx-LMe" secondAttribute="bottom" constant="20" id="Dbs-AB-hd7"/>
@@ -287,7 +294,7 @@
                                         <constraint firstAttribute="trailing" secondItem="04P-w4-QQP" secondAttribute="trailing" id="WTN-V1-fPn"/>
                                         <constraint firstAttribute="trailing" secondItem="cYZ-nK-LaW" secondAttribute="trailing" constant="15" id="dST-YX-yXM"/>
                                         <constraint firstItem="G6A-VP-Cmr" firstAttribute="leading" secondItem="oxn-PZ-KPg" secondAttribute="trailing" constant="10" id="dbw-7x-qfs"/>
-                                        <constraint firstItem="cYZ-nK-LaW" firstAttribute="top" secondItem="G6A-VP-Cmr" secondAttribute="bottom" constant="15" id="dfH-bf-ipd"/>
+                                        <constraint firstItem="cYZ-nK-LaW" firstAttribute="top" relation="greaterThanOrEqual" secondItem="G6A-VP-Cmr" secondAttribute="bottom" constant="15" id="dfH-bf-ipd"/>
                                         <constraint firstItem="04P-w4-QQP" firstAttribute="leading" secondItem="1nP-Gl-CFB" secondAttribute="leading" id="fBu-rZ-AWR"/>
                                         <constraint firstItem="oxn-PZ-KPg" firstAttribute="leading" secondItem="Sk3-fx-LMe" secondAttribute="trailing" constant="15" id="ho2-Ub-fTi"/>
                                         <constraint firstAttribute="bottom" secondItem="04P-w4-QQP" secondAttribute="bottom" id="iXO-gy-EqF"/>

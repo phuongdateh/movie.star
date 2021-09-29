@@ -7,6 +7,18 @@
 
 import Foundation
 
+enum MediaType: String {
+    case movie
+    case tv
+    case person
+    case all
+}
+
+enum TimeWindow: String {
+    case day
+    case week
+}
+
 struct TrendingMovie: Decodable {
     let id: Int
     let backdropPath: String?

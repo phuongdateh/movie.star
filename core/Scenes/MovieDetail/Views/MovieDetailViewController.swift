@@ -26,34 +26,88 @@ class MovieDetailViewController: ViewController<MovieDetailViewModel> {
     @IBOutlet weak var genresLbl: UILabel!
     @IBOutlet weak var durationLbl: UILabel!
     @IBOutlet weak var releaseDateLbl: UILabel!
+
+    // Admod
+    @IBOutlet weak var nativeAdsView: UIView!
+    
+    @IBOutlet weak var overviewLbl: UILabel!
+    @IBOutlet weak var moreButtonView: UIView!
+    @IBOutlet weak var moreButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureView()
     }
-
+    
     private func configureView() {
         self.detailWrapperView.layer.cornerRadius = 20
-        
+
         self.posterImageView.contentMode = .scaleAspectFill
         self.posterImageViewHeightConstraint.constant = Helpers.screenSize().width
-        
+
         self.overlayViewHeightConstraint.constant = Helpers.screenSize().width / 2
-        
+
         self.scrollView.delegate = self
-        self.posterImageView.downloadImage(with: .tmdb("/2CAL2433ZeIihfX1Hb2139CX0pW.jpg"))
-        
+
         self.thumbnailImageView.contentMode = .scaleAspectFill
         self.thumbnailImageView.layer.cornerRadius = 5
-        self.thumbnailImageView.downloadImage(with: .tmdb("/zZTy8G3sEVZNv0yGssgc7DvPUQJ.jpg"))
+        
+        self.overviewLbl.numberOfLines = 3
+        self.moreButton.tintColor = UIColor.gray
+        self.moreButton.setTitle("More", for: .normal)
+        self.moreButton.titleLabel?.setFont(appFont: .medium, size: 14)
     }
-
-    @IBAction func backButtonTouchUpInside(_ sender: LumiKitBackButton) {
-        self.navigationController?.popViewController(animated: true)
+    
+    override func bindViewModel() {
+        self.viewModel.retrieveMovieDetail(success: { [weak self] in
+            DispatchQueue.main.async {
+                self?.updateView()
+            }
+        }, error: { msg in
+            
+        })
     }
-
-    @IBAction func playButtonTouchUpInside(_ sender: PlayButton) {
-        print(#function)
+    
+    private func updateView() {
+        guard let movie = self.viewModel.getMovieDetail() else { return }
+        self.posterImageView.downloadImage(with: .tmdb(movie.posterPath ?? ""))
+        self.thumbnailImageView.downloadImage(with: .tmdb(movie.backdropPath ?? ""))
+        self.ratingView.rating = movie.voteAverage
+        self.originTitleLbl.text = movie.originalTitle
+        self.releaseDateLbl.text = "Date of Release: " + (movie.releaseDate ?? "")
+        self.durationLbl.text = "Durations: \(movie.runtime) mins"
+        if let genres = movie.genres, genres.isEmpty == false {
+            var genresStr: String = "Category: "
+            let names = genres.map({ $0.name })
+            for (index, item) in names.enumerated() {
+                genresStr += item
+                if index != names.count {
+                    genresStr += ", "
+                }
+            }
+            self.genresLbl.text = genresStr
+        } else {
+            genresLbl.text = ""
+        }
+        self.voteAvegareValueLbl.text = "\(movie.voteAverage)"
+        
+        self.overviewLbl.text = movie.overview
+        
+        self.renderAdsView()
+        self.renderMoreButtonView()
+    }
+    
+    private func renderAdsView() {
+        self.nativeAdsView.isHidden = !viewModel.isShouldShowAdsView()
+    }
+    
+    private func renderMoreButtonView() {
+        if self.overviewLbl.lineCount() > 3 {
+            self.moreButtonView.isHidden = false
+        } else {
+            self.moreButtonView.isHidden = true
+        }
     }
 }
 
@@ -66,5 +120,23 @@ extension MovieDetailViewController: UIScrollViewDelegate {
         } else {
             posterImageViewHeightConstraint.constant = 0
         }
+    }
+}
+
+extension MovieDetailViewController {
+    @IBAction func moreButtonTouchUpInside(_ sender: UIButton) {
+        overviewLbl.numberOfLines = 0
+        self.moreButtonView.isHidden = true
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    @IBAction func backButtonTouchUpInside(_ sender: LumiKitBackButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
+
+    @IBAction func playButtonTouchUpInside(_ sender: PlayButton) {
+        print(#function)
     }
 }
