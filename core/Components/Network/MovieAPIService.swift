@@ -43,6 +43,36 @@ final class MovieAPIService: MovieAPIProtocol {
     func getNowPlaying(page: Int, _ completion: @escaping CompletionResult<MovieResponse>) {
         self.request(target: .nowPlaying(pageNumber: page), completion)
     }
+    
+    func getMovieWithGenre(page: Int,
+                           genreId: Int,
+                           completion: @escaping CompletionResult<MovieResponse>) {
+        self.request(target: .movieWithGenres(pageNumber: page, genreId: genreId), completion)
+    }
+    
+    func getMovieRating(page: Int,
+                        movieId: Int,
+                        completion: @escaping CompletionResult<ReviewsResponse>) {
+        self.request(target: .movieRating(pageNumber: page, movieId: movieId), completion)
+    }
+    
+    func getPersonDetail(_ personId: Int,
+                         _ completion: @escaping CompletionResult<PersonDetail>) {
+        self.request(target: .personDetail(personId: personId), completion)
+    }
+    
+    func getMovieTrending(page: Int,
+                          mediaType: MediaType,
+                          time: TimeWindow,
+                          completion: @escaping CompletionResult<TrendingResponse<TrendingMovie>>) {
+        self.request(target: .movieTrending(pageNumber: page, mediaType: mediaType, time: time), completion)
+    }
+    
+    func getPersonTrending(page: Int,
+                           time: TimeWindow,
+                           completion: @escaping CompletionResult<TrendingResponse<TrendingPerson>>) {
+        self.request(target: .personTrending(pageNumber: page, time: time), completion)
+    }
 }
 
 extension MovieAPIProtocol {
