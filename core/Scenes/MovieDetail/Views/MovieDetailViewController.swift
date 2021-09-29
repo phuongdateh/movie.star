@@ -9,14 +9,24 @@ import UIKit
 
 class MovieDetailViewController: ViewController<MovieDetailViewModel> {
 
+    @IBOutlet weak var backButton: LumiKitBackButton!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var posterImageView: UIImageView!
     @IBOutlet weak var posterImageViewHeightConstraint: NSLayoutConstraint!
-    
-    @IBOutlet weak var thumbnailImageView: UIImageView!
-    @IBOutlet weak var detailWrapperView: UIView!
     @IBOutlet weak var overlayViewHeightConstraint: NSLayoutConstraint!
+
+    @IBOutlet weak var detailWrapperView: UIView!
+    @IBOutlet weak var thumbnailImageView: UIImageView!
+    
+    @IBOutlet weak var originTitleLbl: UILabel!
+    @IBOutlet weak var ratingView: RatingView!
+    @IBOutlet weak var voteAvegareValueLbl: UILabel!
+
+    @IBOutlet weak var genresLbl: UILabel!
+    @IBOutlet weak var durationLbl: UILabel!
+    @IBOutlet weak var releaseDateLbl: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureView()
@@ -24,7 +34,6 @@ class MovieDetailViewController: ViewController<MovieDetailViewModel> {
 
     private func configureView() {
         self.detailWrapperView.layer.cornerRadius = 20
-        self.navigationController?.navigationBar.isTranslucent = false
         
         self.posterImageView.contentMode = .scaleAspectFill
         self.posterImageViewHeightConstraint.constant = Helpers.screenSize().width
@@ -38,6 +47,14 @@ class MovieDetailViewController: ViewController<MovieDetailViewModel> {
         self.thumbnailImageView.layer.cornerRadius = 5
         self.thumbnailImageView.downloadImage(with: .tmdb("/zZTy8G3sEVZNv0yGssgc7DvPUQJ.jpg"))
     }
+
+    @IBAction func backButtonTouchUpInside(_ sender: LumiKitBackButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
+
+    @IBAction func playButtonTouchUpInside(_ sender: PlayButton) {
+        print(#function)
+    }
 }
 
 extension MovieDetailViewController: UIScrollViewDelegate {
@@ -46,8 +63,7 @@ extension MovieDetailViewController: UIScrollViewDelegate {
         let realCurrentOffsetY = scrollView.contentOffset.y
         if (realFullAppearOffsetY - realCurrentOffsetY) >= 0 {
             posterImageViewHeightConstraint.constant = realFullAppearOffsetY - realCurrentOffsetY
-        }
-        else {
+        } else {
             posterImageViewHeightConstraint.constant = 0
         }
     }

@@ -7,19 +7,19 @@ target 'core' do
 
   # Logging
   pod 'CocoaLumberjack/Swift'
-  
+
   # UI
   pod 'Hero'
-  
+
   # Network
   pod 'Moya'
-  
+
   # Autolayout
   pod 'SnapKit'
   
   # Loading
   pod 'NVActivityIndicatorView'
-  
+
   # Cache media file while play media using AVPlayerr.
   pod 'VIMediaCache'
 
@@ -28,12 +28,12 @@ target 'core' do
   
   pod 'SDWebImage'
   pod 'FSPagerView'
-  
+
   #Firebase
   pod 'Firebase/Analytics'
   pod 'Firebase/RemoteConfig'
 
-  
+  pod 'Cosmos'
   
 end
 

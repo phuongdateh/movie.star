@@ -21,9 +21,9 @@ class TabbarViewController: UITabBarController {
         appearance.backgroundColor = ColorPalette.tabbar
         tabBar.tintColor = ColorPalette.mistyBlue
         tabBar.standardAppearance = appearance
-        if #available(iOS 15.0, *) {
-            tabBar.scrollEdgeAppearance = appearance
-        }
+//        if #available(iOS 15.0, *) {
+//            tabBar.scrollEdgeAppearance = appearance
+//        }
         tabBarItem.setTitleTextAttributes([.font: UIFont(name: AppFont.regular.name, size: 10)!], for: .normal)
     }
     
