@@ -17,8 +17,11 @@ protocol MovieAPIProtocol {
     func getTopRated(page: Int,_ completion: @escaping CompletionResult<MovieResponse>)
     func getUpcomming(page: Int,_ completion: @escaping CompletionResult<MovieResponse>)
     func getNowPlaying(page: Int,_ completion: @escaping CompletionResult<MovieResponse>)
+    
     func getMovieDetail(_ movieId: Int,_ comepletion: @escaping CompletionResult<MovieDetail>)
     func getViedeos(_ movieId: Int,_ comepletion: @escaping CompletionResult<VideoResults>)
     func getGenres(_ completion: @escaping CompletionResult<GenreResponse>)
+    
+    func getPersonDetail(_ personId: Int,_ completion: @escaping CompletionResult<>)
 }
  
