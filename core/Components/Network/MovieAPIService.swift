@@ -16,11 +16,13 @@ final class MovieAPIService: MovieAPIProtocol {
         self.provider = MoyaProvider<MovieTarget>(plugins: [VerbosePlugin(verbose: true)])
     }
     
-    func getPopular(page: Int, _ completion: @escaping CompletionResult<MovieResponse>) {
+    func getPopular(page: Int,
+                    _ completion: @escaping CompletionResult<ResultsResponse<Movie>>) {
         self.request(target: .popular(pageNumber: page), completion)
     }
     
-    func getMovieDetail(_ movieId: Int, _ completion: @escaping CompletionResult<MovieDetail>) {
+    func getMovieDetail(_ movieId: Int,
+                        _ completion: @escaping CompletionResult<MovieDetail>) {
         self.request(target: .detail(id: movieId), completion)
     }
     
@@ -32,27 +34,28 @@ final class MovieAPIService: MovieAPIProtocol {
         self.request(target: .genre, completion)
     }
     
-    func getTopRated(page: Int, _ completion: @escaping CompletionResult<MovieResponse>) {
+    func getTopRated(page: Int,
+                     _ completion: @escaping CompletionResult<ResultsResponse<Movie>>) {
         self.request(target: .topRated(pageNumber: page), completion)
     }
     
-    func getUpcomming(page: Int, _ completion: @escaping CompletionResult<MovieResponse>) {
+    func getUpcomming(page: Int, _ completion: @escaping CompletionResult<ResultsResponse<Movie>>) {
         self.request(target: .upcoming(pageNumber: page), completion)
     }
     
-    func getNowPlaying(page: Int, _ completion: @escaping CompletionResult<MovieResponse>) {
+    func getNowPlaying(page: Int, _ completion: @escaping CompletionResult<ResultsResponse<Movie>>) {
         self.request(target: .nowPlaying(pageNumber: page), completion)
     }
     
     func getMovieWithGenre(page: Int,
                            genreId: Int,
-                           completion: @escaping CompletionResult<MovieResponse>) {
+                           completion: @escaping CompletionResult<ResultsResponse<Movie>>) {
         self.request(target: .movieWithGenres(pageNumber: page, genreId: genreId), completion)
     }
     
     func getMovieRating(page: Int,
                         movieId: Int,
-                        completion: @escaping CompletionResult<ReviewsResponse>) {
+                        completion: @escaping CompletionResult<ResultsResponse<Review>>) {
         self.request(target: .movieRating(pageNumber: page, movieId: movieId), completion)
     }
     
@@ -64,13 +67,13 @@ final class MovieAPIService: MovieAPIProtocol {
     func getMovieTrending(page: Int,
                           mediaType: MediaType,
                           time: TimeWindow,
-                          completion: @escaping CompletionResult<TrendingResponse<TrendingMovie>>) {
+                          completion: @escaping CompletionResult<ResultsResponse<TrendingMovie>>) {
         self.request(target: .movieTrending(pageNumber: page, mediaType: mediaType, time: time), completion)
     }
     
     func getPersonTrending(page: Int,
                            time: TimeWindow,
-                           completion: @escaping CompletionResult<TrendingResponse<TrendingPerson>>) {
+                           completion: @escaping CompletionResult<ResultsResponse<TrendingPerson>>) {
         self.request(target: .personTrending(pageNumber: page, time: time), completion)
     }
 }

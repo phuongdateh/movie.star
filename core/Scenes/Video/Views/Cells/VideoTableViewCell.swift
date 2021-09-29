@@ -54,8 +54,8 @@ class VideoTableViewCell: UITableViewCell {
     func bind(category: VideoCategory) {
         titleLbl.text = category.video.name
         thumbnailImageView.downloadImage(with: .youtube(category.video.key))
-        movieImageView.downloadImage(with: .tmdb(category.movieDetail.backdropPath ?? category.movieDetail.posterPath ?? ""))
-        subInfoLbl.text = "Release Dates: " + (category.movieDetail.releaseDate ?? "")
+//        movieImageView.downloadImage(with: .tmdb(category.movieDetail.backdropPath ?? category.movieDetail.posterPath ?? ""))
+//        subInfoLbl.text = "Release Dates: " + (category.movieDetail.releaseDate ?? "")
     }
 }
 

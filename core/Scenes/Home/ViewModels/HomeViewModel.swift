@@ -53,7 +53,7 @@ class HomeViewModel: ViewModel {
         self.apiSerivice.getGenres { result in
             switch result {
             case .success(let response):
-                self.genres.append(contentsOf: response.genres)
+                self.genres.append(contentsOf: response.genres ?? [Genre]())
                 self.didChangeData?()
             case .failure(let error):
                 print(error.localizedDescription)
@@ -70,7 +70,7 @@ class HomeViewModel: ViewModel {
                     switch result {
                     case .success(let response):
                         self.movieSectionItems.append(HomeMovieSectionItem.init(title: config.name,
-                                                                                movies: response.movies))
+                                                                                movies: response.results))
                     case .failure(let error):
                         print(error.localizedDescription)
                     }
@@ -80,7 +80,7 @@ class HomeViewModel: ViewModel {
                     switch result {
                     case .success(let response):
                         self.movieSectionItems.append(HomeMovieSectionItem.init(title: config.name,
-                                                                                movies: response.movies.sorted(by: {$0.voteCount > $1.voteCount})))
+                                                                                movies: response.results.sorted(by: {$0.voteCount > $1.voteCount})))
                     case .failure(let error):
                         print(error.localizedDescription)
                     }
@@ -90,7 +90,7 @@ class HomeViewModel: ViewModel {
                     switch result {
                     case .success(let response):
                         self.movieSectionItems.append(HomeMovieSectionItem.init(title: config.name,
-                                                                                movies: response.movies))
+                                                                                movies: response.results))
                     case .failure(let error):
                         print(error.localizedDescription)
                     }
@@ -99,7 +99,7 @@ class HomeViewModel: ViewModel {
                 self.apiSerivice.getTopRated(page: 1) { result in
                     switch result {
                     case .success(let response):
-                        let movies = response.movies.sorted(by: { $0.voteAverage > $1.voteAverage})
+                        let movies = response.results.sorted(by: { $0.voteAverage > $1.voteAverage})
                         self.movieSectionItems.append(HomeMovieSectionItem.init(title: config.name,
                                                                                 movies: movies))
                     case .failure(let error):
@@ -115,7 +115,7 @@ class HomeViewModel: ViewModel {
         apiSerivice.getPopular(page: currentPage) { [weak self] result in
             switch result {
             case .success(let response):
-                self?.movies.append(contentsOf: response.movies)
+                self?.movies.append(contentsOf: response.results)
                 sucess?()
             case .failure(let error):
                 print(error.localizedDescription)

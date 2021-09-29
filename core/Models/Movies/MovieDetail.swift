@@ -15,18 +15,18 @@ struct MovieDetail: Decodable {
     let title: String?
     let status: String?
     let tagline: String?
-    var voteAverage: Double = 0
+    let voteAverage: Double = 0
     var voteCount: Int = 0
     let releaseDate: String?
     let posterPath: String?
     let overview: String?
     let originalTitle: String?
     let homepage: String?
-    let genres: GenreResponse?
-    let recommendations: MovieResponse?
-    let reviews: ReviewsResponse?
+    let genres: [Genre]?
+    let recommendations: ResultsResponse<Movie>?
+    let reviews: ResultsResponse<Review>?
     let credits: CreditsResponse?
-    
+
     enum CodingKeys: String, CodingKey {
         case id
         case runtime
@@ -42,7 +42,7 @@ struct MovieDetail: Decodable {
         case overview
         case originalTitle = "original_title"
         case homepage
-        case genres
+        case genres = "genres"
         case recommendations
         case reviews
         case credits

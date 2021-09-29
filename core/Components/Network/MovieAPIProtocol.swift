@@ -34,21 +34,21 @@ protocol MovieAPIProtocol {
     var provider: MoyaProvider<MovieTarget> { get set }
     
     func getPopular(page: Int,
-                    _ completion: @escaping CompletionResult<MovieResponse>)
+                    _ completion: @escaping CompletionResult<ResultsResponse<Movie>>)
     func getTopRated(page: Int,
-                     _ completion: @escaping CompletionResult<MovieResponse>)
+                     _ completion: @escaping CompletionResult<ResultsResponse<Movie>>)
     func getUpcomming(page: Int,
-                      _ completion: @escaping CompletionResult<MovieResponse>)
+                      _ completion: @escaping CompletionResult<ResultsResponse<Movie>>)
     func getNowPlaying(page: Int,
-                       _ completion: @escaping CompletionResult<MovieResponse>)
+                       _ completion: @escaping CompletionResult<ResultsResponse<Movie>>)
     
     func getMovieWithGenre(page: Int,
                            genreId: Int,
-                           completion: @escaping CompletionResult<MovieResponse>)
+                           completion: @escaping CompletionResult<ResultsResponse<Movie>>)
 
     func getMovieRating(page: Int,
                         movieId: Int,
-                        completion: @escaping CompletionResult<ReviewsResponse>)
+                        completion: @escaping CompletionResult<ResultsResponse<Review>>)
     func getMovieDetail(_ movieId: Int,
                         _ comepletion: @escaping CompletionResult<MovieDetail>)
     func getViedeos(_ movieId: Int,
@@ -60,9 +60,9 @@ protocol MovieAPIProtocol {
     func getMovieTrending(page: Int,
                           mediaType: MediaType,
                           time: TimeWindow,
-                          completion: @escaping CompletionResult<TrendingResponse<TrendingMovie>>)
+                          completion: @escaping CompletionResult<ResultsResponse<TrendingMovie>>)
     func getPersonTrending(page: Int,
                            time: TimeWindow,
-                           completion: @escaping CompletionResult<TrendingResponse<TrendingPerson>>)
+                           completion: @escaping CompletionResult<ResultsResponse<TrendingPerson>>)
 }
  
