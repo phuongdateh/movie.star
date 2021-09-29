@@ -22,6 +22,10 @@ struct MovieDetail: Decodable {
     let overview: String?
     let originalTitle: String?
     let homepage: String?
+    let genres: GenreResponse?
+    let recommendations: MovieResponse?
+    let reviews: ReviewsResponse?
+    let credits: CreditsResponse?
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -38,5 +42,9 @@ struct MovieDetail: Decodable {
         case overview
         case originalTitle = "original_title"
         case homepage
+        case genres
+        case recommendations
+        case reviews
+        case credits
     }
 }
