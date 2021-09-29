@@ -34,6 +34,10 @@ class MovieDetailViewController: ViewController<MovieDetailViewModel> {
     @IBOutlet weak var moreButtonView: UIView!
     @IBOutlet weak var moreButton: UIButton!
     
+    @IBOutlet weak var loveButton: UIButton!
+    @IBOutlet weak var shareButton: UIButton!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +61,11 @@ class MovieDetailViewController: ViewController<MovieDetailViewModel> {
         self.moreButton.tintColor = UIColor.gray
         self.moreButton.setTitle("More", for: .normal)
         self.moreButton.titleLabel?.setFont(appFont: .medium, size: 14)
+        
+        self.loveButton.layer.cornerRadius = 15
+        self.shareButton.layer.cornerRadius = 15
+        self.loveButton.addShadow()
+        self.shareButton.addShadow()
     }
     
     override func bindViewModel() {
@@ -138,5 +147,12 @@ extension MovieDetailViewController {
 
     @IBAction func playButtonTouchUpInside(_ sender: PlayButton) {
         print(#function)
+    }
+    
+    @IBAction func shareButtonTouchUpInside(_ sender: UIButton) {
+        
+    }
+    @IBAction func loveButtonTouchUpInside(_ sender: UIButton) {
+        
     }
 }

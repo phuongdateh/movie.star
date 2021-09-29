@@ -92,6 +92,7 @@
 		75CACDEC2704C5CD00758D05 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CACDEB2704C5CD00758D05 /* UILabel.swift */; };
 		75CBB6CA26FB75CD0078A1C6 /* VideoPlayingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CBB6C826FB75CD0078A1C6 /* VideoPlayingTableViewCell.swift */; };
 		75CBB6CB26FB75CD0078A1C6 /* VideoPlayingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75CBB6C926FB75CD0078A1C6 /* VideoPlayingTableViewCell.xib */; };
+		75CD632F2704CAC50079DBF3 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CD632E2704CAC50079DBF3 /* UIView+Ext.swift */; };
 		75F886C926F8C3F70050B384 /* VideoPlayingHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F886C726F8C3F70050B384 /* VideoPlayingHeaderTableViewCell.swift */; };
 		75F886CA26F8C3F70050B384 /* VideoPlayingHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75F886C826F8C3F70050B384 /* VideoPlayingHeaderTableViewCell.xib */; };
 		A43813D5268CAD5B0055DF76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43813D4268CAD5B0055DF76 /* AppDelegate.swift */; };
@@ -219,6 +220,7 @@
 		75CACDEB2704C5CD00758D05 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		75CBB6C826FB75CD0078A1C6 /* VideoPlayingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayingTableViewCell.swift; sourceTree = "<group>"; };
 		75CBB6C926FB75CD0078A1C6 /* VideoPlayingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoPlayingTableViewCell.xib; sourceTree = "<group>"; };
+		75CD632E2704CAC50079DBF3 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		75F886C726F8C3F70050B384 /* VideoPlayingHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayingHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		75F886C826F8C3F70050B384 /* VideoPlayingHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoPlayingHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		A43813D1268CAD5B0055DF76 /* core.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = core.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -752,6 +754,7 @@
 			isa = PBXGroup;
 			children = (
 				A4815F142691FCA9004107D1 /* UIViewController.swift */,
+				75CD632E2704CAC50079DBF3 /* UIView+Ext.swift */,
 				A4815F162691FCDD004107D1 /* UIStoryBoard.swift */,
 				006FD95F26F0B42300169CDD /* UIImageView.swift */,
 				A4815F182691FD48004107D1 /* UITableView.swift */,
@@ -1089,6 +1092,7 @@
 				7501129F26FEC55800B08B3D /* MovieConfigure.swift in Sources */,
 				75CACDDF27045B6A00758D05 /* Crew.swift in Sources */,
 				A4815F172691FCDD004107D1 /* UIStoryBoard.swift in Sources */,
+				75CD632F2704CAC50079DBF3 /* UIView+Ext.swift in Sources */,
 				006FD96026F0B42300169CDD /* UIImageView.swift in Sources */,
 				00EA997D26EE05BF003DCA4E /* BMTimeSlider.swift in Sources */,
 				75CACDE1270460FB00758D05 /* PersonDetail.swift in Sources */,
