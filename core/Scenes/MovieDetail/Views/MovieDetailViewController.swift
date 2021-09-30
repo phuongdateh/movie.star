@@ -41,8 +41,13 @@ class MovieDetailViewController: ViewController<MovieDetailViewModel> {
     @IBOutlet weak var reviewLbl: UILabel!
     
     @IBOutlet weak var creditsSectionView: UIView!
+    @IBOutlet weak var recommendationsSectionView: UIView!
+    @IBOutlet weak var recommendationsSectionViewHeightConstraint: NSLayoutConstraint!
     
     
+    private var recommendationsView: RecommendationsView? {
+        return RecommendationsView.fromNib()
+    }
     private var creditsView: CreditsView? {
         let view = CreditsView.fromNib()
         return view
@@ -127,11 +132,24 @@ class MovieDetailViewController: ViewController<MovieDetailViewModel> {
                 view.rightAnchor.constraint(equalTo: creditsSectionView.rightAnchor)
             ])
         }
+        
+        if let recommendations = movie.recommendations, let view = recommendationsView {
+            view.configureData(recommendations.results)
+            view.translatesAutoresizingMaskIntoConstraints = false
+            recommendationsSectionView.addSubview(view)
+            NSLayoutConstraint.activate([
+                view.topAnchor.constraint(equalTo: recommendationsSectionView.topAnchor),
+                view.bottomAnchor.constraint(equalTo: recommendationsSectionView.bottomAnchor),
+                view.leftAnchor.constraint(equalTo: recommendationsSectionView.leftAnchor),
+                view.rightAnchor.constraint(equalTo: recommendationsSectionView.rightAnchor)
+            ])
+        }
 
         self.renderAdsView()
         self.renderMoreButtonView()
         self.renderReviewSectionView(isShow: movie.reviews == nil)
         self.renderCreditsSectionView(isShow: movie.credits == nil)
+        self.renderRecommendationsSectionView(isShow: movie.recommendations == nil)
     }
 
     private func renderAdsView() {
@@ -152,6 +170,11 @@ class MovieDetailViewController: ViewController<MovieDetailViewModel> {
     
     private func renderCreditsSectionView(isShow: Bool) {
         self.creditsSectionView.isHidden = isShow
+    }
+    
+    private func renderRecommendationsSectionView(isShow: Bool) {
+        self.recommendationsSectionViewHeightConstraint.constant = RecommendationsView.height()
+        self.recommendationsSectionView.isHidden = isShow
     }
 }
 

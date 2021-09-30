@@ -35,6 +35,8 @@
                 <outlet property="posterImageView" destination="Ed9-bq-UB8" id="Snu-C2-JHS"/>
                 <outlet property="posterImageViewHeightConstraint" destination="YEU-8V-v3T" id="k2U-87-grb"/>
                 <outlet property="ratingView" destination="oxn-PZ-KPg" id="GzB-ML-d2d"/>
+                <outlet property="recommendationsSectionView" destination="AS4-sQ-rw4" id="Eww-a6-Bbq"/>
+                <outlet property="recommendationsSectionViewHeightConstraint" destination="oOO-Ia-Flj" id="Lcd-dk-PnS"/>
                 <outlet property="releaseDateLbl" destination="w5K-iF-gSX" id="VLt-Pg-UFz"/>
                 <outlet property="reviewLbl" destination="6wy-6H-Hws" id="ckG-bg-dP6"/>
                 <outlet property="reviewSectionView" destination="QN3-Ph-nnM" id="j32-hj-cbd"/>
@@ -60,10 +62,10 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="1474"/>
                     <subviews>
                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mRg-L3-f7t">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="990.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="1040.5"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1nP-Gl-CFB">
-                                    <rect key="frame" x="0.0" y="200" width="414" height="790.5"/>
+                                    <rect key="frame" x="0.0" y="200" width="414" height="840.5"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sk3-fx-LMe">
                                             <rect key="frame" x="20" y="30" width="165.5" height="248.5"/>
@@ -118,7 +120,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="04P-w4-QQP">
-                                            <rect key="frame" x="0.0" y="298.5" width="414" height="492"/>
+                                            <rect key="frame" x="0.0" y="298.5" width="414" height="542"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L1k-ph-8pP">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="74"/>
@@ -296,6 +298,13 @@
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" priority="750" id="sKY-oh-x8H"/>
+                                                    </constraints>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AS4-sQ-rw4">
+                                                    <rect key="frame" x="0.0" y="492" width="414" height="50"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="oOO-Ia-Flj"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>

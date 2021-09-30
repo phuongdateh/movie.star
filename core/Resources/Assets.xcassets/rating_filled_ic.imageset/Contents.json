@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "Path.png",
+      "filename" : "GoldStar.pdf",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Path@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Path@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

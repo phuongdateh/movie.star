@@ -62,6 +62,10 @@
 		7507D68427058A8F0006B8FF /* CreditsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7507D68327058A8F0006B8FF /* CreditsView.xib */; };
 		7507D68C27058CB20006B8FF /* CreditsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7507D68A27058CB10006B8FF /* CreditsCollectionViewCell.swift */; };
 		7507D68D27058CB20006B8FF /* CreditsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7507D68B27058CB10006B8FF /* CreditsCollectionViewCell.xib */; };
+		7507D69027060A170006B8FF /* RecommendationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7507D68F27060A170006B8FF /* RecommendationsView.swift */; };
+		7507D69227060A360006B8FF /* RecommendationsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7507D69127060A360006B8FF /* RecommendationsView.xib */; };
+		7507D69527060B240006B8FF /* RecommendationMovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7507D69327060B240006B8FF /* RecommendationMovieCollectionViewCell.swift */; };
+		7507D69627060B240006B8FF /* RecommendationMovieCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7507D69427060B240006B8FF /* RecommendationMovieCollectionViewCell.xib */; };
 		750A5B9226F8921800876196 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750A5B9126F8921800876196 /* ColorPalette.swift */; };
 		750D430D26F3540700668731 /* BMPlayerCustomControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750D430C26F3540700668731 /* BMPlayerCustomControlView.swift */; };
 		754357A226FEE4C500850CCB /* GenresTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754357A026FEE4C500850CCB /* GenresTableViewCell.swift */; };
@@ -194,6 +198,10 @@
 		7507D68327058A8F0006B8FF /* CreditsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreditsView.xib; sourceTree = "<group>"; };
 		7507D68A27058CB10006B8FF /* CreditsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsCollectionViewCell.swift; sourceTree = "<group>"; };
 		7507D68B27058CB10006B8FF /* CreditsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreditsCollectionViewCell.xib; sourceTree = "<group>"; };
+		7507D68F27060A170006B8FF /* RecommendationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsView.swift; sourceTree = "<group>"; };
+		7507D69127060A360006B8FF /* RecommendationsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecommendationsView.xib; sourceTree = "<group>"; };
+		7507D69327060B240006B8FF /* RecommendationMovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationMovieCollectionViewCell.swift; sourceTree = "<group>"; };
+		7507D69427060B240006B8FF /* RecommendationMovieCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecommendationMovieCollectionViewCell.xib; sourceTree = "<group>"; };
 		750A5B9126F8921800876196 /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 		750D430C26F3540700668731 /* BMPlayerCustomControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMPlayerCustomControlView.swift; sourceTree = "<group>"; };
 		754357A026FEE4C500850CCB /* GenresTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresTableViewCell.swift; sourceTree = "<group>"; };
@@ -488,6 +496,17 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		7507D68E270608950006B8FF /* Recommendations */ = {
+			isa = PBXGroup;
+			children = (
+				7507D68F27060A170006B8FF /* RecommendationsView.swift */,
+				7507D69127060A360006B8FF /* RecommendationsView.xib */,
+				7507D69327060B240006B8FF /* RecommendationMovieCollectionViewCell.swift */,
+				7507D69427060B240006B8FF /* RecommendationMovieCollectionViewCell.xib */,
+			);
+			path = Recommendations;
+			sourceTree = "<group>";
+		};
 		7556A4E726EC5F4E004BD99F /* Plugin */ = {
 			isa = PBXGroup;
 			children = (
@@ -595,6 +614,7 @@
 		75CACDCD2704527900758D05 /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
+				7507D68E270608950006B8FF /* Recommendations */,
 				7507D68527058C840006B8FF /* Cells */,
 				75CACDCE2704528400758D05 /* Credits */,
 			);
@@ -1020,6 +1040,7 @@
 				75B054EB270350BF00FC2712 /* MovieDetailViewController.xib in Resources */,
 				003771FA26F1886300105A0A /* Proxima Nova Medium.ttf in Resources */,
 				A4AC289426B6E2D400FCA700 /* ProfileViewController.xib in Resources */,
+				7507D69227060A360006B8FF /* RecommendationsView.xib in Resources */,
 				003771FF26F1886300105A0A /* Proxima Nova Black.otf in Resources */,
 				003771FE26F1886300105A0A /* Proxima Nova-Regular.otf in Resources */,
 				A43813E1268CAD5C0055DF76 /* LaunchScreen.storyboard in Resources */,
@@ -1048,6 +1069,7 @@
 				7507D68D27058CB20006B8FF /* CreditsCollectionViewCell.xib in Resources */,
 				0037720026F1886300105A0A /* Proxima Nova Extrabold.otf in Resources */,
 				75B054E5270325B700FC2712 /* MovieCollectionViewCell.xib in Resources */,
+				7507D69627060B240006B8FF /* RecommendationMovieCollectionViewCell.xib in Resources */,
 				003771FC26F1886300105A0A /* Proxima Nova Thin.otf in Resources */,
 				7501129426FE27F400B08B3D /* HomeMovieTableViewCell.xib in Resources */,
 			);
@@ -1132,6 +1154,7 @@
 				755771C826FF265400ED4B27 /* GenreCollectionViewCell.swift in Sources */,
 				7507D68227058A790006B8FF /* CreditsView.swift in Sources */,
 				A44D5EE326A3F14600D8E87B /* Navigator.swift in Sources */,
+				7507D69027060A170006B8FF /* RecommendationsView.swift in Sources */,
 				A4AC288A26B6E27400FCA700 /* VideoViewController.swift in Sources */,
 				00EA997526EE05BF003DCA4E /* BMPlayerProtocols.swift in Sources */,
 				006FD94E26F0812C00169CDD /* GetStartedViewController.swift in Sources */,
@@ -1175,6 +1198,7 @@
 				75CACDDB270459DC00758D05 /* Credits.swift in Sources */,
 				A4AC288126B6E1E600FCA700 /* HomeViewController.swift in Sources */,
 				A44D5EF126A4821800D8E87B /* GetStartedViewModel.swift in Sources */,
+				7507D69527060B240006B8FF /* RecommendationMovieCollectionViewCell.swift in Sources */,
 				759E14EB26FCCD89004B2810 /* HomeItemCollectionViewCell.swift in Sources */,
 				00F2B3BE26EB6860001F2497 /* MovieTarget.swift in Sources */,
 				75CBB6CA26FB75CD0078A1C6 /* VideoPlayingTableViewCell.swift in Sources */,
