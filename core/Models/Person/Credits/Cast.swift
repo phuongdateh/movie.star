@@ -30,19 +30,12 @@ struct Cast: Decodable {
     }
 }
 
-let sampleJson = """
-{
-    "adult": false,
-    "gender": 2,
-    "id": 1277188,
-    "known_for_department": "Acting",
-    "name": "Jacob Tremblay",
-    "original_name": "Jacob Tremblay",
-    "popularity": 11.717,
-    "profile_path": "/ngQAfH1GuKhnMSOQNm9zo7aWiqO.jpg",
-    "cast_id": 9,
-    "character": "Luca Paguro (voice)",
-    "credit_id": "6037b03e11c0660040492809",
-    "order": 0
+extension Cast: CreditsDisplayable {
+    var nameDisplay: String {
+        return self.name ?? ""
+    }
+    
+    var profilePathUrl: String {
+        return self.profilePath ?? ""
+    }
 }
-"""

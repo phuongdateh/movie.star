@@ -40,8 +40,13 @@ class MovieDetailViewController: ViewController<MovieDetailViewModel> {
     @IBOutlet weak var reviewSectionView: UIView!
     @IBOutlet weak var reviewLbl: UILabel!
     
+    @IBOutlet weak var creditsSectionView: UIView!
     
     
+    private var creditsView: CreditsView? {
+        let view = CreditsView.fromNib()
+        return view
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -110,10 +115,23 @@ class MovieDetailViewController: ViewController<MovieDetailViewModel> {
         if let reviews = movie.reviews {
             reviewLbl.text = "Rating & reivews: \(reviews.results.count) ratings"
         }
+        
+        if let credit = movie.credits, let view = self.creditsView {
+            view.configure(credits: credit)
+            view.translatesAutoresizingMaskIntoConstraints = false
+            creditsSectionView.addSubview(view)
+            NSLayoutConstraint.activate([
+                view.topAnchor.constraint(equalTo: creditsSectionView.topAnchor),
+                view.bottomAnchor.constraint(equalTo: creditsSectionView.bottomAnchor),
+                view.leftAnchor.constraint(equalTo: creditsSectionView.leftAnchor),
+                view.rightAnchor.constraint(equalTo: creditsSectionView.rightAnchor)
+            ])
+        }
 
         self.renderAdsView()
         self.renderMoreButtonView()
         self.renderReviewSectionView(isShow: movie.reviews == nil)
+        self.renderCreditsSectionView(isShow: movie.credits == nil)
     }
 
     private func renderAdsView() {
@@ -130,6 +148,10 @@ class MovieDetailViewController: ViewController<MovieDetailViewModel> {
 
     private func renderReviewSectionView(isShow: Bool) {
         self.reviewSectionView.isHidden = isShow
+    }
+    
+    private func renderCreditsSectionView(isShow: Bool) {
+        self.creditsSectionView.isHidden = isShow
     }
 }
 
@@ -153,7 +175,7 @@ extension MovieDetailViewController {
             self.view.layoutIfNeeded()
         }
     }
-    
+
     @IBAction func backButtonTouchUpInside(_ sender: LumiKitBackButton) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -161,10 +183,11 @@ extension MovieDetailViewController {
     @IBAction func playButtonTouchUpInside(_ sender: PlayButton) {
         print(#function)
     }
-    
+
     @IBAction func shareButtonTouchUpInside(_ sender: UIButton) {
         
     }
+
     @IBAction func loveButtonTouchUpInside(_ sender: UIButton) {
         
     }

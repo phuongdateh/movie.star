@@ -43,7 +43,18 @@ extension UIColor {
     }
 }
 
+extension UIView: Reusable {}
+
 extension UIView {
+    
+    private static func nib<T: UIView>(ofType type: T.Type) -> T? {
+        return Bundle.main.loadNibNamed(T.reuseID, owner: nil, options: nil)?.first as? T
+    }
+    
+    static func fromNib() -> Self? {
+        return nib(ofType: self)
+    }
+    
     func addShadow() {
         self.clipsToBounds = false
         layer.applySketchShadow(color: UIColor(0, 0, 0, 1.0),

@@ -15,3 +15,8 @@ struct Credits: Decodable {
     var cast = [Cast]()
     var crew = [Crew]()
 }
+
+protocol CreditsDisplayable {
+    var nameDisplay: String { get }
+    var profilePathUrl: String { get }
+}

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,7 +12,7 @@
         <array key="Proxima Nova Bold.otf">
             <string>ProximaNova-Bold</string>
         </array>
-        <array key="Proxima Nova-Regular.otf">
+        <array key="Proxima Nova Regular.otf">
             <string>ProximaNova-Regular</string>
         </array>
     </customFonts>
@@ -21,6 +21,7 @@
             <connections>
                 <outlet property="backButton" destination="efT-dZ-3gI" id="RCe-mh-u5I"/>
                 <outlet property="contentView" destination="mRg-L3-f7t" id="WFA-Xg-FwR"/>
+                <outlet property="creditsSectionView" destination="Voh-mc-IKj" id="RpO-tP-PK5"/>
                 <outlet property="detailWrapperView" destination="1nP-Gl-CFB" id="Fa3-44-wwB"/>
                 <outlet property="durationLbl" destination="V9O-IF-PF1" id="aqm-WK-HRf"/>
                 <outlet property="genresLbl" destination="cYZ-nK-LaW" id="9zt-iv-2Dw"/>
@@ -59,10 +60,10 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="1474"/>
                     <subviews>
                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mRg-L3-f7t">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="940.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="990.5"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1nP-Gl-CFB">
-                                    <rect key="frame" x="0.0" y="200" width="414" height="740.5"/>
+                                    <rect key="frame" x="0.0" y="200" width="414" height="790.5"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sk3-fx-LMe">
                                             <rect key="frame" x="20" y="30" width="165.5" height="248.5"/>
@@ -117,7 +118,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="04P-w4-QQP">
-                                            <rect key="frame" x="0.0" y="298.5" width="414" height="442"/>
+                                            <rect key="frame" x="0.0" y="298.5" width="414" height="492"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L1k-ph-8pP">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="74"/>
@@ -288,6 +289,13 @@
                                                         <constraint firstAttribute="bottom" secondItem="6wy-6H-Hws" secondAttribute="bottom" constant="20" id="NuF-C5-dU7"/>
                                                         <constraint firstAttribute="trailing" secondItem="6wy-6H-Hws" secondAttribute="trailing" constant="15" id="qan-JN-grk"/>
                                                         <constraint firstItem="6wy-6H-Hws" firstAttribute="leading" secondItem="QN3-Ph-nnM" secondAttribute="leading" constant="15" id="yxK-uw-GN7"/>
+                                                    </constraints>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Voh-mc-IKj">
+                                                    <rect key="frame" x="0.0" y="442" width="414" height="50"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" priority="750" id="sKY-oh-x8H"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>

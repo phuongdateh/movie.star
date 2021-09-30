@@ -29,3 +29,13 @@ struct Crew: Decodable {
         case job
     }
 }
+
+extension Crew: CreditsDisplayable {
+    var nameDisplay: String {
+        return self.name ?? ""
+    }
+    
+    var profilePathUrl: String {
+        return self.profilePath ?? ""
+    }
+}
