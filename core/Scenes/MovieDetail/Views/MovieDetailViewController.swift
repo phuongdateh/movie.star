@@ -149,7 +149,7 @@ class MovieDetailViewController: ViewController<MovieDetailViewModel> {
         self.renderMoreButtonView()
         self.renderReviewSectionView(isShow: movie.reviews == nil)
         self.renderCreditsSectionView(isShow: movie.credits == nil)
-        self.renderRecommendationsSectionView(isShow: movie.recommendations == nil)
+        self.renderRecommendationsSectionView(isShow: movie.recommendations?.results.isEmpty ?? false)
     }
 
     private func renderAdsView() {

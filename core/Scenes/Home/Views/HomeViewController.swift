@@ -81,6 +81,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         } else if section == HomeSection.movieList.rawValue {
             let cell = tableView.dequeueReusableCell(ofType: HomeMovieTableViewCell.self, at: indexPath)
             cell.selectionStyle = .none
+            cell.delegate = self
             cell.configure(item: viewModel.cellForRowAtMovie(indexPath: indexPath))
             return cell
         } else if section == HomeSection.actorList.rawValue {

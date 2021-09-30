@@ -7,11 +7,16 @@
 
 import UIKit
 
+protocol HomeMovieTableViewCellDelegate: AnyObject {
+    func homeMovieTableViewCellDidSelectItem(_ view: HomeMovieTableViewCell, movieId: Int)
+}
+
 class HomeMovieTableViewCell: UITableViewCell {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var titleSectionbl: UILabel!
     
+    weak var delegate: HomeMovieTableViewCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -51,6 +56,11 @@ extension HomeMovieTableViewCell: UICollectionViewDelegate, UICollectionViewData
         let cell = collectionView.dequeueReusableCell(ofType: MovieCollectionViewCell.self, at: indexPath)
         cell.configure(self.movies[indexPath.row])
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let movie = self.movies[indexPath.row]
+        delegate?.homeMovieTableViewCellDidSelectItem(self, movieId: movie.id)
     }
 }
 
