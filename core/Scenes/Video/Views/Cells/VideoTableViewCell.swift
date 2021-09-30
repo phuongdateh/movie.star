@@ -43,19 +43,13 @@ class VideoTableViewCell: UITableViewCell {
         playButtonView.layer.cornerRadius = playButtonView.frame.width / 2
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
     var category: VideoCategory!
     
     func bind(category: VideoCategory) {
         titleLbl.text = category.video.name
         thumbnailImageView.downloadImage(with: .youtube(category.video.key))
-//        movieImageView.downloadImage(with: .tmdb(category.movieDetail.backdropPath ?? category.movieDetail.posterPath ?? ""))
-//        subInfoLbl.text = "Release Dates: " + (category.movieDetail.releaseDate ?? "")
+        movieImageView.downloadImage(with: .tmdb(category.movieDetail.backdropPath ?? category.movieDetail.posterPath ?? ""))
+        subInfoLbl.text = "Release Dates: " + (category.movieDetail.releaseDate ?? "")
     }
 }
 
