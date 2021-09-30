@@ -31,7 +31,7 @@ class HomeHeaderCell: UITableViewCell {
         
         self.pageView.register(UINib(nibName: "HomeItemCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "HomeItemCollectionViewCell")
         self.pageView.automaticSlidingInterval = 3
-        self.pageView.transformer = FSPagerViewTransformer.init(type: .cubic)
+        self.pageView.transformer = FSPagerViewTransformer.init(type: .overlap)
         self.pageView.delegate = self
         self.pageView.dataSource = self
     }

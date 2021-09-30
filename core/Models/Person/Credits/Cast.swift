@@ -9,7 +9,6 @@ import Foundation
 
 struct Cast: Decodable {
     let id: Int
-    let adult: Bool
     let gender: Int
     let knownForDepartment: String?
     let name: String?
@@ -17,11 +16,10 @@ struct Cast: Decodable {
     let profilePath: String?
     var castId: Int = 0
     let character: String?
-    var creditId: Int = 0
+    let creditId: String?
     
     enum CodingKeys: String, CodingKey {
         case id
-        case adult
         case gender
         case knownForDepartment = "known_for_department"
         case name

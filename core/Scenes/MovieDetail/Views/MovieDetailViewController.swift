@@ -37,6 +37,10 @@ class MovieDetailViewController: ViewController<MovieDetailViewModel> {
     @IBOutlet weak var loveButton: UIButton!
     @IBOutlet weak var shareButton: UIButton!
     
+    @IBOutlet weak var reviewSectionView: UIView!
+    @IBOutlet weak var reviewLbl: UILabel!
+    
+    
     
     
     override func viewDidLoad() {
@@ -100,13 +104,18 @@ class MovieDetailViewController: ViewController<MovieDetailViewModel> {
             genresLbl.text = ""
         }
         self.voteAvegareValueLbl.text = "\(movie.voteAverage)"
-        
+
         self.overviewLbl.text = movie.overview
-        
+
+        if let reviews = movie.reviews {
+            reviewLbl.text = "Rating & reivews: \(reviews.results.count) ratings"
+        }
+
         self.renderAdsView()
         self.renderMoreButtonView()
+        self.renderReviewSectionView(isShow: movie.reviews == nil)
     }
-    
+
     private func renderAdsView() {
         self.nativeAdsView.isHidden = !viewModel.isShouldShowAdsView()
     }
@@ -117,6 +126,10 @@ class MovieDetailViewController: ViewController<MovieDetailViewModel> {
         } else {
             self.moreButtonView.isHidden = true
         }
+    }
+
+    private func renderReviewSectionView(isShow: Bool) {
+        self.reviewSectionView.isHidden = isShow
     }
 }
 

@@ -33,6 +33,7 @@ final class MovieDetailViewModel: ViewModel {
                 self?.movieDetail = detail
                 success()
             case .failure(let err):
+                print("❌ Movie detail fail")
                 error(err.localizedDescription)
             }
         }

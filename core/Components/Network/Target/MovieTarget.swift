@@ -65,7 +65,7 @@ extension MovieTarget: TargetType {
         case .nowPlaying(let pageNumber):
             parameters["page"] = pageNumber
         case .detail(_):
-            parameters["append_to_response"] = "videos,images"
+            parameters["append_to_response"] = "videos,credits,recommendations,reviews"
         case .movieWithGenres(let pageNumber, let genreId):
             parameters["page"] = pageNumber
             parameters["with_genres"] = genreId

@@ -12,6 +12,6 @@ struct CreditsResponse: Decodable {
 }
 
 struct Credits: Decodable {
-    let cast: [Cast]?
-    let crew: [Crew]?
+    var cast = [Cast]()
+    var crew = [Crew]()
 }

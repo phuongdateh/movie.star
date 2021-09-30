@@ -25,7 +25,30 @@ struct MovieDetail: Decodable {
     let genres: [Genre]?
     let recommendations: ResultsResponse<Movie>?
     let reviews: ResultsResponse<Review>?
-    let credits: CreditsResponse?
+    let credits: Credits?
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        self.id = try container.decode(Int.self, forKey: .id)
+        self.runtime = try container.decode(Int.self, forKey: .runtime)
+        self.videos = try? container.decode(VideoResults.self, forKey: .videos)
+        self.backdropPath = try? container.decode(String.self, forKey: .backdropPath)
+        self.title = try? container.decode(String.self, forKey: .title)
+        self.status = try? container.decode(String.self, forKey: .status)
+        self.tagline = try? container.decode(String.self, forKey: .tagline)
+        self.voteCount = try container.decode(Int.self, forKey: .voteCount)
+        self.voteAverage = try container.decode(Double.self, forKey: .voteAverage)
+        self.releaseDate = try? container.decode(String.self, forKey: .releaseDate)
+        self.posterPath = try? container.decode(String.self, forKey: .posterPath)
+        self.genres = try? container.decode([Genre].self, forKey: .genres)
+        self.reviews = try? container.decode(ResultsResponse<Review>.self, forKey: .reviews)
+        self.credits = try? container.decode(Credits.self, forKey: .credits)
+        self.recommendations = try? container.decode(ResultsResponse<Movie>.self, forKey: .recommendations)
+        self.homepage = try? container.decode(String.self, forKey: .homepage)
+        self.originalTitle = try? container.decode(String.self, forKey: .originalTitle)
+        self.overview = try? container.decode(String.self, forKey: .overview)
+    }
 
     enum CodingKeys: String, CodingKey {
         case id
