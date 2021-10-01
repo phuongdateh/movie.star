@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol CreditsViewDelegate: AnyObject {
+    func creditsViewDidSelectCredit(_ view: CreditsView, creditId: Int)
+}
+
 final class CreditsView: UIView {
     
     private let castCollectionViewheight: CGFloat = 200
@@ -21,6 +25,7 @@ final class CreditsView: UIView {
     @IBOutlet weak var crewCollectionViewHeightConstraint: NSLayoutConstraint!
 
     private var credits: Credits!
+    weak var delegate: CreditsViewDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -99,6 +104,14 @@ extension CreditsView: UICollectionViewDelegate, UICollectionViewDataSource {
             let cell = collectionView.dequeueReusableCell(ofType: CreditsCollectionViewCell.self, at: indexPath)
             cell.configureData(self.crew[indexPath.row])
             return cell
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == castCollectionView {
+            self.delegate?.creditsViewDidSelectCredit(self, creditId: self.cast[indexPath.row].id)
+        } else {
+            self.delegate?.creditsViewDidSelectCredit(self, creditId: self.crew[indexPath.row].id)
         }
     }
 }

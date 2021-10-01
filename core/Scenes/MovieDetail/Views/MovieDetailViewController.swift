@@ -59,6 +59,7 @@ class MovieDetailViewController: ViewController<MovieDetailViewModel> {
     private func configureView() {
         self.detailWrapperView.layer.cornerRadius = 20
 
+        self.posterImageView.addShadow()
         self.posterImageView.contentMode = .scaleAspectFill
         self.posterImageViewHeightConstraint.constant = Helpers.screenSize().width
 
@@ -121,6 +122,7 @@ class MovieDetailViewController: ViewController<MovieDetailViewModel> {
         
         if let credit = movie.credits, let view = self.creditsView {
             view.configure(credits: credit)
+            view.delegate = self
             creditsSectionView.addChildView(view: view)
         }
         

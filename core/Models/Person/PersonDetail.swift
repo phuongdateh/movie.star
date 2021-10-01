@@ -20,7 +20,8 @@ struct PersonDetail: Decodable {
     let placeOfBirth: String?
     var popularity: Double = 0
     let profilePath: String?
-    let credits: CreditsResponse?
+    let movieCredits: MovieCredits?
+    let tvCredits: MovieCredits?
     
     enum CodingKeys: String, CodingKey  {
         case id
@@ -35,6 +36,12 @@ struct PersonDetail: Decodable {
         case placeOfBirth = "place_of_birth"
         case popularity
         case profilePath = "profile_path"
-        case credits
+        case movieCredits = "movie_credits"
+        case tvCredits = "tv_credits"
     }
+}
+
+struct MovieCredits: Decodable {
+    var cast = [Movie]()
+    var crew = [Movie]()
 }

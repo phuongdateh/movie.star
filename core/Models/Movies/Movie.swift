@@ -10,12 +10,14 @@ import Foundation
 struct Movie: Decodable {
     let id: Int
     let title: String?
-    let originalTitle: String
+    let originalTitle: String?
     let backdropPath: String?
     let posterPath: String?
     let releaseDate: String?
     var voteAverage: Double = 0
     var voteCount: Int = 0
+    let character: String?
+    let episodeCount: Int?
 }
 
 extension Movie {
@@ -28,5 +30,7 @@ extension Movie {
         case releaseDate = "release_date"
         case voteAverage = "vote_average"
         case voteCount = "vote_count"
+        case character
+        case episodeCount = "episode_count"
     }
 }

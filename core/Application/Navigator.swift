@@ -23,6 +23,7 @@ class Navigator {
         case tabbar(viewModel: TabbarViewModel)
         case videoPlaying(viewModel: VideoPlayingViewModel)
         case movieDetail(moviedId: Int)
+        case creditDetail(id: Int)
     }
     
     enum Transition {
@@ -40,10 +41,15 @@ class Navigator {
 extension Navigator {
     func get(scene: Scene) -> UIViewController?  {
         switch scene {
+        case let .creditDetail(id: id):
+            let viewModel = CreditsDetailViewModel(id: id)
+            let vc = CreditsDetailViewController.fromNib()
+            vc.set(viewModel: viewModel, navigator: self)
+            return vc
         case let .movieDetail(moviedId: id):
             let viewModel = MovieDetailViewModel(movieId: id)
             let vc = MovieDetailViewController.fromNib()
-            vc.viewModel = viewModel
+            vc.set(viewModel: viewModel, navigator: self)
             return vc
         case .splash(let viewModel):
             let vc = SplashViewController.fromNib()

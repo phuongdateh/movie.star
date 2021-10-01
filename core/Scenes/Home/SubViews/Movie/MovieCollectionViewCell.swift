@@ -29,7 +29,7 @@ final class MovieCollectionViewCell: UICollectionViewCell {
     }
     
     func configure(_ movie: Movie) {
-        self.thumbnailImageView.retrivingImage(path: movie.backdropPath ?? "")
+        self.thumbnailImageView.downloadImage(with: .tmdb(movie.backdropPath ?? ""))
         self.titleLbl.text = movie.originalTitle
         self.releasedDateLbl.text = movie.releaseDate
         let voteAverageText = NSMutableAttributedString.init()
