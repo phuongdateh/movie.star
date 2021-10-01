@@ -67,14 +67,17 @@ extension UIView {
 
 extension UIView {
     func addChildView(view: UIView,
-                      constant: CGFloat = 0) {
+                      topConstant: CGFloat = 0,
+                      leftConstant: CGFloat = 0,
+                      bottomConstant: CGFloat = 0,
+                      rightConstant: CGFloat = 0) {
         view.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(view)
         NSLayoutConstraint.activate([
-            view.topAnchor.constraint(equalTo: self.topAnchor, constant: constant),
-            view.leftAnchor.constraint(equalTo: self.leftAnchor, constant: constant),
-            view.rightAnchor.constraint(equalTo: self.rightAnchor, constant: constant),
-            view.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: constant)
+            view.topAnchor.constraint(equalTo: self.topAnchor, constant: topConstant),
+            view.leftAnchor.constraint(equalTo: self.leftAnchor, constant: leftConstant),
+            view.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -rightConstant),
+            view.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -bottomConstant)
         ])
     }
 }

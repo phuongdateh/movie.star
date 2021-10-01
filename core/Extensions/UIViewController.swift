@@ -29,3 +29,12 @@ extension UIViewController {
         return fromNib(ofType: self)
     }
 }
+
+
+class BaseCollectionViewCell: UICollectionViewCell {
+    func configureMovie(_ movie: Movie) {
+        
+    }
+}
+
+

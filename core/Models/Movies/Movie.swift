@@ -10,6 +10,8 @@ import Foundation
 struct Movie: Decodable {
     let id: Int
     let title: String?
+    let name: String?
+    let originalName: String?
     let originalTitle: String?
     let backdropPath: String?
     let posterPath: String?
@@ -18,12 +20,15 @@ struct Movie: Decodable {
     var voteCount: Int = 0
     let character: String?
     let episodeCount: Int?
+    let firstAirDate: String?
 }
 
 extension Movie {
     enum CodingKeys: String, CodingKey {
         case id
         case title
+        case name
+        case originalName = "original_name"
         case originalTitle = "original_title"
         case backdropPath = "backdrop_path"
         case posterPath = "poster_path"
@@ -32,5 +37,6 @@ extension Movie {
         case voteCount = "vote_count"
         case character
         case episodeCount = "episode_count"
+        case firstAirDate = "first_air_date" 
     }
 }

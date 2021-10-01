@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RecommendationMovieCollectionViewCell: UICollectionViewCell {
+class RecommendationMovieCollectionViewCell: BaseCollectionViewCell {
 
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var titleLbl: UILabel!
@@ -22,7 +22,14 @@ class RecommendationMovieCollectionViewCell: UICollectionViewCell {
     }
 
     func configureData(movie: Movie) {
-        self.thumbnailImageView.downloadImage(with: .tmdb(movie.backdropPath ?? ""))
+        self.thumbnailImageView.downloadImage(with: .tmdb(movie.backdropPath ?? movie.posterPath ?? ""))
+        self.titleLbl.text = movie.title
+        self.ratingView.rating = movie.voteAverage
+        self.releaseDateLbl.text = movie.releaseDate
+    }
+    
+    override func configureMovie(_ movie: Movie) {
+        self.thumbnailImageView.downloadImage(with: .tmdb(movie.backdropPath ?? movie.posterPath ?? ""))
         self.titleLbl.text = movie.title
         self.ratingView.rating = movie.voteAverage
         self.releaseDateLbl.text = movie.releaseDate

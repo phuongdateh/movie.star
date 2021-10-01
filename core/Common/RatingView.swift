@@ -18,6 +18,7 @@ final class RatingView: CosmosView {
     }
     
     private func configuration() {
+        newSettings.updateOnTouch = false
         newSettings.totalStars = 5
         newSettings.fillMode = .precise
         newSettings.disablePanGestures = true

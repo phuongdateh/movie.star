@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class MovieCollectionViewCell: UICollectionViewCell {
+final class MovieCollectionViewCell: BaseCollectionViewCell {
 
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var titleLbl: UILabel!
@@ -28,8 +28,22 @@ final class MovieCollectionViewCell: UICollectionViewCell {
         self.voteAverageView.layer.cornerRadius = 5
     }
     
+    override func configureMovie(_ movie: Movie) {
+        self.thumbnailImageView.downloadImage(with: .tmdb(movie.backdropPath ?? movie.posterPath ?? ""))
+        self.titleLbl.text = movie.name
+        self.releasedDateLbl.text = movie.firstAirDate
+        let voteAverageText = NSMutableAttributedString.init()
+        voteAverageText.append(NSAttributedString(string: "IMDb ",
+                                                  attributes: [.font: UIFont(name: AppFont.bold.name, size: 14)!,
+                                                                .foregroundColor: UIColor.black]))
+        voteAverageText.append(NSAttributedString(string: "\(movie.voteAverage)",
+                                                  attributes: [.font: UIFont(name: AppFont.bold.name, size: 12)!,
+                                                                .foregroundColor: UIColor.red]))
+        voteAverageLbl.attributedText = voteAverageText
+    }
+    
     func configure(_ movie: Movie) {
-        self.thumbnailImageView.downloadImage(with: .tmdb(movie.backdropPath ?? ""))
+        self.thumbnailImageView.downloadImage(with: .tmdb(movie.backdropPath ?? movie.posterPath ?? ""))
         self.titleLbl.text = movie.originalTitle
         self.releasedDateLbl.text = movie.releaseDate
         let voteAverageText = NSMutableAttributedString.init()

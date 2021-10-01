@@ -7,7 +7,16 @@
 
 import UIKit
 
+extension Array {
+    var isNotEmpty: Bool {
+        return !isEmpty
+    }
+}
+
 class CreditsDetailViewController: ViewController<CreditsDetailViewModel> {
+    
+    private let movieCreditsViewHeight: CGFloat = 350
+    private let tvCreditsViewHeight: CGFloat = 390
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var contentView: UIView!
@@ -53,9 +62,12 @@ class CreditsDetailViewController: ViewController<CreditsDetailViewModel> {
         }
         return person
     }
+    
+    private var movieCredistView: HorizontalMovieView<RecommendationMovieCollectionViewCell>!
+    private var tvCreditsView: HorizontalMovieView<MovieCollectionViewCell>!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.configurateView()
     }
     
@@ -77,6 +89,18 @@ class CreditsDetailViewController: ViewController<CreditsDetailViewModel> {
         self.shareButton.layer.cornerRadius = 15
         self.loveButton.addShadow()
         self.shareButton.addShadow()
+        
+        self.movieCredistView = HorizontalMovieView<RecommendationMovieCollectionViewCell>.init(frame: CGRect(x: 0,
+                                                                                                              y: 0,
+                                                                                                              width: self.movieCreditsSectionView.frame.width,
+                                                                                                              height: self.movieCreditsViewHeight))
+        self.movieCreditsSectionView.addChildView(view: self.movieCredistView)
+        
+        self.tvCreditsView = HorizontalMovieView<MovieCollectionViewCell>.init(frame: CGRect(x: 0,
+                                                                                             y: 0,
+                                                                                             width: self.tvCreditsSectionView.frame.width,
+                                                                                             height: self.movieCreditsViewHeight))
+        self.tvCreditsSectionView.addChildView(view: self.tvCreditsView)
     }
     
     override func bindViewModel() {
@@ -99,6 +123,42 @@ class CreditsDetailViewController: ViewController<CreditsDetailViewModel> {
         self.renderAlsoKnownAsSectionView()
         self.renderMoreButtonSectionView()
         self.renderAdsSectionView()
+        self.renderMovieCreditsSectionView()
+        self.renderTvCreditsSectionView()
+    }
+    
+    private func renderMovieCreditsSectionView() {
+        guard let movieCredits = person.movieCredits else {
+            self.movieCreditsSectionView.isHidden = true
+            return
+        }
+        if movieCredits.crew.isNotEmpty || movieCredits.crew.isNotEmpty {
+            let movies = movieCredits.crew + movieCredits.cast
+            self.movieCredistView.configureMovies(movies,
+                                                  title: "Movie Credits",
+                                                  sizeForItem: .init(width: 200, height: 320))
+            self.movieCreditsSectionView.isHidden = false
+            self.movieCreditsSectionViewHeightConstraint.constant = self.movieCreditsViewHeight
+        } else {
+            self.movieCreditsSectionView.isHidden = true
+        }
+    }
+    
+    private func renderTvCreditsSectionView() {
+        guard let tvCredits = person.tvCredits else {
+            self.tvCreditsSectionView.isHidden = true
+            return
+        }
+        if tvCredits.crew.isNotEmpty || tvCredits.crew.isNotEmpty {
+            let movies = tvCredits.crew + tvCredits.cast
+            self.tvCreditsView.configureMovies(movies,
+                                               title: "TV Credits",
+                                               sizeForItem: .init(width: 200, height: 320))
+            self.tvCreditsSectionView.isHidden = false
+            self.tvCreditsSectionViewHeightConstraint.constant = self.tvCreditsViewHeight
+        } else {
+            self.tvCreditsSectionView.isHidden = true
+        }
     }
     
     private func renderAdsSectionView() {
