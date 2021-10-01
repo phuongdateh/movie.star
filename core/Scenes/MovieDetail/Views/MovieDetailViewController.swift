@@ -123,26 +123,12 @@ class MovieDetailViewController: ViewController<MovieDetailViewModel> {
         
         if let credit = movie.credits, let view = self.creditsView {
             view.configure(credits: credit)
-            view.translatesAutoresizingMaskIntoConstraints = false
-            creditsSectionView.addSubview(view)
-            NSLayoutConstraint.activate([
-                view.topAnchor.constraint(equalTo: creditsSectionView.topAnchor),
-                view.bottomAnchor.constraint(equalTo: creditsSectionView.bottomAnchor),
-                view.leftAnchor.constraint(equalTo: creditsSectionView.leftAnchor),
-                view.rightAnchor.constraint(equalTo: creditsSectionView.rightAnchor)
-            ])
+            creditsSectionView.addChildView(view: view)
         }
         
         if let recommendations = movie.recommendations, let view = recommendationsView {
             view.configureData(recommendations.results)
-            view.translatesAutoresizingMaskIntoConstraints = false
-            recommendationsSectionView.addSubview(view)
-            NSLayoutConstraint.activate([
-                view.topAnchor.constraint(equalTo: recommendationsSectionView.topAnchor),
-                view.bottomAnchor.constraint(equalTo: recommendationsSectionView.bottomAnchor),
-                view.leftAnchor.constraint(equalTo: recommendationsSectionView.leftAnchor),
-                view.rightAnchor.constraint(equalTo: recommendationsSectionView.rightAnchor)
-            ])
+            recommendationsSectionView.addChildView(view: view)
         }
 
         self.renderAdsView()
