@@ -37,6 +37,9 @@ class MovieDetailViewController: ViewController<MovieDetailViewModel> {
     @IBOutlet weak var loveButton: UIButton!
     @IBOutlet weak var shareButton: UIButton!
     
+    @IBOutlet weak var trailerSectionView: UIView!
+    @IBOutlet weak var trailerSectionViewHeightConstraint: NSLayoutConstraint!
+
     @IBOutlet weak var reviewSectionView: UIView!
     @IBOutlet weak var reviewLbl: UILabel!
     
@@ -44,14 +47,9 @@ class MovieDetailViewController: ViewController<MovieDetailViewModel> {
     @IBOutlet weak var recommendationsSectionView: UIView!
     @IBOutlet weak var recommendationsSectionViewHeightConstraint: NSLayoutConstraint!
     
-    
-    private var recommendationsView: RecommendationsView? {
-        return RecommendationsView.fromNib()
-    }
-    private var creditsView: CreditsView? {
-        let view = CreditsView.fromNib()
-        return view
-    }
+    private var trailerView: TrailerView? { return TrailerView.fromNib()}
+    private var recommendationsView: RecommendationsView? { return RecommendationsView.fromNib() }
+    private var creditsView: CreditsView? { return CreditsView.fromNib() }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -130,12 +128,18 @@ class MovieDetailViewController: ViewController<MovieDetailViewModel> {
             view.configureData(recommendations.results)
             recommendationsSectionView.addChildView(view: view)
         }
+        
+        if let videoResults = movie.videos, let view = trailerView {
+            view.configureData(videos: videoResults.results)
+            trailerSectionView.addChildView(view: view)
+        }
 
         self.renderAdsView()
         self.renderMoreButtonView()
         self.renderReviewSectionView(isShow: movie.reviews == nil)
         self.renderCreditsSectionView(isShow: movie.credits == nil)
         self.renderRecommendationsSectionView(isShow: movie.recommendations?.results.isEmpty ?? false)
+        self.renderTrailerSectionView(isShow: movie.videos?.results.isEmpty ?? false)
     }
 
     private func renderAdsView() {
@@ -161,6 +165,11 @@ class MovieDetailViewController: ViewController<MovieDetailViewModel> {
     private func renderRecommendationsSectionView(isShow: Bool) {
         self.recommendationsSectionViewHeightConstraint.constant = RecommendationsView.height()
         self.recommendationsSectionView.isHidden = isShow
+    }
+    
+    private func renderTrailerSectionView(isShow: Bool) {
+        self.trailerSectionViewHeightConstraint.constant = TrailerView.height
+        self.trailerSectionView.isHidden = isShow
     }
 }
 

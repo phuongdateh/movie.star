@@ -57,7 +57,7 @@ extension UIView {
     
     func addShadow() {
         self.clipsToBounds = false
-        layer.applySketchShadow(color: UIColor(0, 0, 0, 1.0),
+        layer.applySketchShadow(color: .white,
                                 alpha: 0.16,
                                 x: 0, y: 1,
                                 blur: 6,

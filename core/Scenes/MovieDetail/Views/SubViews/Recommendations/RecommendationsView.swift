@@ -27,6 +27,7 @@ final class RecommendationsView: UIView {
         layout.minimumInteritemSpacing = 15
         collectionView.collectionViewLayout = layout
         collectionView.registerCell(ofType: RecommendationMovieCollectionViewCell.self)
+        collectionView.showsHorizontalScrollIndicator = false
         collectionView.backgroundColor = .clear
         collectionView.delegate = self
         collectionView.dataSource = self

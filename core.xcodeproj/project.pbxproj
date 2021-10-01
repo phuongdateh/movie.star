@@ -68,6 +68,10 @@
 		7507D69627060B240006B8FF /* RecommendationMovieCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7507D69427060B240006B8FF /* RecommendationMovieCollectionViewCell.xib */; };
 		750A5B9226F8921800876196 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750A5B9126F8921800876196 /* ColorPalette.swift */; };
 		750D430D26F3540700668731 /* BMPlayerCustomControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750D430C26F3540700668731 /* BMPlayerCustomControlView.swift */; };
+		75301B0127069607003A4F1D /* TrailerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75301B0027069607003A4F1D /* TrailerView.swift */; };
+		75301B032706961C003A4F1D /* TrailerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75301B022706961C003A4F1D /* TrailerView.xib */; };
+		75301B0627069B06003A4F1D /* TrailerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75301B0427069B06003A4F1D /* TrailerCollectionViewCell.swift */; };
+		75301B0727069B06003A4F1D /* TrailerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75301B0527069B06003A4F1D /* TrailerCollectionViewCell.xib */; };
 		754357A226FEE4C500850CCB /* GenresTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754357A026FEE4C500850CCB /* GenresTableViewCell.swift */; };
 		754357A326FEE4C500850CCB /* GenresTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 754357A126FEE4C500850CCB /* GenresTableViewCell.xib */; };
 		754357A626FEE51200850CCB /* NativeAdsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754357A426FEE51200850CCB /* NativeAdsTableViewCell.swift */; };
@@ -204,6 +208,10 @@
 		7507D69427060B240006B8FF /* RecommendationMovieCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecommendationMovieCollectionViewCell.xib; sourceTree = "<group>"; };
 		750A5B9126F8921800876196 /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 		750D430C26F3540700668731 /* BMPlayerCustomControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMPlayerCustomControlView.swift; sourceTree = "<group>"; };
+		75301B0027069607003A4F1D /* TrailerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailerView.swift; sourceTree = "<group>"; };
+		75301B022706961C003A4F1D /* TrailerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrailerView.xib; sourceTree = "<group>"; };
+		75301B0427069B06003A4F1D /* TrailerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailerCollectionViewCell.swift; sourceTree = "<group>"; };
+		75301B0527069B06003A4F1D /* TrailerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrailerCollectionViewCell.xib; sourceTree = "<group>"; };
 		754357A026FEE4C500850CCB /* GenresTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresTableViewCell.swift; sourceTree = "<group>"; };
 		754357A126FEE4C500850CCB /* GenresTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenresTableViewCell.xib; sourceTree = "<group>"; };
 		754357A426FEE51200850CCB /* NativeAdsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeAdsTableViewCell.swift; sourceTree = "<group>"; };
@@ -507,6 +515,17 @@
 			path = Recommendations;
 			sourceTree = "<group>";
 		};
+		75301AFF270695F3003A4F1D /* TrailerView */ = {
+			isa = PBXGroup;
+			children = (
+				75301B0027069607003A4F1D /* TrailerView.swift */,
+				75301B022706961C003A4F1D /* TrailerView.xib */,
+				75301B0427069B06003A4F1D /* TrailerCollectionViewCell.swift */,
+				75301B0527069B06003A4F1D /* TrailerCollectionViewCell.xib */,
+			);
+			path = TrailerView;
+			sourceTree = "<group>";
+		};
 		7556A4E726EC5F4E004BD99F /* Plugin */ = {
 			isa = PBXGroup;
 			children = (
@@ -614,6 +633,7 @@
 		75CACDCD2704527900758D05 /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
+				75301AFF270695F3003A4F1D /* TrailerView */,
 				7507D68E270608950006B8FF /* Recommendations */,
 				7507D68527058C840006B8FF /* Cells */,
 				75CACDCE2704528400758D05 /* Credits */,
@@ -1039,9 +1059,11 @@
 			files = (
 				75B054EB270350BF00FC2712 /* MovieDetailViewController.xib in Resources */,
 				003771FA26F1886300105A0A /* Proxima Nova Medium.ttf in Resources */,
+				75301B032706961C003A4F1D /* TrailerView.xib in Resources */,
 				A4AC289426B6E2D400FCA700 /* ProfileViewController.xib in Resources */,
 				7507D69227060A360006B8FF /* RecommendationsView.xib in Resources */,
 				003771FF26F1886300105A0A /* Proxima Nova Black.otf in Resources */,
+				75301B0727069B06003A4F1D /* TrailerCollectionViewCell.xib in Resources */,
 				003771FE26F1886300105A0A /* Proxima Nova-Regular.otf in Resources */,
 				A43813E1268CAD5C0055DF76 /* LaunchScreen.storyboard in Resources */,
 				A43813DE268CAD5C0055DF76 /* Assets.xcassets in Resources */,
@@ -1174,6 +1196,7 @@
 				00F2B3BB26EB6812001F2497 /* Movie.swift in Sources */,
 				00EA997A26EE05BF003DCA4E /* BMPlayerControlView.swift in Sources */,
 				75CACDD42704576200758D05 /* Review.swift in Sources */,
+				75301B0627069B06003A4F1D /* TrailerCollectionViewCell.swift in Sources */,
 				00F2B3C126EB698E001F2497 /* Configs.swift in Sources */,
 				A43813D5268CAD5B0055DF76 /* AppDelegate.swift in Sources */,
 				75CACDDD270459F100758D05 /* Cast.swift in Sources */,
@@ -1191,6 +1214,7 @@
 				006FD95726F09A1600169CDD /* YoutubeService.swift in Sources */,
 				750A5B9226F8921800876196 /* ColorPalette.swift in Sources */,
 				A4AC288E26B6E28E00FCA700 /* VideoViewModel.swift in Sources */,
+				75301B0127069607003A4F1D /* TrailerView.swift in Sources */,
 				006FD95426F0975200169CDD /* YoutubeVideo.swift in Sources */,
 				750D430D26F3540700668731 /* BMPlayerCustomControlView.swift in Sources */,
 				006FD94A26F080E700169CDD /* SplashViewController.swift in Sources */,
