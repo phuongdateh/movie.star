@@ -17,6 +17,10 @@ extension HomeViewController: HomeHeaderCellDelegate {
 
 // MARK: - HomeMovieTableViewCell
 extension HomeViewController: HomeMovieTableViewCellDelegate {
+    func homeMovieTableViewCellDidSelectViewAll(_ view: HomeMovieTableViewCell, item: HomeMovieSectionItem) {
+        self.navigator.show(segue: .movieList(title: nil, movies: nil, genre: nil, item: item), sender: self)
+    }
+    
     func homeMovieTableViewCellDidSelectItem(_ view: HomeMovieTableViewCell, movieId: Int) {
         self.pushMovieDetail(movieId)
     }

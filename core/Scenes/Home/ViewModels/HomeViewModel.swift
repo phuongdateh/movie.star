@@ -13,6 +13,7 @@ typealias Action = (() -> ())
 struct HomeMovieSectionItem {
     let title: String
     let movies: [Movie]
+    let homeType: HomeConfigure.HomeType
 }
 
 enum HomeActorSectionItem {
@@ -70,7 +71,8 @@ class HomeViewModel: ViewModel {
                     switch result {
                     case .success(let response):
                         self.movieSectionItems.append(HomeMovieSectionItem.init(title: config.name,
-                                                                                movies: response.results))
+                                                                                movies: response.results,
+                                                                                homeType: type))
                     case .failure(let error):
                         print(error.localizedDescription)
                     }
@@ -80,7 +82,8 @@ class HomeViewModel: ViewModel {
                     switch result {
                     case .success(let response):
                         self.movieSectionItems.append(HomeMovieSectionItem.init(title: config.name,
-                                                                                movies: response.results.sorted(by: {$0.voteCount > $1.voteCount})))
+                                                                                movies: response.results.sorted(by: {$0.voteCount > $1.voteCount}),
+                                                                                homeType: type))
                     case .failure(let error):
                         print(error.localizedDescription)
                     }
@@ -90,7 +93,8 @@ class HomeViewModel: ViewModel {
                     switch result {
                     case .success(let response):
                         self.movieSectionItems.append(HomeMovieSectionItem.init(title: config.name,
-                                                                                movies: response.results))
+                                                                                movies: response.results,
+                                                                                homeType: type))
                     case .failure(let error):
                         print(error.localizedDescription)
                     }
@@ -101,7 +105,8 @@ class HomeViewModel: ViewModel {
                     case .success(let response):
                         let movies = response.results.sorted(by: { $0.voteAverage > $1.voteAverage})
                         self.movieSectionItems.append(HomeMovieSectionItem.init(title: config.name,
-                                                                                movies: movies))
+                                                                                movies: movies,
+                                                                                homeType: type))
                     case .failure(let error):
                         print(error.localizedDescription)
                     }

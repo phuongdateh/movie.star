@@ -21,6 +21,7 @@ struct Movie: Decodable {
     let character: String?
     let episodeCount: Int?
     let firstAirDate: String?
+    let genreIds: [Int]?
 }
 
 extension Movie {
@@ -37,6 +38,7 @@ extension Movie {
         case voteCount = "vote_count"
         case character
         case episodeCount = "episode_count"
-        case firstAirDate = "first_air_date" 
+        case firstAirDate = "first_air_date"
+        case genreIds = "genre_ids"
     }
 }

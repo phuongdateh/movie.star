@@ -37,6 +37,7 @@ target 'core' do
 
   pod 'Cosmos'
   
+  pod 'DisplaySwitcher'
 end
 
 post_install do |installer|

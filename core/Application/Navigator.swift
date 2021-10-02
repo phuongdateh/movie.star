@@ -24,6 +24,10 @@ class Navigator {
         case videoPlaying(viewModel: VideoPlayingViewModel)
         case movieDetail(moviedId: Int)
         case creditDetail(id: Int)
+        case movieList(title: String?,
+                       movies: [Movie]?,
+                       genre: Genre?,
+                       item: HomeMovieSectionItem?)
     }
     
     enum Transition {
@@ -41,24 +45,40 @@ class Navigator {
 extension Navigator {
     func get(scene: Scene) -> UIViewController?  {
         switch scene {
+        case let .movieList(title: title,
+                            movies: movies,
+                            genre: genre,
+                            item: item):
+            let viewModel = MovieListViewModel(movies: movies,
+                                               title: title,
+                                               genre: genre,
+                                               item: item)
+            let vc = MovieListViewController.fromNib()
+            vc.set(viewModel: viewModel,
+                   navigator: self)
+            return vc
         case let .creditDetail(id: id):
             let viewModel = CreditsDetailViewModel(id: id)
             let vc = CreditsDetailViewController.fromNib()
-            vc.set(viewModel: viewModel, navigator: self)
+            vc.set(viewModel: viewModel,
+                   navigator: self)
             return vc
         case let .movieDetail(moviedId: id):
             let viewModel = MovieDetailViewModel(movieId: id)
             let vc = MovieDetailViewController.fromNib()
-            vc.set(viewModel: viewModel, navigator: self)
+            vc.set(viewModel: viewModel,
+                   navigator: self)
             return vc
         case .splash(let viewModel):
             let vc = SplashViewController.fromNib()
-            vc.set(viewModel: viewModel, navigator: self)
+            vc.set(viewModel: viewModel,
+                   navigator: self)
             let navitaionController = NavigationController(rootViewController: vc)
             return navitaionController
         case .getstarted(viewModel: let viewModel):
             let vc = GetStartedViewController.fromNib()
-            vc.set(viewModel: viewModel, navigator: self)
+            vc.set(viewModel: viewModel,
+                   navigator: self)
             return vc
         case let .tabbar(viewModel: viewModel):
             let storyboard = UIStoryboard(name: "Tabbar", bundle: nil)
@@ -69,8 +89,8 @@ extension Navigator {
             return vc
         case let .videoPlaying(viewModel: viewModel):
             let vc = VideoPlayingViewController.fromNib()
-            vc.viewModel = viewModel
-            vc.navigator = self
+            vc.set(viewModel: viewModel,
+                   navigator: self)
             return vc
         }
     }
