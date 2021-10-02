@@ -8,11 +8,18 @@
 import Foundation
 import UIKit
 
+protocol RecommendationsViewDelegate: AnyObject {
+    func recommendationsViewDidSelecteItem(_ view: RecommendationsView, movieId: Int)
+}
+
 final class RecommendationsView: UIView {
     
     class func height() -> CGFloat {
         return 400
     }
+    
+    weak var delegate: RecommendationsViewDelegate?
+    private var movies = [Movie]()
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -33,8 +40,6 @@ final class RecommendationsView: UIView {
         collectionView.dataSource = self
     }
     
-    private var movies = [Movie]()
-    
     func configureData(_ movies: [Movie]) {
         self.movies.append(contentsOf: movies)
         self.collectionView.reloadData()
@@ -54,6 +59,11 @@ extension RecommendationsView: UICollectionViewDelegate, UICollectionViewDataSou
         let cell = collectionView.dequeueReusableCell(ofType: RecommendationMovieCollectionViewCell.self, at: indexPath)
         cell.configureData(movie: self.movies[indexPath.row])
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let movie = self.movies[indexPath.row]
+        self.delegate?.recommendationsViewDidSelecteItem(self, movieId: movie.id)
     }
 }
 

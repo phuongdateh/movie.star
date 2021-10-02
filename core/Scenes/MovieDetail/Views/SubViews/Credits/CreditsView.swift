@@ -63,8 +63,8 @@ final class CreditsView: UIView {
     
     func configure(credits: Credits) {
         self.credits = credits
-        self.cast = credits.cast.filter({ $0.profilePath != nil })
-        self.crew = credits.crew.filter({ $0.profilePath != nil })
+        self.cast = credits.cast
+        self.crew = credits.crew
         self.didSetCredits()
     }
 

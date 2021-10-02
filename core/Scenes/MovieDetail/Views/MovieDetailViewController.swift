@@ -120,13 +120,16 @@ class MovieDetailViewController: ViewController<MovieDetailViewModel> {
             reviewLbl.text = "Rating & reivews: \(reviews.results.count) ratings"
         }
         
-        if let credit = movie.credits, let view = self.creditsView {
+        if let credit = movie.credits,
+           let view = self.creditsView {
             view.configure(credits: credit)
             view.delegate = self
             creditsSectionView.addChildView(view: view)
         }
         
-        if let recommendations = movie.recommendations, let view = recommendationsView {
+        if let recommendations = movie.recommendations,
+           let view = recommendationsView {
+            view.delegate = self
             view.configureData(recommendations.results)
             recommendationsSectionView.addChildView(view: view)
         }
@@ -197,11 +200,27 @@ extension MovieDetailViewController {
     }
 
     @IBAction func backButtonTouchUpInside(_ sender: LumiKitBackButton) {
+//        if let viewControllers = self.navigationController?.viewControllers,
+//           viewControllers.count > 1,
+//           let firstVC = viewControllers.first(where: { vc in
+//            if vc is HomeViewController {
+//                return true
+//            }
+//            return false
+//        }) {
+//            self.navigationController?.popToViewController(firstVC, animated: true)
+//        } else {
+//            self.navigationController?.popViewController(animated: true)
+//        }
         self.navigationController?.popViewController(animated: true)
     }
 
     @IBAction func playButtonTouchUpInside(_ sender: PlayButton) {
-        print(#function)
+        guard let detail = viewModel.getMovieDetail(),
+              let videoResults = detail.videos,
+                videoResults.results.isNotEmpty else { return }
+        let firstVideo = videoResults.results.first!
+        self.showTrailer(video: firstVideo)
     }
 
     @IBAction func shareButtonTouchUpInside(_ sender: UIButton) {
