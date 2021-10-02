@@ -102,5 +102,9 @@ extension MovieListViewController: UICollectionViewDelegate, UICollectionViewDat
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let movie = self.viewModel.cellForItemAt(indexPath: indexPath)
+        self.navigator.show(segue: .movieDetail(moviedId: movie.id), sender: self)
+    }
     
 }
