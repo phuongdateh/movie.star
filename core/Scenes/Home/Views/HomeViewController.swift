@@ -72,6 +72,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         } else if section == HomeSection.genres.rawValue {
             let cell = tableView.dequeueReusableCell(ofType: GenresTableViewCell.self, at: indexPath)
             cell.selectionStyle = .none
+            cell.delegate = self
             cell.configure(viewModel.cellForRowAtGenre())
             return cell
         } else if section == HomeSection.ads.rawValue {

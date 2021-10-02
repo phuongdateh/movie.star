@@ -7,10 +7,15 @@
 
 import UIKit
 
+protocol GenresTableViewCellDelegate: AnyObject {
+    func genresTableViewCellDidSelectItem(_ view: GenresTableViewCell, genre: Genre)
+}
+
 class GenresTableViewCell: UITableViewCell {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
+    weak var delegate: GenresTableViewCellDelegate?
     private var genres: [Genre]!
     
     override func awakeFromNib() {
@@ -57,5 +62,10 @@ extension GenresTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
         let cell = collectionView.dequeueReusableCell(ofType: GenreCollectionViewCell.self, at: indexPath)
         cell.configure(self.genres[indexPath.row])
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let genre = self.genres[indexPath.row]
+        self.delegate?.genresTableViewCellDidSelectItem(self, genre: genre)
     }
 }

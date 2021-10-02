@@ -31,3 +31,9 @@ extension HomeViewController {
         self.navigator.show(segue: .movieDetail(moviedId: movieId), sender: self)
     }
 }
+
+extension HomeViewController: GenresTableViewCellDelegate {
+    func genresTableViewCellDidSelectItem(_ view: GenresTableViewCell, genre: Genre) {
+        self.navigator.show(segue: .movieList(title: nil, movies: nil, genre: genre, item: nil), sender: self)
+    }
+}
