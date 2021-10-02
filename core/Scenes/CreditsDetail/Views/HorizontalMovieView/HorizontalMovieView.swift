@@ -13,16 +13,17 @@ final class HorizontalMovieView<T: BaseCollectionViewCell>: UIView,
                                                             UICollectionViewDataSource,
                                                             UICollectionViewDelegateFlowLayout {
     private let stackView = UIStackView()
-    
     private let topStackView = UIStackView()
     private let viewAllSectionView = UIView()
     private let viewAllLabel = UILabel()
     private let titleLbl = UILabel()
-    
     private var collectionView: UICollectionView!
     
     private var movies = [Movie]()
     private var sizeForItem: CGSize = .zero
+    
+    var didSelectViewAll: ((String, [Movie]) -> Void)?
+    var didSelectMovieItem: ((Int) -> Void)?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -66,7 +67,7 @@ final class HorizontalMovieView<T: BaseCollectionViewCell>: UIView,
     }
     
     @objc private func viewAllButtonTouchUpInside() {
-        print(#function)
+        self.didSelectViewAll?(self.titleLbl.text ?? "", self.movies)
     }
 
     private func configureView() {
@@ -118,6 +119,11 @@ final class HorizontalMovieView<T: BaseCollectionViewCell>: UIView,
         let cell = collectionView.dequeueReusableCell(ofType: T.self, at: indexPath)
         cell.configureMovie(self.movies[indexPath.row])
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let movie = self.movies[indexPath.row]
+        self.didSelectMovieItem?(movie.id)
     }
     
     func collectionView(_ collectionView: UICollectionView,

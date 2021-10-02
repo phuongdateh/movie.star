@@ -139,6 +139,16 @@ class CreditsDetailViewController: ViewController<CreditsDetailViewModel> {
                                                   sizeForItem: .init(width: 200, height: 320))
             self.movieCreditsSectionView.isHidden = false
             self.movieCreditsSectionViewHeightConstraint.constant = self.movieCreditsViewHeight
+            self.movieCredistView.didSelectViewAll = { title, movies in
+                self.navigator.show(segue: .movieList(title: title,
+                                                      movies: movies,
+                                                      genre: nil,
+                                                      item: nil),
+                                    sender: self)
+            }
+            self.movieCredistView.didSelectMovieItem = { movieId in
+                self.navigator.show(segue: .movieDetail(moviedId: movieId), sender: self)
+            }
         } else {
             self.movieCreditsSectionView.isHidden = true
         }
@@ -156,6 +166,16 @@ class CreditsDetailViewController: ViewController<CreditsDetailViewModel> {
                                                sizeForItem: .init(width: 200, height: 320))
             self.tvCreditsSectionView.isHidden = false
             self.tvCreditsSectionViewHeightConstraint.constant = self.tvCreditsViewHeight
+            self.tvCreditsView.didSelectViewAll = { title, movies in
+                self.navigator.show(segue: .movieList(title: title,
+                                                      movies: movies,
+                                                      genre: nil,
+                                                      item: nil),
+                                    sender: self)
+            }
+            self.tvCreditsView.didSelectMovieItem = { movieId in
+                self.navigator.show(segue: .movieDetail(moviedId: movieId), sender: self)
+            }
         } else {
             self.tvCreditsSectionView.isHidden = true
         }
