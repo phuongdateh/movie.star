@@ -104,7 +104,7 @@ class MovieDetailViewController: ViewController<MovieDetailViewModel> {
             let names = genres.map({ $0.name })
             for (index, item) in names.enumerated() {
                 genresStr += item
-                if index != names.count {
+                if index != names.count - 1 {
                     genresStr += ", "
                 }
             }
@@ -134,8 +134,10 @@ class MovieDetailViewController: ViewController<MovieDetailViewModel> {
             recommendationsSectionView.addChildView(view: view)
         }
         
-        if let videoResults = movie.videos, let view = trailerView {
+        if let videoResults = movie.videos,
+            let view = trailerView {
             view.configureData(videos: videoResults.results)
+            view.delegate = self
             trailerSectionView.addChildView(view: view)
         }
 

@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol TrailerViewDelegate: AnyObject {
+    func trailerViewDidSelectItem(_ view: TrailerView, _ video: Video)
+}
+
 class TrailerView: UIView {
     
     static var height: CGFloat {
@@ -14,6 +18,8 @@ class TrailerView: UIView {
     }
 
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    weak var delegate: TrailerViewDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -36,6 +42,7 @@ class TrailerView: UIView {
     
     func configureData(videos: [Video]) {
         self.videos = videos
+        self.collectionView.reloadData()
     }
 }
 extension TrailerView: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -53,6 +60,12 @@ extension TrailerView: UICollectionViewDelegate, UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(ofType: TrailerCollectionViewCell.self, at: indexPath)
         cell.configureData(self.videos[indexPath.row])
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        didSelectItemAt indexPath: IndexPath) {
+        let video = self.videos[indexPath.row]
+        self.delegate?.trailerViewDidSelectItem(self, video)
     }
 }
 

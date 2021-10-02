@@ -19,3 +19,9 @@ extension MovieDetailViewController: RecommendationsViewDelegate {
         self.navigator.show(segue: .movieDetail(moviedId: movieId), sender: self)
     }
 }
+
+extension MovieDetailViewController: TrailerViewDelegate {
+    func trailerViewDidSelectItem(_ view: TrailerView, _ video: Video) {
+        self.showTrailer(video: video)
+    }
+}
