@@ -30,8 +30,8 @@ final class MovieCollectionViewCell: BaseCollectionViewCell {
     
     override func configureMovie(_ movie: Movie) {
         self.thumbnailImageView.downloadImage(with: .tmdb(movie.backdropPath ?? movie.posterPath ?? ""))
-        self.titleLbl.text = movie.name
-        self.releasedDateLbl.text = movie.firstAirDate
+        self.titleLbl.text = movie.name ?? movie.title
+        self.releasedDateLbl.text = movie.firstAirDate ?? movie.releaseDate
         let voteAverageText = NSMutableAttributedString.init()
         voteAverageText.append(NSAttributedString(string: "IMDb ",
                                                   attributes: [.font: UIFont(name: AppFont.bold.name, size: 14)!,

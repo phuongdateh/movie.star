@@ -26,7 +26,7 @@ class MovieListViewController: ViewController<MovieListViewModel> {
         layout.scrollDirection = .vertical
         let width: CGFloat = Helpers.screenSize().width / 2
         layout.itemSize = CGSize(width: width,
-                                 height: width + 50)
+                                 height: width + 80)
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
         return layout
@@ -36,20 +36,21 @@ class MovieListViewController: ViewController<MovieListViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-    }
-    
-    override func makeUI() {
+        
         self.changeLayoutButton.setTitle("", for: .normal)
         self.changeLayoutButton.setImage(UIImage(named: isListingLayout ? "list_ic" : "grid_ic"), for: .normal)
-        collectionView.collectionViewLayout = listLayout
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.itemSize = CGSize(width: self.collectionView.frame.width - 30, height: 200)
+        layout.minimumLineSpacing = 15
+        collectionView.collectionViewLayout = layout
         collectionView.registerCell(ofType: MovieCollectionViewCell.self)
         collectionView.registerCell(ofType: MovieListCollectionViewCell.self)
         collectionView.backgroundColor = .clear
         collectionView.delegate = self
         collectionView.dataSource = self
     }
-
+    
     override func bindViewModel() {
         titleViewLbl.text = viewModel.titleView
         guard viewModel.movies == nil else {

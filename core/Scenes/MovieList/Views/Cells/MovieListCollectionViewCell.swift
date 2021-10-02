@@ -28,6 +28,8 @@ class MovieListCollectionViewCell: BaseCollectionViewCell {
         self.posterImageView.layer.cornerRadius = 5
         
         self.loveButton.setTitle("", for: .normal)
+        self.wrapperView.addShadow()
+        self.wrapperView.layer.cornerRadius = 10
     }
     
     override func configureMovie(_ movie: Movie) {

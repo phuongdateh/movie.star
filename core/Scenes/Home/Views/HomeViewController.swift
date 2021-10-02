@@ -13,7 +13,6 @@ class HomeViewController: ViewController<HomeViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     override func makeUI() {
