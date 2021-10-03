@@ -70,18 +70,18 @@ class MovieListViewController: ViewController<MovieListViewModel> {
         viewModel.retrieveMovies(sucess: { [weak self] in
             self?.collectionView.headerEndRefreshing(completion: nil)
             self?.collectionView.reloadData()
-        }, fail: {
-            
+        }, fail: { [weak self] in
+            self?.collectionView.headerEndRefreshing(completion: nil)
         })
     }
     
     private func retrieveMoreMovies() {
         collectionView.footerBeginRefreshing()
-        viewModel.retrieveMovies(sucess: { [weak self] in
+        viewModel.retrieveMovies(isLoadMore: true, sucess: { [weak self] in
             self?.collectionView.footerEndRefreshing(completion: nil)
             self?.collectionView.reloadData()
-        }, fail: {
-            
+        }, fail: { [weak self] in
+            self?.collectionView.footerEndRefreshing(completion: nil)
         })
     }
 

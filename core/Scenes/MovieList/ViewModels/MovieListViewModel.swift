@@ -43,41 +43,57 @@ final class MovieListViewModel: ViewModel {
     }
     
     private var currentPage: Int = 1
+    private var totalPages: Int = 0
     
-    func retrieveMovies(sucess: Action?,
+    func retrieveMovies(isLoadMore: Bool = false,
+                        sucess: Action?,
                         fail: (() -> ())?) {
+        if isLoadMore {
+            guard currentPage < totalPages else {
+                return
+            }
+            currentPage += 1
+        }
         if let genre = genre {
-            self.service.getMovieWithGenre(page: 1, genreId: genre.id) { [weak self] result in
-                self?.handleResponseResults(sucess, fail, result)
+            self.service.getMovieWithGenre(page: currentPage, genreId: genre.id) { [weak self] result in
+                self?.handleResponseResults(isLoadMore, sucess, fail, result)
             }
         } else if let item = item {
             switch item.homeType {
             case .nowPlaying:
                 self.service.getNowPlaying(page: currentPage) { [weak self] result in
-                    self?.handleResponseResults(sucess, fail, result)
+                    self?.handleResponseResults(isLoadMore, sucess, fail, result)
                 }
             case .popular:
                 self.service.getPopular(page: currentPage) { [weak self] result in
-                    self?.handleResponseResults(sucess, fail, result)
+                    self?.handleResponseResults(isLoadMore, sucess, fail, result)
                 }
             case .topRated:
                 self.service.getTopRated(page: currentPage) { [weak self] result in
-                    self?.handleResponseResults(sucess, fail, result)
+                    self?.handleResponseResults(isLoadMore, sucess, fail, result)
                 }
             case .upComing:
                 self.service.getUpcomming(page: currentPage) { [weak self] result in
-                    self?.handleResponseResults(sucess, fail, result)
+                    self?.handleResponseResults(isLoadMore, sucess, fail, result)
                 }
             }
+        } else {
+            fail?()
         }
     }
 
-    func handleResponseResults(_ sucess: Action?,
+    func handleResponseResults(_ isLoadMore: Bool,
+                               _ sucess: Action?,
                                _ fail: (() -> ())?,
                                _ result: Result<ResultsResponse<Movie>, Error>) {
         switch result {
         case let .success(response):
-            self.movies = response.results
+            self.totalPages = response.totalPages
+            if isLoadMore {
+                self.movies?.append(contentsOf: response.results)
+            } else {
+                self.movies = response.results
+            }
             sucess?()
         case let .failure(err):
             print(err.localizedDescription)
