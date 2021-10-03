@@ -99,6 +99,7 @@
 		75C18D8E2707F66900C7561D /* MovieListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C18D8D2707F66900C7561D /* MovieListViewModel.swift */; };
 		75C18D922708038E00C7561D /* MovieListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C18D902708038E00C7561D /* MovieListCollectionViewCell.swift */; };
 		75C18D932708038E00C7561D /* MovieListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75C18D912708038E00C7561D /* MovieListCollectionViewCell.xib */; };
+		75C18D962709497F00C7561D /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C18D952709497F00C7561D /* LoadingView.swift */; };
 		75CACDC82704055900758D05 /* LumiKitBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CACDC72704055900758D05 /* LumiKitBackButton.swift */; };
 		75CACDCA2704126E00758D05 /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CACDC92704126E00758D05 /* PlayButton.swift */; };
 		75CACDCC2704223300758D05 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CACDCB2704223300758D05 /* RatingView.swift */; };
@@ -249,6 +250,7 @@
 		75C18D8D2707F66900C7561D /* MovieListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewModel.swift; sourceTree = "<group>"; };
 		75C18D902708038E00C7561D /* MovieListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListCollectionViewCell.swift; sourceTree = "<group>"; };
 		75C18D912708038E00C7561D /* MovieListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieListCollectionViewCell.xib; sourceTree = "<group>"; };
+		75C18D952709497F00C7561D /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		75CACDC72704055900758D05 /* LumiKitBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LumiKitBackButton.swift; sourceTree = "<group>"; };
 		75CACDC92704126E00758D05 /* PlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayButton.swift; sourceTree = "<group>"; };
 		75CACDCB2704223300758D05 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
@@ -875,6 +877,7 @@
 				75CACDC72704055900758D05 /* LumiKitBackButton.swift */,
 				75CACDC92704126E00758D05 /* PlayButton.swift */,
 				75CACDCB2704223300758D05 /* RatingView.swift */,
+				75C18D952709497F00C7561D /* LoadingView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1344,6 +1347,7 @@
 				00EA997726EE05BF003DCA4E /* BMPlayerItem.swift in Sources */,
 				00EA997E26EE05BF003DCA4E /* BMPlayerManager.swift in Sources */,
 				75B054EA270350BF00FC2712 /* MovieDetailViewController.swift in Sources */,
+				75C18D962709497F00C7561D /* LoadingView.swift in Sources */,
 				A4815F152691FCA9004107D1 /* UIViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

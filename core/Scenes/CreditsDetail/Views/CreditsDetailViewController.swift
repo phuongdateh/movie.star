@@ -104,9 +104,11 @@ class CreditsDetailViewController: ViewController<CreditsDetailViewModel> {
     }
     
     override func bindViewModel() {
+        self.shouldShowLoading(isShow: true)
         viewModel.retrievePersonDetail(success: {[weak self] in
             DispatchQueue.main.async {
                 self?.updateView()
+                self?.shouldShowLoading(isShow: false)
             }
         }, error: { msg in
             

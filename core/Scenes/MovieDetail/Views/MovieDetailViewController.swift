@@ -82,9 +82,11 @@ class MovieDetailViewController: ViewController<MovieDetailViewModel> {
     }
     
     override func bindViewModel() {
+        self.shouldShowLoading(isShow: true)
         self.viewModel.retrieveMovieDetail(success: { [weak self] in
             DispatchQueue.main.async {
                 self?.updateView()
+                self?.shouldShowLoading(isShow: false)
             }
         }, error: { msg in
             

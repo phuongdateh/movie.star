@@ -8,6 +8,7 @@
 import UIKit
 import AVKit
 import XCDYouTubeKit
+import SnapKit
 
 class ViewController<VM: ViewModel>: UIViewController,
                                      Navigatable,
@@ -91,11 +92,47 @@ class ViewController<VM: ViewModel>: UIViewController,
         }
     }
     
+    let vc = UIViewController()
+    func shouldShowLoading(isShow: Bool) {
+        vc.view.backgroundColor = 0x222222.color
+        let indictorView = IndicatorType.ballSpinFadeLoader.view(frame: vc.view.frame,
+                                                                 with: .lightGray)
+        vc.view.addSubview(indictorView)
+        indictorView.snp.makeConstraints { make in
+            make.width.height.equalTo(70)
+            make.centerX.equalTo(vc.view)
+            make.centerY.equalTo(vc.view)
+        }
+        if isShow {
+            self.presentOverContext(vc, animated: true, completion: nil)
+        } else {
+            vc.dismiss(animated: true, completion: nil)
+        }
+    }
+    
     func playerViewController(_ playerViewController: AVPlayerViewController,
                               willEndFullScreenPresentationWithAnimationCoordinator coordinator: UIViewControllerTransitionCoordinator) {
-        playerViewController.dismiss(animated: true) { [weak self] in
-            if let weakSelf = self {
-                // Show ads
+        playerViewController.dismiss(animated: true) {
+            // show ads
+        }
+    }
+}
+
+extension UIViewController {
+    func presentOverContext(_ viewController: UIViewController, animated: Bool = true, completion: (()->())? = nil) {
+        viewController.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        viewController.modalTransitionStyle = .crossDissolve
+        if let tabBarController = tabBarController {
+            DispatchQueue.main.async {
+                tabBarController.present(viewController, animated: animated, completion: completion)
+            }
+        } else if let navigationController = navigationController {
+            DispatchQueue.main.async {
+                navigationController.present(viewController, animated: animated, completion: completion)
+            }
+        } else {
+            DispatchQueue.main.async {[weak self] in
+                self?.present(viewController, animated: animated, completion: completion)
             }
         }
     }
