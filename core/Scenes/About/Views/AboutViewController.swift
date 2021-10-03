@@ -10,6 +10,7 @@ import UIKit
 class AboutViewController: ViewController<AboutViewModel> {
 
     @IBOutlet weak var contentLbl: UILabel!
+    @IBOutlet weak var versionLbl: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,12 @@ class AboutViewController: ViewController<AboutViewModel> {
         backButton.addTarget(self,
                              action: #selector(AboutViewController.backAction),
                              for: .touchUpInside)
+        
+        let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+        var fullText = "Version: " + (version ?? "")
+        fullText += "\n\n @ Copyright by DoanPhuong 2021"
+        self.versionLbl.text = fullText
+        self.versionLbl.numberOfLines = 0
     }
     
     @objc private func backAction() {

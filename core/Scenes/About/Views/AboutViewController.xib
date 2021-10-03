@@ -16,6 +16,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AboutViewController" customModule="core" customModuleProvider="target">
             <connections>
                 <outlet property="contentLbl" destination="rtc-ok-JAc" id="egH-Td-chR"/>
+                <outlet property="versionLbl" destination="Y6d-xf-gE2" id="aYP-u0-ZKs"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -37,6 +38,12 @@
                     <color key="textColor" red="0.95294117649999999" green="0.96470588239999999" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y6d-xf-gE2">
+                    <rect key="frame" x="30" y="822.5" width="354" height="19.5"/>
+                    <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="16"/>
+                    <color key="textColor" red="0.95294117649999999" green="0.96470588239999999" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -44,8 +51,11 @@
                 <constraint firstItem="qx8-mH-H30" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="KWY-ru-g5d"/>
                 <constraint firstItem="rtc-ok-JAc" firstAttribute="top" secondItem="qx8-mH-H30" secondAttribute="bottom" constant="20" id="Phs-1X-Jge"/>
                 <constraint firstItem="qx8-mH-H30" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Qai-M4-dYW"/>
+                <constraint firstItem="Y6d-xf-gE2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="TLZ-wD-t2l"/>
                 <constraint firstItem="rtc-ok-JAc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="le4-4o-zYY"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Y6d-xf-gE2" secondAttribute="bottom" constant="20" id="mNO-Y8-zgg"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="rtc-ok-JAc" secondAttribute="trailing" constant="30" id="qTs-kU-6BU"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Y6d-xf-gE2" secondAttribute="trailing" constant="30" id="slq-fO-efF"/>
             </constraints>
             <point key="canvasLocation" x="139" y="153"/>
         </view>
