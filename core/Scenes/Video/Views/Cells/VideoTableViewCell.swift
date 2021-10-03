@@ -41,6 +41,9 @@ class VideoTableViewCell: UITableViewCell {
         runtimeView.alpha = 0
         
         playButtonView.layer.cornerRadius = playButtonView.frame.width / 2
+        playButtonView.backgroundColor = ColorPalette.strongBlue
+        
+        contentView.backgroundColor = ColorPalette.background
     }
 
     var category: VideoCategory!

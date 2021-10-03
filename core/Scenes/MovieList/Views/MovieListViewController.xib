@@ -26,6 +26,10 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gBm-SB-yGu">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                    <color key="backgroundColor" red="0.050980392156862744" green="0.066666666666666666" blue="0.22352941176470587" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k7v-zl-6wu">
                     <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                     <subviews>
@@ -36,7 +40,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" red="0.11372549019607843" green="0.11372549019607843" blue="0.11372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.050980392156862744" green="0.066666666666666666" blue="0.22352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="9RM-u2-nwg" secondAttribute="bottom" id="L95-oF-Sqx"/>
                         <constraint firstAttribute="trailing" secondItem="9RM-u2-nwg" secondAttribute="trailing" constant="44" id="Z7a-1w-o9O"/>
@@ -82,11 +86,15 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="gBm-SB-yGu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="9m7-pj-uaR"/>
+                <constraint firstItem="k7v-zl-6wu" firstAttribute="top" secondItem="gBm-SB-yGu" secondAttribute="bottom" id="Fd6-bo-OF1"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="k7v-zl-6wu" secondAttribute="trailing" id="LI7-KQ-WVw"/>
                 <constraint firstItem="kSa-xt-cRt" firstAttribute="centerY" secondItem="k7v-zl-6wu" secondAttribute="centerY" id="MWt-9j-BI9"/>
                 <constraint firstItem="kSa-xt-cRt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="TsG-hg-DZm"/>
+                <constraint firstAttribute="trailing" secondItem="gBm-SB-yGu" secondAttribute="trailing" id="W3c-kU-iVH"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="8vN-uj-4pf" secondAttribute="bottom" id="Ztj-2n-8AI"/>
                 <constraint firstItem="Yze-gm-Ctl" firstAttribute="centerY" secondItem="k7v-zl-6wu" secondAttribute="centerY" id="act-cj-MJS"/>
+                <constraint firstItem="gBm-SB-yGu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="b1d-la-uCq"/>
                 <constraint firstItem="k7v-zl-6wu" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="cr5-Qp-2WZ"/>
                 <constraint firstItem="8vN-uj-4pf" firstAttribute="top" secondItem="k7v-zl-6wu" secondAttribute="bottom" id="dMp-iQ-Ilf"/>
                 <constraint firstItem="8vN-uj-4pf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="gKF-Tz-qi4"/>
@@ -95,7 +103,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Yze-gm-Ctl" secondAttribute="trailing" constant="15" id="wm9-xg-PNs"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="137.68115942028987" y="146.65178571428569"/>
+            <point key="canvasLocation" x="137.68115942028987" y="145.98214285714286"/>
         </view>
     </objects>
 </document>

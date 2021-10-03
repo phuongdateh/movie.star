@@ -31,6 +31,8 @@ class VideoPlayingViewController: ViewController<VideoPlayingViewModel> {
         tableView.backgroundColor = ColorPalette.background
         tableView.delegate = self
         tableView.dataSource = self
+        
+        view.backgroundColor = ColorPalette.background
     }
     
     private var source: YoutubeVideo?

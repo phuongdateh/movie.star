@@ -14,16 +14,10 @@ class VideoPlayingTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        thumbnailImageView.contentMode = .scaleAspectFill
+        self.thumbnailImageView.contentMode = .scaleAspectFill
         self.backgroundColor = ColorPalette.background
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
     func configure(video: Video) {
         titleVideoLbl.text = video.name
         thumbnailImageView.downloadImage(with: .youtube(video.key))

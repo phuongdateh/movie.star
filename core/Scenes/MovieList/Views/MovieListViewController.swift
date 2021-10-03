@@ -55,6 +55,8 @@ class MovieListViewController: ViewController<MovieListViewModel> {
         }
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        self.view.backgroundColor = ColorPalette.background
     }
     
     override func bindViewModel() {

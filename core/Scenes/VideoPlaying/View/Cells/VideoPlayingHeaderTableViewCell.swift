@@ -19,6 +19,7 @@ class VideoPlayingHeaderTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        self.contentView.backgroundColor = ColorPalette.background
         seeMoreButton.titleLabel?.font = UIFont(name: AppFont.regular.name, size: 12)
         seeMoreButton.tintColor = UIColor.gray
     }

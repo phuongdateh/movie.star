@@ -94,9 +94,9 @@ class ViewController<VM: ViewModel>: UIViewController,
     
     let vc = UIViewController()
     func shouldShowLoading(isShow: Bool) {
-        vc.view.backgroundColor = 0x222222.color
         let indictorView = IndicatorType.ballSpinFadeLoader.view(frame: vc.view.frame,
                                                                  with: .lightGray)
+        vc.view.backgroundColor = ColorPalette.background
         vc.view.addSubview(indictorView)
         indictorView.snp.makeConstraints { make in
             make.width.height.equalTo(70)

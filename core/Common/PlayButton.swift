@@ -41,7 +41,7 @@ final class PlayButton: UIControl {
                                 cornerRadii: CGSize(width: radius, height: radius))
 
         let containerView = UIView.init(frame: bounds)
-        containerView.backgroundColor =  0x222222.color
+        containerView.backgroundColor =  ColorPalette.strongBlue
         containerView.isUserInteractionEnabled = false
         self.addSubview(containerView)
         let mask = CAShapeLayer()

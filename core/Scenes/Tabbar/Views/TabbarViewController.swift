@@ -18,13 +18,13 @@ class TabbarViewController: UITabBarController {
         UINavigationBar().isTranslucent = true
         let appearance = UITabBarAppearance.init()
         appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = ColorPalette.tabbar
-        tabBar.tintColor = ColorPalette.mistyBlue
+        appearance.backgroundColor = ColorPalette.strongBlue
+        tabBar.tintColor = ColorPalette.orange
         tabBar.standardAppearance = appearance
-//        if #available(iOS 15.0, *) {
-//            tabBar.scrollEdgeAppearance = appearance
-//        }
-        tabBarItem.setTitleTextAttributes([.font: UIFont(name: AppFont.regular.name, size: 10)!], for: .normal)
+        if #available(iOS 15.0, *) {
+            tabBar.scrollEdgeAppearance = appearance
+        }
+        tabBarItem.setTitleTextAttributes([.font: UIFont(name: AppFont.medium.name, size: 10)!], for: .normal)
     }
     
     func setupChilds() {

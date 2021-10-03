@@ -14,8 +14,9 @@ class GenreCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        nameLbl.textColor = .white
+        self.contentView.layer.cornerRadius = 10
+        self.nameLbl.textColor = .white
+        self.backgroundColor = ColorPalette.strongBlue
     }
     
     func configure(_ genre: Genre) {

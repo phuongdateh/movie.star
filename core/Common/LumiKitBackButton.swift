@@ -38,7 +38,7 @@ final class LumiKitBackButton: UIControl {
                                 cornerRadii: CGSize(width: radius, height: radius))
 
         let containerView = UIView.init(frame: bounds)
-        containerView.backgroundColor =  0x222222.color
+        containerView.backgroundColor =  ColorPalette.strongBlue
         containerView.isUserInteractionEnabled = false
         self.addSubview(containerView)
         let mask = CAShapeLayer()
@@ -70,7 +70,7 @@ final class LumiKitBackButton: UIControl {
         shapeLayer.shadowOpacity = 1
         shapeLayer.shadowColor = UIColor.gray.cgColor
 
-        self.layer.insertSublayer(shapeLayer, below: containerView.layer)
+//        self.layer.insertSublayer(shapeLayer, below: containerView.layer)
     }
 
     override func prepareForInterfaceBuilder() {

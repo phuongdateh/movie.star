@@ -19,7 +19,7 @@ class TrailerCollectionViewCell: UICollectionViewCell {
         self.thumbnailImageView.layer.cornerRadius = 5
         self.thumbnailImageView.contentMode = .scaleAspectFill
         self.playView.layer.cornerRadius = playView.frame.height / 2
-        self.playView.backgroundColor = 0x222222.color
+        self.playView.backgroundColor = ColorPalette.strongBlue
     }
     
     func configureData(_ video: Video) {

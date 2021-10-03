@@ -73,6 +73,8 @@ class CreditsDetailViewController: ViewController<CreditsDetailViewModel> {
     
     private func configurateView() {
         self.scrollView.delegate = self
+        self.view.backgroundColor = ColorPalette.background
+        self.contentView.backgroundColor = ColorPalette.background
         contentView.addShadow()
         contentView.layer.cornerRadius = 20
         posterImageView.contentMode = .scaleAspectFill
@@ -85,6 +87,8 @@ class CreditsDetailViewController: ViewController<CreditsDetailViewModel> {
         self.moreButton.setTitle("More", for: .normal)
         self.moreButton.titleLabel?.setFont(appFont: .medium, size: 14)
         
+        self.loveButton.backgroundColor = ColorPalette.strongBlue
+        self.shareButton.backgroundColor = ColorPalette.strongBlue
         self.loveButton.layer.cornerRadius = 15
         self.shareButton.layer.cornerRadius = 15
         self.loveButton.addShadow()
@@ -184,7 +188,7 @@ class CreditsDetailViewController: ViewController<CreditsDetailViewModel> {
     }
     
     private func renderAdsSectionView() {
-        self.adsSectionView.isHidden = viewModel.isShouldShowAdsView()
+        self.adsSectionView.isHidden = !viewModel.isShouldShowAdsView()
     }
     
     private func renderMoreButtonSectionView() {

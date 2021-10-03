@@ -24,12 +24,14 @@ class MovieListCollectionViewCell: BaseCollectionViewCell {
     }
     
     private func configurateView() {
+        self.backgroundColor = .clear
         self.posterImageView.contentMode = .scaleAspectFill
         self.posterImageView.layer.cornerRadius = 5
         
         self.loveButton.setTitle("", for: .normal)
         self.wrapperView.addShadow()
         self.wrapperView.layer.cornerRadius = 10
+        self.wrapperView.backgroundColor = ColorPalette.strongBlue
     }
     
     override func configureMovie(_ movie: Movie) {

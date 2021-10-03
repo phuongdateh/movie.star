@@ -57,6 +57,8 @@ class MovieDetailViewController: ViewController<MovieDetailViewModel> {
     }
     
     private func configureView() {
+        self.view.backgroundColor = ColorPalette.background
+        self.detailWrapperView.backgroundColor = ColorPalette.background
         self.detailWrapperView.layer.cornerRadius = 20
 
         self.posterImageView.addShadow()
@@ -75,6 +77,8 @@ class MovieDetailViewController: ViewController<MovieDetailViewModel> {
         self.moreButton.setTitle("More", for: .normal)
         self.moreButton.titleLabel?.setFont(appFont: .medium, size: 14)
         
+        self.loveButton.backgroundColor = ColorPalette.strongBlue
+        self.shareButton.backgroundColor = ColorPalette.strongBlue
         self.loveButton.layer.cornerRadius = 15
         self.shareButton.layer.cornerRadius = 15
         self.loveButton.addShadow()

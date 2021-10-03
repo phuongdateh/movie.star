@@ -20,6 +20,8 @@ class HomeItemCollectionViewCell: FSPagerViewCell {
         
         posterImageView.contentMode = .scaleAspectFill
         
+        wrapperView.alpha = 0.7
+        wrapperView.backgroundColor = ColorPalette.strongBlue
         wrapperView.layer.cornerRadius = 20
     }
     
