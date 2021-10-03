@@ -42,6 +42,17 @@ class ViewController<VM: ViewModel>: UIViewController,
         
         makeUI()
         bindViewModel()
+        self.configColorNavigationBar()
+    }
+    
+    func configColorNavigationBar() {
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = ColorPalette.strongBlue
+        appearance.titleTextAttributes = [.font: UIFont(name: AppFont.bold.name, size: 18)!,
+                                          .foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.standardAppearance = appearance
+        self.navigationController?.navigationBar.scrollEdgeAppearance = self.navigationController?.navigationBar.standardAppearance
     }
     
     func makeUI() {

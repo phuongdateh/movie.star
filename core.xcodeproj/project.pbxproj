@@ -101,6 +101,8 @@
 		75C18D932708038E00C7561D /* MovieListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75C18D912708038E00C7561D /* MovieListCollectionViewCell.xib */; };
 		75C18D962709497F00C7561D /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C18D952709497F00C7561D /* LoadingView.swift */; };
 		75C18D9827097A3500C7561D /* UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C18D9727097A3500C7561D /* UIScrollView.swift */; };
+		75C18D9C2709BBD200C7561D /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C18D9A2709BBD200C7561D /* ProfileTableViewCell.swift */; };
+		75C18D9D2709BBD200C7561D /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75C18D9B2709BBD200C7561D /* ProfileTableViewCell.xib */; };
 		75CACDC82704055900758D05 /* LumiKitBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CACDC72704055900758D05 /* LumiKitBackButton.swift */; };
 		75CACDCA2704126E00758D05 /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CACDC92704126E00758D05 /* PlayButton.swift */; };
 		75CACDCC2704223300758D05 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CACDCB2704223300758D05 /* RatingView.swift */; };
@@ -253,6 +255,8 @@
 		75C18D912708038E00C7561D /* MovieListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieListCollectionViewCell.xib; sourceTree = "<group>"; };
 		75C18D952709497F00C7561D /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		75C18D9727097A3500C7561D /* UIScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollView.swift; sourceTree = "<group>"; };
+		75C18D9A2709BBD200C7561D /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		75C18D9B2709BBD200C7561D /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
 		75CACDC72704055900758D05 /* LumiKitBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LumiKitBackButton.swift; sourceTree = "<group>"; };
 		75CACDC92704126E00758D05 /* PlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayButton.swift; sourceTree = "<group>"; };
 		75CACDCB2704223300758D05 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
@@ -727,6 +731,15 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		75C18D992709BBBB00C7561D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				75C18D9A2709BBD200C7561D /* ProfileTableViewCell.swift */,
+				75C18D9B2709BBD200C7561D /* ProfileTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		75CACDCD2704527900758D05 /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -1045,6 +1058,7 @@
 		A4AC289026B6E2C800FCA700 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				75C18D992709BBBB00C7561D /* Cells */,
 				A4AC289126B6E2D400FCA700 /* ProfileViewController.swift */,
 				A4AC289226B6E2D400FCA700 /* ProfileViewController.xib */,
 			);
@@ -1193,6 +1207,7 @@
 				003771FB26F1886300105A0A /* Proxima Nova Semibold.otf in Resources */,
 				75CBB6CB26FB75CD0078A1C6 /* VideoPlayingTableViewCell.xib in Resources */,
 				7507D68D27058CB20006B8FF /* CreditsCollectionViewCell.xib in Resources */,
+				75C18D9D2709BBD200C7561D /* ProfileTableViewCell.xib in Resources */,
 				0037720026F1886300105A0A /* Proxima Nova Extrabold.otf in Resources */,
 				75B054E5270325B700FC2712 /* MovieCollectionViewCell.xib in Resources */,
 				7507D69627060B240006B8FF /* RecommendationMovieCollectionViewCell.xib in Resources */,
@@ -1328,6 +1343,7 @@
 				75301B0127069607003A4F1D /* TrailerView.swift in Sources */,
 				006FD95426F0975200169CDD /* YoutubeVideo.swift in Sources */,
 				750D430D26F3540700668731 /* BMPlayerCustomControlView.swift in Sources */,
+				75C18D9C2709BBD200C7561D /* ProfileTableViewCell.swift in Sources */,
 				006FD94A26F080E700169CDD /* SplashViewController.swift in Sources */,
 				A4AC287C26B6B75700FCA700 /* TabbarViewModel.swift in Sources */,
 				75CACDDB270459DC00758D05 /* Credits.swift in Sources */,
