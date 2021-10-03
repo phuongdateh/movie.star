@@ -47,6 +47,12 @@ class MovieListViewController: ViewController<MovieListViewModel> {
         collectionView.registerCell(ofType: MovieCollectionViewCell.self)
         collectionView.registerCell(ofType: MovieListCollectionViewCell.self)
         collectionView.backgroundColor = .clear
+        collectionView.addRefreshHeader { [weak self] in
+            self?.retrieveMovies()
+        }
+        collectionView.addLoadMoreFooter { [weak self] in
+            self?.retrieveMoreMovies()
+        }
         collectionView.delegate = self
         collectionView.dataSource = self
     }
@@ -56,8 +62,23 @@ class MovieListViewController: ViewController<MovieListViewModel> {
         guard viewModel.movies == nil else {
             return
         }
-        
+        self.retrieveMovies()
+    }
+    
+    private func retrieveMovies() {
+        collectionView.headerBeginRefreshing()
         viewModel.retrieveMovies(sucess: { [weak self] in
+            self?.collectionView.headerEndRefreshing(completion: nil)
+            self?.collectionView.reloadData()
+        }, fail: {
+            
+        })
+    }
+    
+    private func retrieveMoreMovies() {
+        collectionView.footerBeginRefreshing()
+        viewModel.retrieveMovies(sucess: { [weak self] in
+            self?.collectionView.footerEndRefreshing(completion: nil)
             self?.collectionView.reloadData()
         }, fail: {
             

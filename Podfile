@@ -38,6 +38,7 @@ target 'core' do
   pod 'Cosmos'
   
   pod 'DisplaySwitcher'
+  pod 'MJRefresh'
 end
 
 post_install do |installer|
