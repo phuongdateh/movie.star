@@ -27,7 +27,7 @@ class HomeHeaderCell: UITableViewCell {
     }
 
     private func configureView() {
-        self.backgroundColor = 0x1D1D1D.color
+        self.backgroundColor = ColorPalette.background
         
         self.pageView.register(UINib(nibName: "HomeItemCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "HomeItemCollectionViewCell")
         self.pageView.automaticSlidingInterval = 3

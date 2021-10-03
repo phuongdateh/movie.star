@@ -18,9 +18,10 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EFJ-Tb-sgN" customClass="FSPagerView" customModule="FSPagerView">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                        <color key="backgroundColor" red="0.090367175640000005" green="0.1106056646" blue="0.14929232000000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="EFJ-Tb-sgN" firstAttribute="leading" secondItem="84j-6C-iUE" secondAttribute="leading" id="8v2-Mb-k9Q"/>
                     <constraint firstAttribute="trailing" secondItem="EFJ-Tb-sgN" secondAttribute="trailing" id="aPZ-Hi-1o2"/>
@@ -28,6 +29,7 @@
                     <constraint firstAttribute="bottom" secondItem="EFJ-Tb-sgN" secondAttribute="bottom" id="tvI-Rr-7cN"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="pageView" destination="EFJ-Tb-sgN" id="axx-fA-OKn"/>
             </connections>

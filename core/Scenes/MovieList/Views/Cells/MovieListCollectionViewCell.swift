@@ -12,7 +12,6 @@ class MovieListCollectionViewCell: BaseCollectionViewCell {
     @IBOutlet weak var posterImageView: UIImageView!
     @IBOutlet weak var wrapperView: UIView!
     @IBOutlet weak var titleLbl: UILabel!
-    @IBOutlet weak var durationsLbl: UILabel!
     @IBOutlet weak var releaseDateLbl: UILabel!
     @IBOutlet weak var genresLbl: UILabel!
     @IBOutlet weak var loveButton: UIButton!
@@ -38,13 +37,11 @@ class MovieListCollectionViewCell: BaseCollectionViewCell {
         self.posterImageView.downloadImage(with: .tmdb(movie.backdropPath ?? movie.posterPath ?? ""))
         self.titleLbl.text = movie.title ?? movie.originalTitle
         self.releaseDateLbl.text = movie.releaseDate
-        self.genresLbl.text = ""
         self.ratingView.rating = movie.voteAverage
+        self.genresLbl.text = ""
     }
-    
 
     @IBAction func loveButonTouchUpInside(_ sender: UIButton) {
-        
+
     }
-    
 }
