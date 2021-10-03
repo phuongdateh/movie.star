@@ -28,6 +28,7 @@ class Navigator {
                        movies: [Movie]?,
                        genre: Genre?,
                        item: HomeMovieSectionItem?)
+        case about
     }
     
     enum Transition {
@@ -45,6 +46,11 @@ class Navigator {
 extension Navigator {
     func get(scene: Scene) -> UIViewController?  {
         switch scene {
+        case let .about:
+            let viewModel = AboutViewModel()
+            let vc = AboutViewController.fromNib()
+            vc.set(viewModel: viewModel, navigator: self)
+            return vc
         case let .movieList(title: title,
                             movies: movies,
                             genre: genre,

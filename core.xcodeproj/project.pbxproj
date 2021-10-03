@@ -103,6 +103,9 @@
 		75C18D9827097A3500C7561D /* UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C18D9727097A3500C7561D /* UIScrollView.swift */; };
 		75C18D9C2709BBD200C7561D /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C18D9A2709BBD200C7561D /* ProfileTableViewCell.swift */; };
 		75C18D9D2709BBD200C7561D /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75C18D9B2709BBD200C7561D /* ProfileTableViewCell.xib */; };
+		75C18DA22709EC9D00C7561D /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C18DA02709EC9D00C7561D /* AboutViewController.swift */; };
+		75C18DA32709EC9D00C7561D /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75C18DA12709EC9D00C7561D /* AboutViewController.xib */; };
+		75C18DA62709ECB100C7561D /* AboutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C18DA52709ECB100C7561D /* AboutViewModel.swift */; };
 		75CACDC82704055900758D05 /* LumiKitBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CACDC72704055900758D05 /* LumiKitBackButton.swift */; };
 		75CACDCA2704126E00758D05 /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CACDC92704126E00758D05 /* PlayButton.swift */; };
 		75CACDCC2704223300758D05 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CACDCB2704223300758D05 /* RatingView.swift */; };
@@ -257,6 +260,9 @@
 		75C18D9727097A3500C7561D /* UIScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollView.swift; sourceTree = "<group>"; };
 		75C18D9A2709BBD200C7561D /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		75C18D9B2709BBD200C7561D /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
+		75C18DA02709EC9D00C7561D /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		75C18DA12709EC9D00C7561D /* AboutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
+		75C18DA52709ECB100C7561D /* AboutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewModel.swift; sourceTree = "<group>"; };
 		75CACDC72704055900758D05 /* LumiKitBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LumiKitBackButton.swift; sourceTree = "<group>"; };
 		75CACDC92704126E00758D05 /* PlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayButton.swift; sourceTree = "<group>"; };
 		75CACDCB2704223300758D05 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
@@ -740,6 +746,32 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		75C18D9E2709EC7D00C7561D /* About */ = {
+			isa = PBXGroup;
+			children = (
+				75C18DA42709ECA600C7561D /* ViewModels */,
+				75C18D9F2709EC8800C7561D /* Views */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
+		75C18D9F2709EC8800C7561D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				75C18DA02709EC9D00C7561D /* AboutViewController.swift */,
+				75C18DA12709EC9D00C7561D /* AboutViewController.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		75C18DA42709ECA600C7561D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				75C18DA52709ECB100C7561D /* AboutViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		75CACDCD2704527900758D05 /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -811,6 +843,7 @@
 		A41E748826909728006E7D0F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				75C18D9E2709EC7D00C7561D /* About */,
 				75C18D862707F5F900C7561D /* MovieList */,
 				75301B082706BE83003A4F1D /* CreditsDetail */,
 				75B054E6270350A200FC2712 /* MovieDetail */,
@@ -1194,6 +1227,7 @@
 				75C18D932708038E00C7561D /* MovieListCollectionViewCell.xib in Resources */,
 				7501129626FEB82400B08B3D /* GoogleService-Info.plist in Resources */,
 				006FD94B26F080E700169CDD /* SplashViewController.xib in Resources */,
+				75C18DA32709EC9D00C7561D /* AboutViewController.xib in Resources */,
 				75301B0D2706D096003A4F1D /* CreditsDetailViewController.xib in Resources */,
 				A43813DC268CAD5B0055DF76 /* Main.storyboard in Resources */,
 				75F886CA26F8C3F70050B384 /* VideoPlayingHeaderTableViewCell.xib in Resources */,
@@ -1361,11 +1395,13 @@
 				00C0E3D326E8F99000CD560C /* MovieAPIProtocol.swift in Sources */,
 				75C18D922708038E00C7561D /* MovieListCollectionViewCell.swift in Sources */,
 				A4AC289726B6E2EB00FCA700 /* ProfileViewModel.swift in Sources */,
+				75C18DA62709ECB100C7561D /* AboutViewModel.swift in Sources */,
 				7507D68C27058CB20006B8FF /* CreditsCollectionViewCell.swift in Sources */,
 				75CACDE627046A0400758D05 /* TredingMovie.swift in Sources */,
 				754357A226FEE4C500850CCB /* GenresTableViewCell.swift in Sources */,
 				00EA997726EE05BF003DCA4E /* BMPlayerItem.swift in Sources */,
 				00EA997E26EE05BF003DCA4E /* BMPlayerManager.swift in Sources */,
+				75C18DA22709EC9D00C7561D /* AboutViewController.swift in Sources */,
 				75B054EA270350BF00FC2712 /* MovieDetailViewController.swift in Sources */,
 				75C18D962709497F00C7561D /* LoadingView.swift in Sources */,
 				A4815F152691FCA9004107D1 /* UIViewController.swift in Sources */,

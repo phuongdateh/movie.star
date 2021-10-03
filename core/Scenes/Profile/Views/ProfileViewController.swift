@@ -77,7 +77,7 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
                 }
             }
         case .about:
-            print("")
+            self.navigator.show(segue: .about, sender: self)
         }
     }
 }
