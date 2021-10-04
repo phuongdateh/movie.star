@@ -144,6 +144,18 @@ class ViewController<VM: ViewModel>: UIViewController,
             // show ads
         }
     }
+    
+    func share(content: String, viewClick: UIView, completion: (() -> Void)? = nil) {
+        let objectsToShare = [content] as [Any]
+        let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+        activityVC.excludedActivityTypes = [UIActivity.ActivityType.airDrop,
+                                            UIActivity.ActivityType.addToReadingList,
+                                            .message]
+        self.present(activityVC, animated: true, completion: nil)
+        if let popOver = activityVC.popoverPresentationController {
+            popOver.sourceView = viewClick
+        }
+    }
 }
 
 extension UIViewController {

@@ -238,7 +238,11 @@ extension MovieDetailViewController {
     }
 
     @IBAction func shareButtonTouchUpInside(_ sender: UIButton) {
-        
+        guard let detail = viewModel.getMovieDetail() else {
+            return
+        }
+        let shareLinkStr: String = "https://www.themoviedb.org/movie/"
+        self.share(content: shareLinkStr + "\(detail.id)", viewClick: self.shareButton, completion: nil)
     }
 
     @IBAction func loveButtonTouchUpInside(_ sender: UIButton) {
