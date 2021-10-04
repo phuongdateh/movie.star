@@ -56,17 +56,6 @@ final class Application {
         let viewModel = TabbarViewModel(apiService: self.apiService!)
         self.navigator.show(segue: .tabbar(viewModel: viewModel), sender: nil, transition: .tabbar(in: window!))
     }
-    
-    private func setAppLauched() {
-        UserDefaults.standard.setValue(true, forKey: "isLauchedApp")
-        UserDefaults.standard.synchronize()
-    }
-    
-    private var isLauchedApp: Bool {
-        get {
-            return UserDefaults.standard.bool(forKey: "isLauchedApp")
-        }
-    }
 }
 
 extension Application {
