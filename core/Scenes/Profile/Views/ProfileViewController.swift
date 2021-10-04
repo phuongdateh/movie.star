@@ -56,9 +56,8 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
         let item = viewModel.cellForRowAt(indexPath: indexPath)
         switch item {
         case .myFavoriteList:
-            print("")
+            self.navigator.show(segue: .myFavorite, sender: self)
         case .rateApp:
-            print("")
             guard let windowScene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene else {
                 return
             }

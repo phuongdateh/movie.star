@@ -48,7 +48,8 @@ extension Movie {
                                title: self.title,
                                posterPath: self.posterPath,
                                backdropPath: self.backdropPath,
-                               releaseDate: self.releaseDate)
+                               releaseDate: self.releaseDate,
+                               voteAverage: self.voteAverage)
         let realm = try! Realm()
         realm.safeWrite {
             realm.add(movie, update: .all)
@@ -58,5 +59,31 @@ extension Movie {
     func isFavorite() -> Bool {
         let realm = try! Realm()
         return realm.objects(MovieRealm.self).map({ $0.id }).contains(self.id)
+    }
+}
+
+extension Movie: MovieProtocol {
+    func getId() -> Int {
+        return self.id
+    }
+    
+    func getTitle() -> String? {
+        return self.title
+    }
+    
+    func getPosterPath() -> String? {
+        return self.posterPath
+    }
+    
+    func getBackdropPath() -> String? {
+        return self.backdropPath
+    }
+    
+    func getReleaseDate() -> String? {
+        return self.releaseDate
+    }
+    
+    func getVoteAverage() -> Double {
+        return self.voteAverage
     }
 }

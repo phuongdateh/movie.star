@@ -68,6 +68,23 @@ class ViewController<VM: ViewModel>: UIViewController,
         
     }
     
+    func addBackButton() {
+        if let navigationController = self.navigationController,
+           let index = navigationController.viewControllers.firstIndex(of: self), index > 0
+            || navigationController.presentingViewController != nil {
+            let imageView = UIImageView(image: UIImage(named: "back_ic"))
+            imageView.tintColor = .white
+            imageView.isUserInteractionEnabled = true
+            imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(AboutViewController.backAction)))
+            let leftBarButton = UIBarButtonItem(customView: imageView)
+            self.navigationItem.leftBarButtonItem = leftBarButton
+        }
+    }
+    
+    @objc private func backAction() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     func showTrailer(video: Video) {
         let playerVC = AVPlayerViewController()
         present(playerVC, animated: true, completion: nil)

@@ -77,7 +77,8 @@ struct MovieDetail: Decodable {
                                title: self.title,
                                posterPath: self.posterPath,
                                backdropPath: self.backdropPath,
-                               releaseDate: self.releaseDate)
+                               releaseDate: self.releaseDate,
+                               voteAverage: self.voteAverage)
         let realm = try! Realm()
         realm.safeWrite {
             realm.add(movie, update: .all)

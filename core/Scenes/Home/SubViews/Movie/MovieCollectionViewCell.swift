@@ -42,15 +42,15 @@ final class MovieCollectionViewCell: BaseCollectionViewCell {
         voteAverageLbl.attributedText = voteAverageText
     }
     
-    func configure(_ movie: Movie) {
-        self.thumbnailImageView.downloadImage(with: .tmdb(movie.backdropPath ?? movie.posterPath ?? ""))
-        self.titleLbl.text = movie.originalTitle
-        self.releasedDateLbl.text = movie.releaseDate
+    func configure(_ movie: MovieProtocol) {
+        self.thumbnailImageView.downloadImage(with: .tmdb(movie.getBackdropPath() ?? movie.getPosterPath() ?? ""))
+        self.titleLbl.text = movie.getTitle()
+        self.releasedDateLbl.text = movie.getReleaseDate()
         let voteAverageText = NSMutableAttributedString.init()
         voteAverageText.append(NSAttributedString(string: "IMDb ",
                                                   attributes: [.font: UIFont(name: AppFont.bold.name, size: 14)!,
                                                                 .foregroundColor: UIColor.black]))
-        voteAverageText.append(NSAttributedString(string: "\(movie.voteAverage)",
+        voteAverageText.append(NSAttributedString(string: "\(movie.getVoteAverage())",
                                                   attributes: [.font: UIFont(name: AppFont.bold.name, size: 12)!,
                                                                 .foregroundColor: UIColor.red]))
         voteAverageLbl.attributedText = voteAverageText

@@ -6,11 +6,26 @@
 //
 
 import Foundation
+import RealmSwift
 
 class FavoriteViewModel: ViewModel {
-    func numberOfItemsInSection(section: Int) -> Int {
-        return 1
+    var movies: Results<MovieRealm>!
+    
+    override init() {
+        super.init()
+        self.initMovies()
     }
     
-//    func cellForRowAt(indexPath: IndexPath) -> 
+    private func initMovies() {
+        let realm = try! Realm()
+        self.movies = realm.objects(MovieRealm.self)
+    }
+    
+    func numberOfItemsInSection(section: Int) -> Int {
+        return self.movies.count
+    }
+    
+    func cellForRowAt(indexPath: IndexPath) -> MovieRealm {
+        return self.movies[indexPath.row]
+    }
 }

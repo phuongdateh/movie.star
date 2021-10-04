@@ -8,12 +8,22 @@
 import Foundation
 import RealmSwift
 
+protocol MovieProtocol {
+    func getId() -> Int
+    func getTitle() -> String?
+    func getPosterPath() -> String?
+    func getBackdropPath() -> String?
+    func getVoteAverage() -> Double
+    func getReleaseDate() -> String?
+}
+
 final class MovieRealm: Object {
     @objc dynamic var id: Int = 0
     @objc dynamic var title: String?
     @objc dynamic var posterPath: String?
     @objc dynamic var backdropPath: String?
     @objc dynamic var releaseDate: String?
+    @objc dynamic var voteAverage: Double = 0
     
     override class func primaryKey() -> String? {
         return "id"
@@ -23,13 +33,41 @@ final class MovieRealm: Object {
                      title: String?,
                      posterPath: String?,
                      backdropPath: String?,
-                     releaseDate: String?) {
+                     releaseDate: String?,
+                     voteAverage: Double) {
         self.init()
         self.id = id
         self.title = title
         self.backdropPath = backdropPath
         self.posterPath = posterPath
         self.releaseDate = releaseDate
+        self.voteAverage = voteAverage
+    }
+}
+
+extension MovieRealm: MovieProtocol {
+    func getId() -> Int {
+        return self.id
+    }
+    
+    func getTitle() -> String? {
+        return self.title
+    }
+    
+    func getPosterPath() -> String? {
+        return self.posterPath
+    }
+    
+    func getBackdropPath() -> String? {
+        return self.backdropPath
+    }
+    
+    func getReleaseDate() -> String? {
+        return self.releaseDate
+    }
+    
+    func getVoteAverage() -> Double {
+        return self.voteAverage
     }
 }
 
