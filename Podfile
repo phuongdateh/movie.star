@@ -7,34 +7,40 @@ target 'core' do
 
   # Logging
   pod 'CocoaLumberjack/Swift'
-  
+
   # UI
   pod 'Hero'
-  
+
   # Network
   pod 'Moya'
-  
+
   # Autolayout
   pod 'SnapKit'
   
   # Loading
   pod 'NVActivityIndicatorView'
-  
+
   # Cache media file while play media using AVPlayerr.
   pod 'VIMediaCache'
 
   # Youtube https://github.com/0xced/XCDYouTubeKit/pull/526#issuecomment-868208997
   pod 'XCDYouTubeKit', :git => 'https://github.com/dpwilhelmsen/XCDYouTubeKit', :branch => 'hotfix/fix-get-video-info-error'
   
+#  pod 'MBVideoPlayer', :git => 'https://github.com/mwaqasbhati/MBVideoPlayer.git'
+  
   pod 'SDWebImage'
   pod 'FSPagerView'
-  
+
   #Firebase
   pod 'Firebase/Analytics'
   pod 'Firebase/RemoteConfig'
 
+  pod 'Cosmos'
   
-  
+  pod 'DisplaySwitcher'
+  pod 'MJRefresh'
+  pod 'RealmSwift'
+
 end
 
 post_install do |installer|

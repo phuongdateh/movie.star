@@ -25,8 +25,8 @@ class VideoViewModel: ViewModel {
             guard let self = self else { return }
             switch result {
             case let .success(movieResponse):
-                if movieResponse.movies.isEmpty == false {
-                    movieResponse.movies.forEach { movie in
+                if movieResponse.results.isEmpty == false {
+                    movieResponse.results.forEach { movie in
 //                        self.getVideos(of: movie)
                         self.getDetailMovie(of: movie)
                     }
@@ -55,6 +55,7 @@ class VideoViewModel: ViewModel {
             case let .success(detail):
                 guard let self = self else { return }
                 self.tranformToVideoCategories(detail)
+                print("Genres: \(detail.genres)")
             case let .failure(error):
                 print("❌ Movie detail: \(error.localizedDescription) of: \(movie.id)")
             }

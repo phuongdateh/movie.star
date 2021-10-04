@@ -10,7 +10,7 @@ import UIKit
 
 struct ColorPalette {
     static var darkBlue: UIColor {
-        return 0x071330.color
+        return 0x0D1139.color
     }
     
     static var mistyBlue: UIColor {
@@ -18,11 +18,15 @@ struct ColorPalette {
     }
     
     static var background: UIColor {
-        return 0x222222.color
+        return 0x101B50.color
     }
     
-    static var tabbar: UIColor {
-        return 0x1D1D1D.color
+    static var strongBlue: UIColor {
+        return 0x0D1139.color
+    }
+    
+    static var orange: UIColor {
+        return 0xE8772F.color
     }
 }
 

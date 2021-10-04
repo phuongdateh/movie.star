@@ -13,7 +13,6 @@ class HomeViewController: ViewController<HomeViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     override func makeUI() {
@@ -21,6 +20,7 @@ class HomeViewController: ViewController<HomeViewModel> {
         tableView.tableFooterView = UIView()
         tableView.tableHeaderView = UIView()
         tableView.backgroundColor = ColorPalette.background
+        tableView.separatorStyle = .none
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -49,6 +49,7 @@ class HomeViewController: ViewController<HomeViewModel> {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = true
+        self.showRating()
     }
 }
 
@@ -66,11 +67,13 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         if section == HomeSection.movieBanner.rawValue {
             let cell = tableView.dequeueReusableCell(ofType: HomeHeaderCell.self, at: indexPath)
             cell.selectionStyle = .none
+            cell.delegate = self
             cell.setViewModel(viewModel: self.viewModel)
             return cell
         } else if section == HomeSection.genres.rawValue {
             let cell = tableView.dequeueReusableCell(ofType: GenresTableViewCell.self, at: indexPath)
             cell.selectionStyle = .none
+            cell.delegate = self
             cell.configure(viewModel.cellForRowAtGenre())
             return cell
         } else if section == HomeSection.ads.rawValue {
@@ -78,6 +81,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         } else if section == HomeSection.movieList.rawValue {
             let cell = tableView.dequeueReusableCell(ofType: HomeMovieTableViewCell.self, at: indexPath)
+            cell.selectionStyle = .none
+            cell.delegate = self
+            cell.configure(item: viewModel.cellForRowAtMovie(indexPath: indexPath))
             return cell
         } else if section == HomeSection.actorList.rawValue {
             

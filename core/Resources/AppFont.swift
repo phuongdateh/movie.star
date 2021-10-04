@@ -65,3 +65,13 @@ enum AppFont {
     }
     
 }
+
+extension UILabel {
+    func setFont(appFont: AppFont,
+                 size: CGFloat,
+                 color: UIColor = .white) {
+        self.font = UIFont.init(name: appFont.name,
+                                size: size)
+        self.textColor = color
+    }
+}

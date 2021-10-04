@@ -13,6 +13,7 @@ typealias Action = (() -> ())
 struct HomeMovieSectionItem {
     let title: String
     let movies: [Movie]
+    let homeType: HomeConfigure.HomeType
 }
 
 enum HomeActorSectionItem {
@@ -65,42 +66,47 @@ class HomeViewModel: ViewModel {
                 fatalError()
             }
             switch type {
-            case .popular:
-                self.apiSerivice.getPopular(page: 1) { result in
+            case .upComing:
+                self.apiSerivice.getUpcomming(page: 1) { result in
                     switch result {
                     case .success(let response):
                         self.movieSectionItems.append(HomeMovieSectionItem.init(title: config.name,
-                                                                                movies: response.movies))
+                                                                                movies: response.results,
+                                                                                homeType: type))
                     case .failure(let error):
                         print(error.localizedDescription)
                     }
                 }
             case .nowPlaying:
+                self.apiSerivice.getNowPlaying(page: 1) { result in
+                    switch result {
+                    case .success(let response):
+                        self.movieSectionItems.append(HomeMovieSectionItem.init(title: config.name,
+                                                                                movies: response.results.sorted(by: {$0.voteCount > $1.voteCount}),
+                                                                                homeType: type))
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
+                }
+            case .popular:
                 self.apiSerivice.getPopular(page: 1) { result in
                     switch result {
                     case .success(let response):
                         self.movieSectionItems.append(HomeMovieSectionItem.init(title: config.name,
-                                                                                movies: response.movies))
+                                                                                movies: response.results,
+                                                                                homeType: type))
                     case .failure(let error):
                         print(error.localizedDescription)
                     }
                 }
             case .topRated:
-                self.apiSerivice.getPopular(page: 1) { result in
+                self.apiSerivice.getTopRated(page: 1) { result in
                     switch result {
                     case .success(let response):
+                        let movies = response.results.sorted(by: { $0.voteAverage > $1.voteAverage})
                         self.movieSectionItems.append(HomeMovieSectionItem.init(title: config.name,
-                                                                                movies: response.movies))
-                    case .failure(let error):
-                        print(error.localizedDescription)
-                    }
-                }
-            case .upComing:
-                self.apiSerivice.getPopular(page: 1) { result in
-                    switch result {
-                    case .success(let response):
-                        self.movieSectionItems.append(HomeMovieSectionItem.init(title: config.name,
-                                                                                movies: response.movies))
+                                                                                movies: movies,
+                                                                                homeType: type))
                     case .failure(let error):
                         print(error.localizedDescription)
                     }
@@ -114,7 +120,7 @@ class HomeViewModel: ViewModel {
         apiSerivice.getPopular(page: currentPage) { [weak self] result in
             switch result {
             case .success(let response):
-                self?.movies.append(contentsOf: response.movies)
+                self?.movies.append(contentsOf: response.results)
                 sucess?()
             case .failure(let error):
                 print(error.localizedDescription)
@@ -165,7 +171,7 @@ extension HomeViewModel {
                   config.isEnableBannerAds {
             return 100
         } else if section == HomeSection.movieList.rawValue {
-            return 213
+            return 400
         } else if section == HomeSection.actorList.rawValue {
             return 120
         }

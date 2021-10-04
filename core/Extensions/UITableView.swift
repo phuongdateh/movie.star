@@ -8,10 +8,6 @@
 import Foundation
 import UIKit
 
-extension UITableViewCell: Reusable { }
-
-extension UICollectionViewCell: Reusable {}
-
 extension UITableView {
     func registerCell<T: UITableViewCell>(ofType cellType: T.Type) {
         self.register(UINib(nibName: T.reuseID, bundle: nil), forCellReuseIdentifier: T.reuseID)
