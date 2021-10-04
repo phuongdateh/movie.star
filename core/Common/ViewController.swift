@@ -9,6 +9,7 @@ import UIKit
 import AVKit
 import XCDYouTubeKit
 import SnapKit
+import StoreKit
 
 class ViewController<VM: ViewModel>: UIViewController,
                                      Navigatable,
@@ -46,13 +47,30 @@ class ViewController<VM: ViewModel>: UIViewController,
     }
     
     func configColorNavigationBar() {
-        let appearance = UINavigationBarAppearance()
-        appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = ColorPalette.strongBlue
-        appearance.titleTextAttributes = [.font: UIFont(name: AppFont.bold.name, size: 18)!,
-                                          .foregroundColor: UIColor.white]
-        self.navigationController?.navigationBar.standardAppearance = appearance
-        self.navigationController?.navigationBar.scrollEdgeAppearance = self.navigationController?.navigationBar.standardAppearance
+        if #available(iOS 13.0, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = ColorPalette.strongBlue
+            appearance.titleTextAttributes = [.font: UIFont(name: AppFont.bold.name, size: 18)!,
+                                              .foregroundColor: UIColor.white]
+            self.navigationController?.navigationBar.standardAppearance = appearance
+            self.navigationController?.navigationBar.scrollEdgeAppearance = self.navigationController?.navigationBar.standardAppearance
+        } else {
+            UINavigationBar.appearance().titleTextAttributes = [.font: UIFont(name: AppFont.bold.name, size: 18)!,
+                                                                .foregroundColor: UIColor.white]
+            UINavigationBar.appearance().backgroundColor = ColorPalette.strongBlue
+        }
+    }
+    
+    func showRating() {
+        if #available(iOS 14.0, *) {
+            guard let windowScene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene else {
+                return
+            }
+            SKStoreReviewController.requestReview(in: windowScene)
+        } else if #available(iOS 10.3, *) {
+            SKStoreReviewController.requestReview()
+        }
     }
     
     func makeUI() {

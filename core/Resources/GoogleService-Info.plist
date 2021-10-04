@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>510771926949-42l1jvdrt9fo7qv18v1udifcurugl1ig.apps.googleusercontent.com</string>
+	<string>510771926949-scl333a8t47flemnsuhjt8ddceub41cd.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.510771926949-42l1jvdrt9fo7qv18v1udifcurugl1ig</string>
+	<string>com.googleusercontent.apps.510771926949-scl333a8t47flemnsuhjt8ddceub41cd</string>
 	<key>API_KEY</key>
 	<string>AIzaSyDfj2mOG5v3lYAy1Ogv15DoLC6MDc4vhqA</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,15 +13,15 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>core.movie</string>
+	<string>movie.star</string>
 	<key>PROJECT_ID</key>
 	<string>movie-video-b2782</string>
 	<key>STORAGE_BUCKET</key>
 	<string>movie-video-b2782.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false/>
+	<true/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false/>
+	<true/>
 	<key>IS_APPINVITE_ENABLED</key>
 	<true/>
 	<key>IS_GCM_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:510771926949:ios:c08992d9f2ba3461997a4c</string>
+	<string>1:510771926949:ios:c2402f680316a82a997a4c</string>
 </dict>
 </plist>

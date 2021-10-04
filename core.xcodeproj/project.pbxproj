@@ -53,7 +53,6 @@
 		7501129026FDDDA400B08B3D /* Tabbar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7501128F26FDDDA400B08B3D /* Tabbar.storyboard */; };
 		7501129326FE27F400B08B3D /* HomeMovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7501129126FE27F400B08B3D /* HomeMovieTableViewCell.swift */; };
 		7501129426FE27F400B08B3D /* HomeMovieTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7501129226FE27F400B08B3D /* HomeMovieTableViewCell.xib */; };
-		7501129626FEB82400B08B3D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7501129526FEB82400B08B3D /* GoogleService-Info.plist */; };
 		7501129826FEBDF600B08B3D /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7501129726FEBDF600B08B3D /* FirebaseService.swift */; };
 		7501129A26FEC48D00B08B3D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7501129926FEC48D00B08B3D /* String.swift */; };
 		7501129D26FEC51500B08B3D /* HomeConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7501129C26FEC51500B08B3D /* HomeConfigure.swift */; };
@@ -110,6 +109,7 @@
 		75C18DAC2709F61D00C7561D /* FavoriteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75C18DAA2709F61D00C7561D /* FavoriteViewController.xib */; };
 		75C18DAF2709F63D00C7561D /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C18DAE2709F63D00C7561D /* FavoriteViewModel.swift */; };
 		75C18DB22709F94500C7561D /* MovieRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C18DB12709F94500C7561D /* MovieRealm.swift */; };
+		75C31ECC270AB7F400E43D40 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 75C31ECB270AB7F400E43D40 /* GoogleService-Info.plist */; };
 		75CACDC82704055900758D05 /* LumiKitBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CACDC72704055900758D05 /* LumiKitBackButton.swift */; };
 		75CACDCA2704126E00758D05 /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CACDC92704126E00758D05 /* PlayButton.swift */; };
 		75CACDCC2704223300758D05 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CACDCB2704223300758D05 /* RatingView.swift */; };
@@ -214,7 +214,6 @@
 		7501128F26FDDDA400B08B3D /* Tabbar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tabbar.storyboard; sourceTree = "<group>"; };
 		7501129126FE27F400B08B3D /* HomeMovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMovieTableViewCell.swift; sourceTree = "<group>"; };
 		7501129226FE27F400B08B3D /* HomeMovieTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeMovieTableViewCell.xib; sourceTree = "<group>"; };
-		7501129526FEB82400B08B3D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7501129726FEBDF600B08B3D /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		7501129926FEC48D00B08B3D /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		7501129C26FEC51500B08B3D /* HomeConfigure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeConfigure.swift; sourceTree = "<group>"; };
@@ -271,6 +270,7 @@
 		75C18DAA2709F61D00C7561D /* FavoriteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteViewController.xib; sourceTree = "<group>"; };
 		75C18DAE2709F63D00C7561D /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
 		75C18DB12709F94500C7561D /* MovieRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRealm.swift; sourceTree = "<group>"; };
+		75C31ECB270AB7F400E43D40 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		75CACDC72704055900758D05 /* LumiKitBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LumiKitBackButton.swift; sourceTree = "<group>"; };
 		75CACDC92704126E00758D05 /* PlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayButton.swift; sourceTree = "<group>"; };
 		75CACDCB2704223300758D05 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
@@ -437,7 +437,7 @@
 				A43813DD268CAD5C0055DF76 /* Assets.xcassets */,
 				A43813E2268CAD5C0055DF76 /* Info.plist */,
 				A43813DF268CAD5C0055DF76 /* LaunchScreen.storyboard */,
-				7501129526FEB82400B08B3D /* GoogleService-Info.plist */,
+				75C31ECB270AB7F400E43D40 /* GoogleService-Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1259,6 +1259,7 @@
 				75301B0727069B06003A4F1D /* TrailerCollectionViewCell.xib in Resources */,
 				003771FE26F1886300105A0A /* Proxima Nova-Regular.otf in Resources */,
 				A43813E1268CAD5C0055DF76 /* LaunchScreen.storyboard in Resources */,
+				75C31ECC270AB7F400E43D40 /* GoogleService-Info.plist in Resources */,
 				A43813DE268CAD5C0055DF76 /* Assets.xcassets in Resources */,
 				7501128E26FDDAF500B08B3D /* HomeHeaderCell.xib in Resources */,
 				754357A326FEE4C500850CCB /* GenresTableViewCell.xib in Resources */,
@@ -1269,7 +1270,6 @@
 				7501129026FDDDA400B08B3D /* Tabbar.storyboard in Resources */,
 				754357A726FEE51200850CCB /* NativeAdsTableViewCell.xib in Resources */,
 				75C18D932708038E00C7561D /* MovieListCollectionViewCell.xib in Resources */,
-				7501129626FEB82400B08B3D /* GoogleService-Info.plist in Resources */,
 				006FD94B26F080E700169CDD /* SplashViewController.xib in Resources */,
 				75C18DA32709EC9D00C7561D /* AboutViewController.xib in Resources */,
 				75301B0D2706D096003A4F1D /* CreditsDetailViewController.xib in Resources */,
@@ -1620,12 +1620,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K2TYLYAWMK;
 				INFOPLIST_FILE = core/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = core.movie;
+				PRODUCT_BUNDLE_IDENTIFIER = movie.star;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -1639,15 +1639,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K2TYLYAWMK;
 				INFOPLIST_FILE = core/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = core.movie;
+				PRODUCT_BUNDLE_IDENTIFIER = movie.star;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

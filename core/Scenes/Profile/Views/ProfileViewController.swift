@@ -58,13 +58,13 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
         case .myFavoriteList:
             self.navigator.show(segue: .myFavorite, sender: self)
         case .rateApp:
-            guard let windowScene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene else {
+            guard let url = URL(string: "itms-apps://itunes.apple.com/app/id1588668113") else {
                 return
             }
-            if #available(iOS 14.0, *) {
-                SKStoreReviewController.requestReview(in: windowScene)
-            } else if #available(iOS 10.3, *) {
-                SKStoreReviewController.requestReview()
+            if #available(iOS 10, *) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            } else {
+                UIApplication.shared.openURL(url)
             }
         case .feedback:
             let email = "95doanphuong@gmail.com"

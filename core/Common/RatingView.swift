@@ -25,7 +25,9 @@ final class RatingView: CosmosView {
         newSettings.starSize = 16
         newSettings.filledBorderWidth = 1
         newSettings.filledImage = UIImage.init(named: "rating_filled_ic")?.withRenderingMode(.alwaysOriginal)
-        newSettings.emptyImage = UIImage.init(named: "rating_empty_ic")?.withRenderingMode(.alwaysOriginal).withTintColor(UIColor.white)
+        if #available(iOS 13.0, *) {
+            newSettings.emptyImage = UIImage.init(named: "rating_empty_ic")?.withRenderingMode(.alwaysOriginal).withTintColor(UIColor.white)
+        }
         self.settings = newSettings
     }
 }
