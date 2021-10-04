@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 struct Movie: Decodable {
     let id: Int
@@ -40,5 +41,22 @@ extension Movie {
         case episodeCount = "episode_count"
         case firstAirDate = "first_air_date"
         case genreIds = "genre_ids"
+    }
+    
+    func favorite() {
+        let movie = MovieRealm(id: self.id,
+                               title: self.title,
+                               posterPath: self.posterPath,
+                               backdropPath: self.backdropPath,
+                               releaseDate: self.releaseDate)
+        let realm = try! Realm()
+        realm.safeWrite {
+            realm.add(movie, update: .all)
+        }
+    }
+    
+    func isFavorite() -> Bool {
+        let realm = try! Realm()
+        return realm.objects(MovieRealm.self).map({ $0.id }).contains(self.id)
     }
 }

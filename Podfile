@@ -39,6 +39,8 @@ target 'core' do
   
   pod 'DisplaySwitcher'
   pod 'MJRefresh'
+  pod 'RealmSwift'
+
 end
 
 post_install do |installer|

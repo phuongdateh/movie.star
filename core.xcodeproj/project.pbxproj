@@ -106,6 +106,10 @@
 		75C18DA22709EC9D00C7561D /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C18DA02709EC9D00C7561D /* AboutViewController.swift */; };
 		75C18DA32709EC9D00C7561D /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75C18DA12709EC9D00C7561D /* AboutViewController.xib */; };
 		75C18DA62709ECB100C7561D /* AboutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C18DA52709ECB100C7561D /* AboutViewModel.swift */; };
+		75C18DAB2709F61D00C7561D /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C18DA92709F61D00C7561D /* FavoriteViewController.swift */; };
+		75C18DAC2709F61D00C7561D /* FavoriteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75C18DAA2709F61D00C7561D /* FavoriteViewController.xib */; };
+		75C18DAF2709F63D00C7561D /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C18DAE2709F63D00C7561D /* FavoriteViewModel.swift */; };
+		75C18DB22709F94500C7561D /* MovieRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C18DB12709F94500C7561D /* MovieRealm.swift */; };
 		75CACDC82704055900758D05 /* LumiKitBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CACDC72704055900758D05 /* LumiKitBackButton.swift */; };
 		75CACDCA2704126E00758D05 /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CACDC92704126E00758D05 /* PlayButton.swift */; };
 		75CACDCC2704223300758D05 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CACDCB2704223300758D05 /* RatingView.swift */; };
@@ -263,6 +267,10 @@
 		75C18DA02709EC9D00C7561D /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		75C18DA12709EC9D00C7561D /* AboutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
 		75C18DA52709ECB100C7561D /* AboutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewModel.swift; sourceTree = "<group>"; };
+		75C18DA92709F61D00C7561D /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		75C18DAA2709F61D00C7561D /* FavoriteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteViewController.xib; sourceTree = "<group>"; };
+		75C18DAE2709F63D00C7561D /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
+		75C18DB12709F94500C7561D /* MovieRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRealm.swift; sourceTree = "<group>"; };
 		75CACDC72704055900758D05 /* LumiKitBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LumiKitBackButton.swift; sourceTree = "<group>"; };
 		75CACDC92704126E00758D05 /* PlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayButton.swift; sourceTree = "<group>"; };
 		75CACDCB2704223300758D05 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
@@ -482,6 +490,7 @@
 		00F2B3B626EB6794001F2497 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				75C18DB02709F93400C7561D /* Realm */,
 				75CACDE927049E7300758D05 /* ResultsResponse.swift */,
 				75CACDE22704672400758D05 /* Trending */,
 				75CACDD02704572C00758D05 /* Reviews */,
@@ -772,6 +781,40 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		75C18DA72709F5FC00C7561D /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				75C18DAD2709F63200C7561D /* ViewModels */,
+				75C18DA82709F60A00C7561D /* Views */,
+			);
+			path = Favorite;
+			sourceTree = "<group>";
+		};
+		75C18DA82709F60A00C7561D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				75C18DA92709F61D00C7561D /* FavoriteViewController.swift */,
+				75C18DAA2709F61D00C7561D /* FavoriteViewController.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		75C18DAD2709F63200C7561D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				75C18DAE2709F63D00C7561D /* FavoriteViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		75C18DB02709F93400C7561D /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				75C18DB12709F94500C7561D /* MovieRealm.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
 		75CACDCD2704527900758D05 /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -843,6 +886,7 @@
 		A41E748826909728006E7D0F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				75C18DA72709F5FC00C7561D /* Favorite */,
 				75C18D9E2709EC7D00C7561D /* About */,
 				75C18D862707F5F900C7561D /* MovieList */,
 				75301B082706BE83003A4F1D /* CreditsDetail */,
@@ -1243,6 +1287,7 @@
 				7507D68D27058CB20006B8FF /* CreditsCollectionViewCell.xib in Resources */,
 				75C18D9D2709BBD200C7561D /* ProfileTableViewCell.xib in Resources */,
 				0037720026F1886300105A0A /* Proxima Nova Extrabold.otf in Resources */,
+				75C18DAC2709F61D00C7561D /* FavoriteViewController.xib in Resources */,
 				75B054E5270325B700FC2712 /* MovieCollectionViewCell.xib in Resources */,
 				7507D69627060B240006B8FF /* RecommendationMovieCollectionViewCell.xib in Resources */,
 				003771FC26F1886300105A0A /* Proxima Nova Thin.otf in Resources */,
@@ -1320,8 +1365,10 @@
 				00EA997C26EE05BF003DCA4E /* BMSubtitles.swift in Sources */,
 				006FD96526F0BA5100169CDD /* VideoPlayingViewController.swift in Sources */,
 				A4815F1F26920038004107D1 /* SplashViewModel.swift in Sources */,
+				75C18DAB2709F61D00C7561D /* FavoriteViewController.swift in Sources */,
 				7501128826FDD84400B08B3D /* HomeHeaderCell.swift in Sources */,
 				A4815F032691EAA6004107D1 /* ViewModelType.swift in Sources */,
+				75C18DAF2709F63D00C7561D /* FavoriteViewModel.swift in Sources */,
 				A4815EFF2691B1CA004107D1 /* Application.swift in Sources */,
 				A4AC289326B6E2D400FCA700 /* ProfileViewController.swift in Sources */,
 				75301B102706D0B0003A4F1D /* CreditsDetailViewModel.swift in Sources */,
@@ -1374,6 +1421,7 @@
 				006FD95726F09A1600169CDD /* YoutubeService.swift in Sources */,
 				750A5B9226F8921800876196 /* ColorPalette.swift in Sources */,
 				A4AC288E26B6E28E00FCA700 /* VideoViewModel.swift in Sources */,
+				75C18DB22709F94500C7561D /* MovieRealm.swift in Sources */,
 				75301B0127069607003A4F1D /* TrailerView.swift in Sources */,
 				006FD95426F0975200169CDD /* YoutubeVideo.swift in Sources */,
 				750D430D26F3540700668731 /* BMPlayerCustomControlView.swift in Sources */,

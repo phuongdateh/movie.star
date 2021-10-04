@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import Firebase
+import RealmSwift
 
 final class Application {
     static let shared = Application()
@@ -28,6 +29,7 @@ final class Application {
         }
         self.window = window
         self.setupFirebase()
+        self.setupRealm()
         
         FirebaseService.shared.fetchConfigs { [weak self] config in
             self?.movieConfigure = config
@@ -68,5 +70,26 @@ final class Application {
 extension Application {
     fileprivate func setupFirebase() {
         FirebaseApp.configure()
+    }
+    
+    fileprivate func setupRealm() {
+        let config = Realm.Configuration(
+            // Set the new schema version. This must be greater than the previously used
+            // version (if you've never set a schema version before, the version is 0).
+            schemaVersion: 0,
+            
+            // Set the block which will be called automatically when opening a Realm with
+            // a schema version lower than the one set above
+            migrationBlock: { migration, oldSchemaVersion in
+                // We haven’t migrated anything yet, so oldSchemaVersion == 0
+                print("Migration Realm")
+                
+            }
+        )
+        // Tell Realm to use this new configuration object for the default Realm
+        Realm.Configuration.defaultConfiguration = config
+        // Now that we've told Realm how to handle the schema change, opening the file
+        // will automatically perform the migration
+        _ = try! Realm()
     }
 }

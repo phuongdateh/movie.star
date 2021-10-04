@@ -146,6 +146,12 @@ class MovieDetailViewController: ViewController<MovieDetailViewModel> {
             view.delegate = self
             trailerSectionView.addChildView(view: view)
         }
+        
+        if movie.isFavorite() {
+            loveButton.tintColor = ColorPalette.orange
+        } else {
+            loveButton.tintColor = .white
+        }
 
         self.renderAdsView()
         self.renderMoreButtonView()
@@ -236,6 +242,16 @@ extension MovieDetailViewController {
     }
 
     @IBAction func loveButtonTouchUpInside(_ sender: UIButton) {
+        guard let detail = viewModel.getMovieDetail() else {
+            return
+        }
+        MovieRealm.favorite(movie: detail)
+        if loveButton.tintColor == ColorPalette.orange {
+            loveButton.tintColor = .white
+        } else {
+            loveButton.tintColor = ColorPalette.orange
+        }
         
+        print("CurrentList: \(MovieRealm.currentList().count)")
     }
 }

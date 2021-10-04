@@ -33,15 +33,28 @@ class MovieListCollectionViewCell: BaseCollectionViewCell {
         self.wrapperView.backgroundColor = ColorPalette.strongBlue
     }
     
+    private var movie: Movie!
+    
     override func configureMovie(_ movie: Movie) {
+        self.movie = movie
         self.posterImageView.downloadImage(with: .tmdb(movie.backdropPath ?? movie.posterPath ?? ""))
         self.titleLbl.text = movie.title ?? movie.originalTitle
         self.releaseDateLbl.text = movie.releaseDate
         self.ratingView.rating = movie.voteAverage
         self.genresLbl.text = ""
+        if movie.isFavorite() {
+            self.loveButton.tintColor = ColorPalette.orange
+        } else {
+            self.loveButton.tintColor = UIColor.white
+        }
     }
 
     @IBAction func loveButonTouchUpInside(_ sender: UIButton) {
-
+        MovieRealm.favorite(movie: self.movie)
+        if loveButton.tintColor == ColorPalette.orange {
+            loveButton.tintColor = .white
+        } else {
+            loveButton.tintColor = ColorPalette.orange
+        }
     }
 }
