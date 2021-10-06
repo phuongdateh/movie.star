@@ -56,4 +56,4 @@ Your Privacy
 
 CONTACTING US
 
-If you have any questions about this Privacy Policy, please contact us at bestfreeappsgames@gmail.com
+If you have any questions about this Privacy Policy, please contact us at 95doanphuong@gmail.com
