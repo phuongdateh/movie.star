@@ -40,6 +40,7 @@ target 'core' do
   pod 'DisplaySwitcher'
   pod 'MJRefresh'
   pod 'RealmSwift'
+  pod 'SkyFloatingLabelTextField', '~> 3.0'
 
 end
 

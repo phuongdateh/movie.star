@@ -7,9 +7,19 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Proxima Nova Medium.ttf">
+            <string>ProximaNova-Medium</string>
+        </array>
+        <array key="Proxima Nova-Regular.otf">
+            <string>ProximaNova-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="core" customModuleProvider="target">
             <connections>
+                <outlet property="loginButton" destination="Rfd-hD-ZF1" id="Vsz-C2-CrD"/>
+                <outlet property="signUpButton" destination="Spe-XB-bBk" id="UTa-Cw-8p1"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,8 +27,53 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rfd-hD-ZF1">
+                    <rect key="frame" x="30" y="742.5" width="354" height="40"/>
+                    <color key="backgroundColor" red="0.90980392160000001" green="0.46666666670000001" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="mI5-4i-23P"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="16"/>
+                    <state key="normal" title="Login">
+                        <color key="titleColor" red="0.95294117649999999" green="0.96470588239999999" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </state>
+                    <connections>
+                        <action selector="loginButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="W8l-Vq-OHV"/>
+                    </connections>
+                </button>
+                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mrW-c6-E3F">
+                    <rect key="frame" x="99.5" y="812.5" width="215" height="19.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Dj-5E-h4t">
+                            <rect key="frame" x="0.0" y="0.0" width="168" height="19.5"/>
+                            <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
+                            <color key="textColor" red="0.90588235289999997" green="0.94901960780000005" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Spe-XB-bBk">
+                            <rect key="frame" x="168" y="0.0" width="47" height="19.5"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="SignUp">
+                                <fontDescription key="titleFontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="14"/>
+                                <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="signUpButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="BUY-H5-7h9"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.062745098039215685" green="0.10588235294117647" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Rfd-hD-ZF1" secondAttribute="trailing" constant="30" id="4w1-Db-MS8"/>
+                <constraint firstItem="Rfd-hD-ZF1" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="6ON-YT-MMO"/>
+                <constraint firstItem="mrW-c6-E3F" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="acA-qi-x9I"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="mrW-c6-E3F" secondAttribute="bottom" constant="30" id="mCn-sn-ssz"/>
+                <constraint firstItem="mrW-c6-E3F" firstAttribute="top" secondItem="Rfd-hD-ZF1" secondAttribute="bottom" constant="30" id="xsv-EK-2YK"/>
+            </constraints>
             <point key="canvasLocation" x="139" y="153"/>
         </view>
     </objects>

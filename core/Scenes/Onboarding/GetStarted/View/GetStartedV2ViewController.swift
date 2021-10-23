@@ -24,6 +24,11 @@ class GetStartedV2ViewController: ViewController<GetStartedViewModel> {
         self.navigationController?.navigationBar.isHidden = true
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.navigationBar.isHidden = false
+    }
+
     @IBAction func skipButtonAction(_ sender: UIButton) {
 //        self.navigator.show(segue: .tabbar(viewModel: self.viewModel.createTabbarViewModel()), sender: self)
         self.navigator.show(segue: .tabbar(viewModel: self.viewModel.createTabbarViewModel()),
@@ -31,6 +36,8 @@ class GetStartedV2ViewController: ViewController<GetStartedViewModel> {
                             transition: .tabbar(in: Application.shared.window!))
     }
 
-    @IBAction func loginButtonAction(_ sender: UIButton) {}
+    @IBAction func loginButtonAction(_ sender: UIButton) {
+        self.navigator.show(segue: .login, sender: self)
+    }
 
     @IBAction func signUpButtonAction(_ sender: UIButton) {}}

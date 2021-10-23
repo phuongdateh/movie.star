@@ -30,6 +30,7 @@ class Navigator {
                        item: HomeMovieSectionItem?)
         case about
         case myFavorite
+        case login
     }
     
     enum Transition {
@@ -104,6 +105,10 @@ extension Navigator {
             let vc = VideoPlayingViewController.fromNib()
             vc.set(viewModel: viewModel,
                    navigator: self)
+            return vc
+        case .login:
+            let vc = LoginViewController()
+            vc.set(viewModel: LoginViewModel(), navigator: self)
             return vc
         }
     }
