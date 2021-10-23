@@ -14,38 +14,38 @@ import StoreKit
 class ViewController<VM: ViewModel>: UIViewController,
                                      Navigatable,
                                      AVPlayerViewControllerDelegate {
-    
+
     var navigator: Navigator!
     var viewModel: VM!
-    
+
     var navigationTitle: String = "" {
         didSet {
             navigationItem.title = navigationTitle
         }
     }
-    
+
     func set(viewModel: VM, navigator: Navigator) {
         self.viewModel = viewModel
         self.navigator = navigator
     }
-    
+
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+
         makeUI()
         bindViewModel()
         self.configColorNavigationBar()
     }
-    
+
     func configColorNavigationBar() {
         if #available(iOS 13.0, *) {
             let appearance = UINavigationBarAppearance()
@@ -58,10 +58,12 @@ class ViewController<VM: ViewModel>: UIViewController,
         } else {
             UINavigationBar.appearance().titleTextAttributes = [.font: UIFont(name: AppFont.bold.name, size: 18)!,
                                                                 .foregroundColor: UIColor.white]
-            UINavigationBar.appearance().backgroundColor = ColorPalette.strongBlue
+            UINavigationBar.appearance().tintColor = .white
+            UINavigationBar.appearance().barTintColor = ColorPalette.strongBlue
         }
+        /// https://stackoverflow.com/questions/56910797/ios13-navigation-bar-large-titles-not-covering-status-bar/57031470#57031470
     }
-    
+
     func showRating() {
         if #available(iOS 14.0, *) {
             guard let windowScene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene else {
@@ -72,20 +74,15 @@ class ViewController<VM: ViewModel>: UIViewController,
             SKStoreReviewController.requestReview()
         }
     }
-    
+
     func makeUI() {
-        
         updateUI()
     }
-    
-    func bindViewModel() {
-        
-    }
-    
-    func updateUI() {
-        
-    }
-    
+
+    func bindViewModel() {}
+
+    func updateUI() {}
+
     func addBackButton() {
         if let navigationController = self.navigationController,
            let index = navigationController.viewControllers.firstIndex(of: self), index > 0
@@ -98,11 +95,11 @@ class ViewController<VM: ViewModel>: UIViewController,
             self.navigationItem.leftBarButtonItem = leftBarButton
         }
     }
-    
+
     @objc private func backAction() {
         self.navigationController?.popViewController(animated: true)
     }
-    
+
     func showTrailer(video: Video) {
         let playerVC = AVPlayerViewController()
         present(playerVC, animated: true, completion: nil)
@@ -137,7 +134,7 @@ class ViewController<VM: ViewModel>: UIViewController,
             playerVC?.player?.play()
         }
     }
-    
+
     let vc = UIViewController()
     func shouldShowLoading(isShow: Bool) {
         let indictorView = IndicatorType.ballSpinFadeLoader.view(frame: vc.view.frame,
@@ -155,14 +152,14 @@ class ViewController<VM: ViewModel>: UIViewController,
             vc.dismiss(animated: true, completion: nil)
         }
     }
-    
+
     func playerViewController(_ playerViewController: AVPlayerViewController,
                               willEndFullScreenPresentationWithAnimationCoordinator coordinator: UIViewControllerTransitionCoordinator) {
         playerViewController.dismiss(animated: true) {
             // show ads
         }
     }
-    
+
     func share(content: String, viewClick: UIView, completion: (() -> Void)? = nil) {
         let objectsToShare = [content] as [Any]
         let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
@@ -177,7 +174,9 @@ class ViewController<VM: ViewModel>: UIViewController,
 }
 
 extension UIViewController {
-    func presentOverContext(_ viewController: UIViewController, animated: Bool = true, completion: (()->())? = nil) {
+    func presentOverContext(_ viewController: UIViewController,
+                            animated: Bool = true,
+                            completion: (() -> ())? = nil) {
         viewController.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
         viewController.modalTransitionStyle = .crossDissolve
         if let tabBarController = tabBarController {
@@ -195,4 +194,3 @@ extension UIViewController {
         }
     }
 }
-

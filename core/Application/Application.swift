@@ -35,14 +35,14 @@ final class Application {
             self?.movieConfigure = config
             DispatchQueue.main.async {[weak self] in
                 guard let self = self else { return }
-                self.showTabbar()
-                // For now not have GetStarted Screen
-//                if self.isLauchedApp {
+//                if Helpers.isLauchedApp {
 //                    self.showTabbar()
 //                } else {
-//                    self.setAppLauched()
+//                    Helpers.setAppLauched()
 //                    self.showGetStarted()
 //                }
+                
+                self.showGetStarted()
             }
         }
     }

@@ -26,6 +26,8 @@ class GetStartedViewController: ViewController<GetStartedViewModel> {
         
     }
     @IBAction func getStartedButtonAction(_ sender: UIButton) {
-        self.navigator.show(segue: .tabbar(viewModel: self.viewModel.createTabbarViewModel()), sender: self)
+//        self.navigator.show(segue: .tabbar(viewModel: self.viewModel.createTabbarViewModel()), sender: self)
+        
+        self.navigator.show(segue: .tabbar(viewModel: self.viewModel.createTabbarViewModel()), sender: nil, transition: .tabbar(in: Application.shared.window!))
     }
 }

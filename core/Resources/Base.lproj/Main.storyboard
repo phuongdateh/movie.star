@@ -17,13 +17,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_ic" translatesAutoresizingMaskIntoConstraints="NO" id="Hbf-k8-XrH">
-                                <rect key="frame" x="19.5" y="114.5" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.062745098039215685" green="0.10588235294117647" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Hbf-k8-XrH" secondAttribute="bottom" id="60G-Nj-RAF"/>
+                            <constraint firstItem="Hbf-k8-XrH" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="BLM-eg-rRT"/>
+                            <constraint firstItem="Hbf-k8-XrH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Eai-00-juq"/>
                             <constraint firstItem="Hbf-k8-XrH" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="GNX-cu-27n"/>
+                            <constraint firstAttribute="trailing" secondItem="Hbf-k8-XrH" secondAttribute="trailing" id="YqK-VX-Ti8"/>
                             <constraint firstItem="Hbf-k8-XrH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="boR-GN-dU9"/>
                         </constraints>
                     </view>
@@ -34,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="splash_ic" width="375" height="667"/>
+        <image name="splash_ic" width="1242" height="2208"/>
     </resources>
 </document>

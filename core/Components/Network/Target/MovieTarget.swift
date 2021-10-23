@@ -44,13 +44,13 @@ extension MovieTarget: TargetType {
             return "/trending/person/\(time.rawValue)"
         }
     }
-    
+
     var method: Moya.Method {
         switch self {
         default: return .get
         }
     }
-    
+
     var parameters: [String: Any] {
         var parameters: [String: Any] = [:]
         parameters["api_key"] = Configs.Network.apiKey

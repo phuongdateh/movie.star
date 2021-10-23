@@ -19,8 +19,7 @@ class ProfileViewController: ViewController<ProfileViewModel> {
         self.view.backgroundColor = ColorPalette.background
         self.tableView.backgroundColor = ColorPalette.background
         self.tableView.registerCell(ofType: ProfileTableViewCell.self)
-        self.tableView.tableFooterView = UIView()
-        self.tableView.tableHeaderView = UIView()
+        self.tableView.separatorStyle = .none
         self.tableView.delegate = self
         self.tableView.dataSource = self
     }

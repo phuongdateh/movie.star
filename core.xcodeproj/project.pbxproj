@@ -605,6 +605,21 @@
 			path = HorizontalMovieView;
 			sourceTree = "<group>";
 		};
+		754820A7270FDDC300F75E5F /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				754820A8270FDDD000F75E5F /* Login */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		754820A8270FDDD000F75E5F /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		7556A4E726EC5F4E004BD99F /* Plugin */ = {
 			isa = PBXGroup;
 			children = (
@@ -886,6 +901,7 @@
 		A41E748826909728006E7D0F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				754820A7270FDDC300F75E5F /* Onboarding */,
 				75C18DA72709F5FC00C7561D /* Favorite */,
 				75C18D9E2709EC7D00C7561D /* About */,
 				75C18D862707F5F900C7561D /* MovieList */,

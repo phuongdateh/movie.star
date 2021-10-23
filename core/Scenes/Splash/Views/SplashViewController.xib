@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,19 +20,69 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_ic" translatesAutoresizingMaskIntoConstraints="NO" id="Bw6-ZU-tPA">
-                    <rect key="frame" x="19.5" y="114.5" width="375" height="667"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                 </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.062745098039215685" green="0.10588235294117647" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Bw6-ZU-tPA" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="pa6-0D-aCK"/>
-                <constraint firstItem="Bw6-ZU-tPA" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="tzH-Ll-BhG"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Bw6-ZU-tPA" secondAttribute="bottom" id="Q4J-67-e2i"/>
+                <constraint firstItem="Bw6-ZU-tPA" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="bZd-8s-Wjr"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Bw6-ZU-tPA" secondAttribute="trailing" id="rY2-jq-QNc"/>
+                <constraint firstItem="Bw6-ZU-tPA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="wVl-6H-E1f"/>
             </constraints>
             <point key="canvasLocation" x="139" y="119"/>
         </view>
+        <viewController id="Wa5-UV-Wi5">
+            <view key="view" contentMode="scaleToFill" id="lt8-uQ-cRM">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xsd-vo-r37">
+                        <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XeJ-gS-zmO">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="819"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="QzI-ow-Igg">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="819"/>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="QzI-ow-Igg" firstAttribute="top" secondItem="XeJ-gS-zmO" secondAttribute="top" id="92O-JR-TwQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="QzI-ow-Igg" secondAttribute="trailing" id="9S5-GZ-v5r"/>
+                                    <constraint firstAttribute="bottom" secondItem="QzI-ow-Igg" secondAttribute="bottom" id="VrJ-mp-6tH"/>
+                                    <constraint firstItem="QzI-ow-Igg" firstAttribute="leading" secondItem="XeJ-gS-zmO" secondAttribute="leading" id="zR7-NL-4z4"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="XeJ-gS-zmO" firstAttribute="leading" secondItem="Xsd-vo-r37" secondAttribute="leading" id="CRx-By-AYe"/>
+                            <constraint firstItem="XeJ-gS-zmO" firstAttribute="height" secondItem="Xsd-vo-r37" secondAttribute="height" priority="250" constant="1" id="ILx-mm-eKi"/>
+                            <constraint firstItem="XeJ-gS-zmO" firstAttribute="top" secondItem="Xsd-vo-r37" secondAttribute="top" id="N8p-zD-N8T"/>
+                            <constraint firstAttribute="trailing" secondItem="XeJ-gS-zmO" secondAttribute="trailing" id="f0B-yq-Dmh"/>
+                            <constraint firstItem="XeJ-gS-zmO" firstAttribute="width" secondItem="Xsd-vo-r37" secondAttribute="width" id="oXg-NU-bFN"/>
+                            <constraint firstAttribute="bottom" secondItem="XeJ-gS-zmO" secondAttribute="bottom" id="wVb-qX-TWz"/>
+                        </constraints>
+                    </scrollView>
+                </subviews>
+                <viewLayoutGuide key="safeArea" id="zvZ-qo-hdI"/>
+                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                <constraints>
+                    <constraint firstItem="zvZ-qo-hdI" firstAttribute="trailing" secondItem="Xsd-vo-r37" secondAttribute="trailing" id="0Iv-dd-yB0"/>
+                    <constraint firstItem="Xsd-vo-r37" firstAttribute="top" secondItem="zvZ-qo-hdI" secondAttribute="top" id="4JS-BR-NoE"/>
+                    <constraint firstItem="Xsd-vo-r37" firstAttribute="leading" secondItem="zvZ-qo-hdI" secondAttribute="leading" id="MVu-Dx-BZo"/>
+                    <constraint firstItem="zvZ-qo-hdI" firstAttribute="bottom" secondItem="Xsd-vo-r37" secondAttribute="bottom" id="uvz-5k-ZgM"/>
+                </constraints>
+            </view>
+            <point key="canvasLocation" x="-767" y="88"/>
+        </viewController>
     </objects>
     <resources>
-        <image name="splash_ic" width="375" height="667"/>
+        <image name="splash_ic" width="1242" height="2208"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
