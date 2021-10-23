@@ -89,7 +89,7 @@ extension Navigator {
             let navitaionController = NavigationController(rootViewController: vc)
             return navitaionController
         case .getstarted(viewModel: let viewModel):
-            let vc = GetStartedViewController.fromNib()
+            let vc = GetStartedV2ViewController.fromNib()
             vc.set(viewModel: viewModel,
                    navigator: self)
             return vc

@@ -59,9 +59,9 @@ class ViewController<VM: ViewModel>: UIViewController,
             UINavigationBar.appearance().titleTextAttributes = [.font: UIFont(name: AppFont.bold.name, size: 18)!,
                                                                 .foregroundColor: UIColor.white]
             UINavigationBar.appearance().tintColor = .white
-            UINavigationBar.appearance().barTintColor = ColorPalette.strongBlue
+            UINavigationBar.appearance().barTintColor = ColorPalette.background
         }
-        /// https://stackoverflow.com/questions/56910797/ios13-navigation-bar-large-titles-not-covering-status-bar/57031470#57031470
+        // https://stackoverflow.com/questions/56910797/ios13-navigation-bar-large-titles-not-covering-status-bar/57031470#57031470
     }
 
     func showRating() {
