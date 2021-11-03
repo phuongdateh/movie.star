@@ -15,6 +15,7 @@ struct MovieConfigure: Decodable {
     let isEnableNativeAds: Bool
     let isEnableSearchMovie: Bool
     let isEnableBannerAds: Bool
+    let googleApiKey: String
     
     enum CodingKeys: String, CodingKey {
         case apikey
@@ -24,5 +25,6 @@ struct MovieConfigure: Decodable {
         case isEnableNativeAds
         case isEnableSearchMovie
         case isEnableBannerAds
+        case googleApiKey
     }
 }

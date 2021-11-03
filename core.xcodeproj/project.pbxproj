@@ -129,6 +129,12 @@
 		75D8E9932723D16E005B0CD0 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D8E9922723D16E005B0CD0 /* LoginViewModel.swift */; };
 		75D8E9962723F266005B0CD0 /* GetStartedV2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D8E9942723F266005B0CD0 /* GetStartedV2ViewController.swift */; };
 		75D8E9972723F266005B0CD0 /* GetStartedV2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75D8E9952723F266005B0CD0 /* GetStartedV2ViewController.xib */; };
+		75E7809427324EEA0094B201 /* MovieTheaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E7809227324EEA0094B201 /* MovieTheaterViewController.swift */; };
+		75E7809527324EEA0094B201 /* MovieTheaterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75E7809327324EEA0094B201 /* MovieTheaterViewController.xib */; };
+		75E7809727324F000094B201 /* MovieTheaterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E7809627324F000094B201 /* MovieTheaterViewModel.swift */; };
+		75E7809A27324FDA0094B201 /* MovieTheaterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E7809827324FDA0094B201 /* MovieTheaterTableViewCell.swift */; };
+		75E7809B27324FDA0094B201 /* MovieTheaterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75E7809927324FDA0094B201 /* MovieTheaterTableViewCell.xib */; };
+		75E7809E273269910094B201 /* MovieTheaterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E7809D273269910094B201 /* MovieTheaterResponse.swift */; };
 		75F886C926F8C3F70050B384 /* VideoPlayingHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F886C726F8C3F70050B384 /* VideoPlayingHeaderTableViewCell.swift */; };
 		75F886CA26F8C3F70050B384 /* VideoPlayingHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75F886C826F8C3F70050B384 /* VideoPlayingHeaderTableViewCell.xib */; };
 		75FAFB5A27242F0500B20DAC /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FAFB5927242F0500B20DAC /* AuthenticationService.swift */; };
@@ -294,6 +300,12 @@
 		75D8E9922723D16E005B0CD0 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		75D8E9942723F266005B0CD0 /* GetStartedV2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedV2ViewController.swift; sourceTree = "<group>"; };
 		75D8E9952723F266005B0CD0 /* GetStartedV2ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GetStartedV2ViewController.xib; sourceTree = "<group>"; };
+		75E7809227324EEA0094B201 /* MovieTheaterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTheaterViewController.swift; sourceTree = "<group>"; };
+		75E7809327324EEA0094B201 /* MovieTheaterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieTheaterViewController.xib; sourceTree = "<group>"; };
+		75E7809627324F000094B201 /* MovieTheaterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTheaterViewModel.swift; sourceTree = "<group>"; };
+		75E7809827324FDA0094B201 /* MovieTheaterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTheaterTableViewCell.swift; sourceTree = "<group>"; };
+		75E7809927324FDA0094B201 /* MovieTheaterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieTheaterTableViewCell.xib; sourceTree = "<group>"; };
+		75E7809D273269910094B201 /* MovieTheaterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTheaterResponse.swift; sourceTree = "<group>"; };
 		75F886C726F8C3F70050B384 /* VideoPlayingHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayingHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		75F886C826F8C3F70050B384 /* VideoPlayingHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoPlayingHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		75FAFB5927242F0500B20DAC /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
@@ -499,6 +511,7 @@
 		00F2B3B626EB6794001F2497 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				75E7809C2732697D0094B201 /* MovieTheater */,
 				75C18DB02709F93400C7561D /* Realm */,
 				75CACDE927049E7300758D05 /* ResultsResponse.swift */,
 				75CACDE22704672400758D05 /* Trending */,
@@ -901,6 +914,26 @@
 			path = Trending;
 			sourceTree = "<group>";
 		};
+		75E7809127324EC30094B201 /* MovieTheater */ = {
+			isa = PBXGroup;
+			children = (
+				75E7809227324EEA0094B201 /* MovieTheaterViewController.swift */,
+				75E7809327324EEA0094B201 /* MovieTheaterViewController.xib */,
+				75E7809627324F000094B201 /* MovieTheaterViewModel.swift */,
+				75E7809827324FDA0094B201 /* MovieTheaterTableViewCell.swift */,
+				75E7809927324FDA0094B201 /* MovieTheaterTableViewCell.xib */,
+			);
+			path = MovieTheater;
+			sourceTree = "<group>";
+		};
+		75E7809C2732697D0094B201 /* MovieTheater */ = {
+			isa = PBXGroup;
+			children = (
+				75E7809D273269910094B201 /* MovieTheaterResponse.swift */,
+			);
+			path = MovieTheater;
+			sourceTree = "<group>";
+		};
 		75F886C626F8C3D50050B384 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -915,17 +948,18 @@
 		A41E748826909728006E7D0F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				754820A7270FDDC300F75E5F /* Onboarding */,
-				75C18DA72709F5FC00C7561D /* Favorite */,
+				75E7809127324EC30094B201 /* MovieTheater */,
 				75C18D9E2709EC7D00C7561D /* About */,
-				75C18D862707F5F900C7561D /* MovieList */,
 				75301B082706BE83003A4F1D /* CreditsDetail */,
-				75B054E6270350A200FC2712 /* MovieDetail */,
-				006FD96126F0BA2700169CDD /* VideoPlaying */,
-				A4AC288F26B6E2C100FCA700 /* Profile */,
-				A4AC288626B6E26000FCA700 /* Video */,
+				75C18DA72709F5FC00C7561D /* Favorite */,
 				A4AC287D26B6E1CD00FCA700 /* Home */,
+				75B054E6270350A200FC2712 /* MovieDetail */,
+				75C18D862707F5F900C7561D /* MovieList */,
+				754820A7270FDDC300F75E5F /* Onboarding */,
+				A4AC288F26B6E2C100FCA700 /* Profile */,
 				A4AC287426B6AA3E00FCA700 /* Tabbar */,
+				A4AC288626B6E26000FCA700 /* Video */,
+				006FD96126F0BA2700169CDD /* VideoPlaying */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -1288,6 +1322,7 @@
 				003771FE26F1886300105A0A /* Proxima Nova-Regular.otf in Resources */,
 				A43813E1268CAD5C0055DF76 /* LaunchScreen.storyboard in Resources */,
 				75C31ECC270AB7F400E43D40 /* GoogleService-Info.plist in Resources */,
+				75E7809527324EEA0094B201 /* MovieTheaterViewController.xib in Resources */,
 				A43813DE268CAD5C0055DF76 /* Assets.xcassets in Resources */,
 				75D8E9972723F266005B0CD0 /* GetStartedV2ViewController.xib in Resources */,
 				7501128E26FDDAF500B08B3D /* HomeHeaderCell.xib in Resources */,
@@ -1308,6 +1343,7 @@
 				759E14EC26FCCD89004B2810 /* HomeItemCollectionViewCell.xib in Resources */,
 				003771FD26F1886300105A0A /* Proxima Nova Bold.otf in Resources */,
 				0037720226F1886300105A0A /* Proxima Nova Regular.otf in Resources */,
+				75E7809B27324FDA0094B201 /* MovieTheaterTableViewCell.xib in Resources */,
 				A4AC288226B6E1E600FCA700 /* HomeViewController.xib in Resources */,
 				755771C926FF265400ED4B27 /* GenreCollectionViewCell.xib in Resources */,
 				A4AC288B26B6E27400FCA700 /* VideoViewController.xib in Resources */,
@@ -1402,6 +1438,7 @@
 				A4AC289326B6E2D400FCA700 /* ProfileViewController.swift in Sources */,
 				75301B102706D0B0003A4F1D /* CreditsDetailViewModel.swift in Sources */,
 				7501129326FE27F400B08B3D /* HomeMovieTableViewCell.swift in Sources */,
+				75E7809E273269910094B201 /* MovieTheaterResponse.swift in Sources */,
 				00C0E3D526E8F9D900CD560C /* MovieAPIService.swift in Sources */,
 				75C18D9827097A3500C7561D /* UIScrollView.swift in Sources */,
 				75F886C926F8C3F70050B384 /* VideoPlayingHeaderTableViewCell.swift in Sources */,
@@ -1428,6 +1465,7 @@
 				755771C526FF23E300ED4B27 /* Genre.swift in Sources */,
 				006FD95226F08BBA00169CDD /* VideoCategory.swift in Sources */,
 				A4815F192691FD48004107D1 /* UITableView.swift in Sources */,
+				75E7809727324F000094B201 /* MovieTheaterViewModel.swift in Sources */,
 				00F2B3BB26EB6812001F2497 /* Movie.swift in Sources */,
 				00EA997A26EE05BF003DCA4E /* BMPlayerControlView.swift in Sources */,
 				75CACDD42704576200758D05 /* Review.swift in Sources */,
@@ -1474,12 +1512,14 @@
 				75B054EE270350E400FC2712 /* MovieDetailViewModel.swift in Sources */,
 				00C0E3D326E8F99000CD560C /* MovieAPIProtocol.swift in Sources */,
 				75C18D922708038E00C7561D /* MovieListCollectionViewCell.swift in Sources */,
+				75E7809427324EEA0094B201 /* MovieTheaterViewController.swift in Sources */,
 				A4AC289726B6E2EB00FCA700 /* ProfileViewModel.swift in Sources */,
 				75C18DA62709ECB100C7561D /* AboutViewModel.swift in Sources */,
 				7507D68C27058CB20006B8FF /* CreditsCollectionViewCell.swift in Sources */,
 				75CACDE627046A0400758D05 /* TredingMovie.swift in Sources */,
 				754357A226FEE4C500850CCB /* GenresTableViewCell.swift in Sources */,
 				00EA997726EE05BF003DCA4E /* BMPlayerItem.swift in Sources */,
+				75E7809A27324FDA0094B201 /* MovieTheaterTableViewCell.swift in Sources */,
 				00EA997E26EE05BF003DCA4E /* BMPlayerManager.swift in Sources */,
 				75C18DA22709EC9D00C7561D /* AboutViewController.swift in Sources */,
 				75B054EA270350BF00FC2712 /* MovieDetailViewController.swift in Sources */,

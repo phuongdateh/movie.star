@@ -27,4 +27,9 @@ extension UIImageView {
     func retrivingImage(path: String) {
         self.sd_setImage(with: URL(string: "https://image.tmdb.org/t/p/w500/\(path)"), placeholderImage: UIImage(named: "placeholder_ic"))
     }
+
+    func retrieveMovieTheater(path: String) {
+        guard let config = Application.shared.movieConfigure else { return }
+        self.sd_setImage(with: URL(string: "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=\(path)&key=\(config.googleApiKey)"))
+    }
 }
