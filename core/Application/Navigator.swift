@@ -30,7 +30,7 @@ class Navigator {
                        item: HomeMovieSectionItem?)
         case about
         case myFavorite
-        case login
+        case login(LoginType)
     }
     
     enum Transition {
@@ -106,9 +106,10 @@ extension Navigator {
             vc.set(viewModel: viewModel,
                    navigator: self)
             return vc
-        case .login:
+        case .login(let type):
             let vc = LoginViewController()
             vc.set(viewModel: LoginViewModel(), navigator: self)
+            vc.type = type
             return vc
         }
     }

@@ -30,14 +30,16 @@ class GetStartedV2ViewController: ViewController<GetStartedViewModel> {
     }
 
     @IBAction func skipButtonAction(_ sender: UIButton) {
-//        self.navigator.show(segue: .tabbar(viewModel: self.viewModel.createTabbarViewModel()), sender: self)
         self.navigator.show(segue: .tabbar(viewModel: self.viewModel.createTabbarViewModel()),
                             sender: nil,
                             transition: .tabbar(in: Application.shared.window!))
     }
 
     @IBAction func loginButtonAction(_ sender: UIButton) {
-        self.navigator.show(segue: .login, sender: self)
+        self.navigator.show(segue: .login(.signIn), sender: self)
     }
 
-    @IBAction func signUpButtonAction(_ sender: UIButton) {}}
+    @IBAction func signUpButtonAction(_ sender: UIButton) {
+        self.navigator.show(segue: .login(.signUp), sender: self)
+    }
+}

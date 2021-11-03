@@ -34,6 +34,7 @@ target 'core' do
   #Firebase
   pod 'Firebase/Analytics'
   pod 'Firebase/RemoteConfig'
+  pod 'Firebase/Auth'
 
   pod 'Cosmos'
   
@@ -41,6 +42,7 @@ target 'core' do
   pod 'MJRefresh'
   pod 'RealmSwift'
   pod 'SkyFloatingLabelTextField', '~> 3.0'
+  pod 'IQKeyboardManagerSwift', '6.3.0'
 
 end
 

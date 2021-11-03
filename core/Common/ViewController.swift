@@ -60,6 +60,7 @@ class ViewController<VM: ViewModel>: UIViewController,
                                                                 .foregroundColor: UIColor.white]
             UINavigationBar.appearance().tintColor = .white
             UINavigationBar.appearance().barTintColor = ColorPalette.background
+            UINavigationBar.appearance().isTranslucent = true
         }
         // https://stackoverflow.com/questions/56910797/ios13-navigation-bar-large-titles-not-covering-status-bar/57031470#57031470
     }

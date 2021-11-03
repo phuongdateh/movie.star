@@ -131,6 +131,7 @@
 		75D8E9972723F266005B0CD0 /* GetStartedV2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75D8E9952723F266005B0CD0 /* GetStartedV2ViewController.xib */; };
 		75F886C926F8C3F70050B384 /* VideoPlayingHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F886C726F8C3F70050B384 /* VideoPlayingHeaderTableViewCell.swift */; };
 		75F886CA26F8C3F70050B384 /* VideoPlayingHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75F886C826F8C3F70050B384 /* VideoPlayingHeaderTableViewCell.xib */; };
+		75FAFB5A27242F0500B20DAC /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FAFB5927242F0500B20DAC /* AuthenticationService.swift */; };
 		A43813D5268CAD5B0055DF76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43813D4268CAD5B0055DF76 /* AppDelegate.swift */; };
 		A43813D9268CAD5B0055DF76 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43813D8268CAD5B0055DF76 /* ViewController.swift */; };
 		A43813DC268CAD5B0055DF76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A43813DA268CAD5B0055DF76 /* Main.storyboard */; };
@@ -295,6 +296,7 @@
 		75D8E9952723F266005B0CD0 /* GetStartedV2ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GetStartedV2ViewController.xib; sourceTree = "<group>"; };
 		75F886C726F8C3F70050B384 /* VideoPlayingHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayingHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		75F886C826F8C3F70050B384 /* VideoPlayingHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoPlayingHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		75FAFB5927242F0500B20DAC /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		A43813D1268CAD5B0055DF76 /* core.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = core.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A43813D4268CAD5B0055DF76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A43813D8268CAD5B0055DF76 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -378,6 +380,7 @@
 			children = (
 				006FD95626F09A1600169CDD /* YoutubeService.swift */,
 				7501129726FEBDF600B08B3D /* FirebaseService.swift */,
+				75FAFB5927242F0500B20DAC /* AuthenticationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1446,6 +1449,7 @@
 				75CACDCC2704223300758D05 /* RatingView.swift in Sources */,
 				7501129D26FEC51500B08B3D /* HomeConfigure.swift in Sources */,
 				0037720426F1888100105A0A /* AppFont.swift in Sources */,
+				75FAFB5A27242F0500B20DAC /* AuthenticationService.swift in Sources */,
 				006FD95726F09A1600169CDD /* YoutubeService.swift in Sources */,
 				750A5B9226F8921800876196 /* ColorPalette.swift in Sources */,
 				A4AC288E26B6E28E00FCA700 /* VideoViewModel.swift in Sources */,

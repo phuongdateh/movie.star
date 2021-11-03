@@ -25,7 +25,6 @@ class VideoViewController: ViewController<VideoViewModel> {
     }
     
     override func makeUI() {
-        title = "Video".uppercased()
         tableView.registerCell(ofType: VideoTableViewCell.self)
         tableView.tableHeaderView = UIView()
         tableView.tableFooterView = UIView()

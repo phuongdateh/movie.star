@@ -20,6 +20,7 @@
             <connections>
                 <outlet property="loginButton" destination="Rfd-hD-ZF1" id="Vsz-C2-CrD"/>
                 <outlet property="signUpButton" destination="Spe-XB-bBk" id="UTa-Cw-8p1"/>
+                <outlet property="subtitleLbl" destination="2Dj-5E-h4t" id="7dS-lW-vn0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

@@ -10,19 +10,19 @@ import FirebaseRemoteConfig
 
 final class FirebaseService {
     static let shared = FirebaseService()
-    
+
     private let remoteConfig = RemoteConfig.remoteConfig()
-    
+
     init() {
         self.configure()
     }
-    
+
     fileprivate func configure() {
         let settings = RemoteConfigSettings()
         settings.minimumFetchInterval = 2
         remoteConfig.configSettings = settings
     }
-    
+
     func fetchConfigs(completion: ((MovieConfigure) -> ())?) {
         remoteConfig.fetch { [weak self] status, error in
             guard status == .success else {
@@ -41,5 +41,4 @@ final class FirebaseService {
             }
         }
     }
-    
 }
