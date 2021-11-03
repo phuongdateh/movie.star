@@ -10,10 +10,18 @@ import Moya
 
 extension MovieTarget: TargetType {
     var baseURL: URL {
-        guard let url = URL(string: Configs.Network.baseURL) else {
-            fatalError("URL invalid")
+        switch self {
+        case .movieTheater:
+            guard let url = URL(string: Configs.Network.googleURL) else {
+                fatalError("URL invalid")
+            }
+            return url
+        default:
+            guard let url = URL(string: Configs.Network.baseURL) else {
+                fatalError("URL invalid")
+            }
+            return url
         }
-        return url
     }
     
     var path: String {
@@ -42,6 +50,8 @@ extension MovieTarget: TargetType {
             return "/trending/\(mediaType.rawValue)/\(time.rawValue)"
         case .personTrending(pageNumber: _, time: let time):
             return "/trending/person/\(time.rawValue)"
+        case .movieTheater:
+            return "/api/place/nearbysearch/json"
         }
     }
 
@@ -80,6 +90,12 @@ extension MovieTarget: TargetType {
             parameters["page"] = pageNumber
         case .genre, .videos(_):
             break
+        case .movieTheater:
+            let config = Application.shared.movieConfigure
+            parameters["key"] = config?.googleApiKey
+            parameters["location"] = "10.78817742226216%2C106.62428850040182"
+            parameters["radius"] = 10000
+            parameters["type"] = "movie_theater"
         }
         return parameters
     }
