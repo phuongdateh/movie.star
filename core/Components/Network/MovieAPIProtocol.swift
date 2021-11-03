@@ -28,7 +28,7 @@ enum MovieTarget {
     case personTrending(pageNumber: Int,
                         time: TimeWindow)
     case genre
-    case movieTheater
+    case movieTheater(pageToken: String?)
 }
 
 protocol MovieAPIProtocol {
@@ -65,6 +65,7 @@ protocol MovieAPIProtocol {
     func getPersonTrending(page: Int,
                            time: TimeWindow,
                            completion: @escaping CompletionResult<ResultsResponse<TrendingPerson>>)
-    func getNearMovieTheater(completion: @escaping CompletionResult<MovieTheaterResponse>)
+    func getNearMovieTheater(pageToken: String,
+                             completion: @escaping CompletionResult<MovieTheaterResponse>)
 }
  

@@ -77,8 +77,9 @@ final class MovieAPIService: MovieAPIProtocol {
         self.request(target: .personTrending(pageNumber: page, time: time), completion)
     }
 
-    func getNearMovieTheater(completion: @escaping CompletionResult<MovieTheaterResponse>) {
-        self.request(target: .movieTheater,
+    func getNearMovieTheater(pageToken: String,
+                             completion: @escaping CompletionResult<MovieTheaterResponse>) {
+        self.request(target: .movieTheater(pageToken: pageToken),
                      completion)
     }
 }

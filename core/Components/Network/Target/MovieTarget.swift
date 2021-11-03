@@ -90,12 +90,13 @@ extension MovieTarget: TargetType {
             parameters["page"] = pageNumber
         case .genre, .videos(_):
             break
-        case .movieTheater:
+        case .movieTheater(let pageToken):
             let config = Application.shared.movieConfigure
+            parameters["pagetoken"] = pageToken ?? ""
             parameters["key"] = config?.googleApiKey
             parameters["location"] = "10.78817742226216%2C106.62428850040182"
             parameters["radius"] = 10000
-            parameters["type"] = "movie_theater"
+            parameters["types"] = "movie_theater"
         }
         return parameters
     }
