@@ -48,4 +48,9 @@ final class AuthenticationService {
             success(result)
         })
     }
+
+    func isAuthoried() -> Bool {
+        let auth = Auth.auth()
+        return auth.currentUser != nil
+    }
 }

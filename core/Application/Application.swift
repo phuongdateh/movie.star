@@ -15,12 +15,14 @@ final class Application {
     
     private let apiService: MovieAPIProtocol?
     private let navigator: Navigator
+    private let authenticationService: AuthenticationService
     var movieConfigure: MovieConfigure?
     var window: UIWindow?
     
     init() {
         self.apiService = MovieAPIService.init()
         self.navigator = Navigator.default
+        self.authenticationService = AuthenticationService.default
     }
     
     func presentInitialScreen(in window: UIWindow?) {
@@ -35,14 +37,12 @@ final class Application {
             self?.movieConfigure = config
             DispatchQueue.main.async {[weak self] in
                 guard let self = self else { return }
-//                if Helpers.isLauchedApp {
-//                    self.showTabbar()
-//                } else {
-//                    Helpers.setAppLauched()
-//                    self.showGetStarted()
-//                }
-                
-                self.showGetStarted()
+                if Helpers.isLauchedApp {
+                    self.showTabbar()
+                } else {
+                    Helpers.setAppLauched()
+                    self.showGetStarted()
+                }
             }
         }
     }
