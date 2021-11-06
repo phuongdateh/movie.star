@@ -27,6 +27,14 @@ class MovieTheaterViewController: ViewController<MovieTheaterViewModel> {
         tableView.addRefreshHeader { [weak self] in
             self?.fetchData()
         }
+        tableView.addLoadMoreFooter { [weak self] in
+            self?.viewModel.retrieveMore(success: { [weak self] in
+                self?.updateView()
+                self?.tableView.footerEndRefreshing(completion: nil)
+            }, failure: { [weak self] in
+                self?.tableView.footerEndRefreshing(completion: nil)
+            })
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -51,7 +59,6 @@ class MovieTheaterViewController: ViewController<MovieTheaterViewModel> {
     }
 
     private func fetchData() {
-//        startLoading()
         viewModel.retrieveNearMovieTheater(success: { [weak self] in
             self?.updateView()
             self?.stopLoading()
