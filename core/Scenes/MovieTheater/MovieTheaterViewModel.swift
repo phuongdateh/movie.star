@@ -21,7 +21,7 @@ class MovieTheaterViewModel: ViewModel {
             case .success(let response):
                 print("Success: \(response.results)")
             case .failure(let error):
-                print(error.localizedDescription)
+                print("RetrieveNearMovieTheater: \(error.localizedDescription)")
             }
         })
     }
