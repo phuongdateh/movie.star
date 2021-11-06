@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MovieTheaterViewController" customModule="core" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="fpE-LC-qqb" id="3Dl-uN-RVf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,8 +19,20 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fpE-LC-qqb">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fpE-LC-qqb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="0yj-GD-WMY"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fpE-LC-qqb" secondAttribute="trailing" id="CoB-iC-qtr"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="fpE-LC-qqb" secondAttribute="bottom" id="S4k-jF-6sZ"/>
+                <constraint firstItem="fpE-LC-qqb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="clA-XQ-7ij"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="139" y="149"/>
         </view>

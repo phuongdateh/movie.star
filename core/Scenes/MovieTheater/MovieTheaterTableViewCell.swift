@@ -18,21 +18,28 @@ class MovieTheaterTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.wrapperView.layer.cornerRadius = 5
-        self.wrapperView.addShadow()
+        wrapperView.layer.cornerRadius = 5
+        wrapperView.addShadow()
 
-        self.directionButton.layer.cornerRadius = 5
+        directionButton.layer.cornerRadius = 5
+        photoImageView.layer.cornerRadius = 5
+        photoImageView.contentMode = .scaleAspectFill
     }
 
     private var data: MovieTheaterResult?
     func configure(data: MovieTheaterResult?) {
         self.data = data
-        self.nameLbl.text = self.data?.name
-        self.addressLbl.text = self.data?.vicinity
-        self.photoImageView.retrieveMovieTheater(path: self.data?.photos.first?.photo_reference ?? "")
+        ratingView.rating = data?.rating ?? 0
+        ratingView.alpha = data?.rating != nil ? 1 : 0
+        nameLbl.text = self.data?.name
+        addressLbl.text = self.data?.vicinity
+        photoImageView.retrieveMovieTheater(path: self.data?.photos.first?.photo_reference ?? "")
     }
 
     @IBAction func directionButtonTouchUpInside(_ sender: UIButton) {
-        
+        let location = data?.geometry?.location
+        Helpers.openGoogleMapsFor(lat: location?.lat ?? 0,
+                                  lng: location?.lng ?? 0,
+                                  address: data?.vicinity ?? "")
     }
 }

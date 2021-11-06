@@ -14,15 +14,33 @@ class MovieTheaterViewModel: ViewModel {
         self.apiService = apiService
     }
 
-    func retrieveNearMovieTheater() {
+    func shouldFetchData() -> Bool {
+        return theaters.isEmpty
+    }
+
+    func retrieveNearMovieTheater(success: (() -> Void)?,
+                                  failure: (() -> Void)?) {
         self.apiService.getNearMovieTheater(pageToken: nil,
-                                            completion: { result in
+                                            completion: { [weak self] result in
             switch result {
             case .success(let response):
                 print("Success: \(response.results)")
+                self?.theaters = response.results
+                success?()
             case .failure(let error):
                 print("RetrieveNearMovieTheater: \(error.localizedDescription)")
+                failure?()
             }
         })
+    }
+
+    private var theaters = [MovieTheaterResult]()
+
+    func numberOfRows() -> Int {
+        return self.theaters.count
+    }
+
+    func cellData(indexPath: IndexPath) -> MovieTheaterResult {
+        return theaters[indexPath.row]
     }
 }
