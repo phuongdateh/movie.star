@@ -65,7 +65,7 @@ protocol MovieAPIProtocol {
     func getPersonTrending(page: Int,
                            time: TimeWindow,
                            completion: @escaping CompletionResult<ResultsResponse<TrendingPerson>>)
-    func getNearMovieTheater(pageToken: String,
+    func getNearMovieTheater(pageToken: String?,
                              completion: @escaping CompletionResult<MovieTheaterResponse>)
 }
  

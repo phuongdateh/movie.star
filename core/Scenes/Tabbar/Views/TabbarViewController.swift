@@ -57,6 +57,15 @@ class TabbarViewController: UITabBarController {
         profileVC.tabBarItem.image = UIImage(named: "profile_ic")
         let profileNav = UINavigationController(rootViewController: profileVC)
 
-        self.viewControllers = [homeNav, videoNav, profileNav]
+        let theaterVC = MovieTheaterViewController.fromNib()
+        theaterVC.set(viewModel: MovieTheaterViewModel(),
+                      navigator: self.navigator)
+        theaterVC.tabBarItem.image = UIImage(named: "theater_ic")
+        let theaterNav = UINavigationController(rootViewController: theaterVC)
+
+        self.viewControllers = [homeNav,
+                                videoNav,
+                                theaterNav,
+                                profileNav]
     }
 }

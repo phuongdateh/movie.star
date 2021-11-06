@@ -11,6 +11,6 @@ class MovieTheaterViewController: ViewController<MovieTheaterViewModel> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.viewModel.retrieveNearMovieTheater()
     }
 }

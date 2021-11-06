@@ -51,7 +51,7 @@ extension MovieTarget: TargetType {
         case .personTrending(pageNumber: _, time: let time):
             return "/trending/person/\(time.rawValue)"
         case .movieTheater:
-            return "/api/place/nearbysearch/json"
+            return "/maps/api/place/nearbysearch/json"
         }
     }
 
@@ -92,9 +92,12 @@ extension MovieTarget: TargetType {
             break
         case .movieTheater(let pageToken):
             let config = Application.shared.movieConfigure
-            parameters["pagetoken"] = pageToken ?? ""
+            parameters.removeAll()
+            if let pageToken = pageToken {
+                parameters["pagetoken"] = pageToken
+            }
             parameters["key"] = config?.googleApiKey
-            parameters["location"] = "10.78817742226216%2C106.62428850040182"
+            parameters["location"] = "10.78901132920102,106.62443882982538"
             parameters["radius"] = 10000
             parameters["types"] = "movie_theater"
         }
