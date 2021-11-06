@@ -14,17 +14,12 @@ class MovieTheaterViewModel: ViewModel {
         self.apiService = apiService
     }
 
-    func shouldFetchData() -> Bool {
-        return theaters.isEmpty
-    }
-
     func retrieveNearMovieTheater(success: (() -> Void)?,
                                   failure: (() -> Void)?) {
         self.apiService.getNearMovieTheater(pageToken: nil,
                                             completion: { [weak self] result in
             switch result {
             case .success(let response):
-                print("Success: \(response.results)")
                 self?.theaters = response.results
                 success?()
             case .failure(let error):

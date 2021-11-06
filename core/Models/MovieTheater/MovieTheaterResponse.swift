@@ -10,6 +10,7 @@ import Foundation
 struct MovieTheaterResponse: Decodable {
     let status: String?
     let results: [MovieTheaterResult]
+    let next_page_token: String?
 }
 
 struct MovieTheaterResult: Decodable {

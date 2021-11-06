@@ -96,8 +96,10 @@ extension MovieTarget: TargetType {
             if let pageToken = pageToken {
                 parameters["pagetoken"] = pageToken
             }
+            if let currentLocation = LocationService.shared.getCurrentLocation() {
+                parameters["location"] = "\(currentLocation.coordinate.latitude),\(currentLocation.coordinate.longitude)"
+            }
             parameters["key"] = config?.googleApiKey
-            parameters["location"] = "10.78901132920102,106.62443882982538"
             parameters["radius"] = 10000
             parameters["types"] = "movie_theater"
         }

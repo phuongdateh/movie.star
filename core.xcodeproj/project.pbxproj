@@ -164,6 +164,7 @@
 		A4AC289326B6E2D400FCA700 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AC289126B6E2D400FCA700 /* ProfileViewController.swift */; };
 		A4AC289426B6E2D400FCA700 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4AC289226B6E2D400FCA700 /* ProfileViewController.xib */; };
 		A4AC289726B6E2EB00FCA700 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AC289626B6E2EB00FCA700 /* ProfileViewModel.swift */; };
+		E9C9148527364CA200C2ABCD /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C9148427364CA200C2ABCD /* LocationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -341,6 +342,7 @@
 		A4AC289626B6E2EB00FCA700 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		ACE97803C125677BA06BB32C /* Pods-core.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-core.release.xcconfig"; path = "Target Support Files/Pods-core/Pods-core.release.xcconfig"; sourceTree = "<group>"; };
 		B08AEFCB4B6BCB39E305CEBB /* Pods-core.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-core.debug.xcconfig"; path = "Target Support Files/Pods-core/Pods-core.debug.xcconfig"; sourceTree = "<group>"; };
+		E9C9148427364CA200C2ABCD /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -393,6 +395,7 @@
 				006FD95626F09A1600169CDD /* YoutubeService.swift */,
 				7501129726FEBDF600B08B3D /* FirebaseService.swift */,
 				75FAFB5927242F0500B20DAC /* AuthenticationService.swift */,
+				E9C9148427364CA200C2ABCD /* LocationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1488,6 +1491,7 @@
 				7501129D26FEC51500B08B3D /* HomeConfigure.swift in Sources */,
 				0037720426F1888100105A0A /* AppFont.swift in Sources */,
 				75FAFB5A27242F0500B20DAC /* AuthenticationService.swift in Sources */,
+				E9C9148527364CA200C2ABCD /* LocationService.swift in Sources */,
 				006FD95726F09A1600169CDD /* YoutubeService.swift in Sources */,
 				750A5B9226F8921800876196 /* ColorPalette.swift in Sources */,
 				A4AC288E26B6E28E00FCA700 /* VideoViewModel.swift in Sources */,

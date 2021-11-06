@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class MovieTheaterViewController: ViewController<MovieTheaterViewModel> {
 
@@ -30,15 +31,27 @@ class MovieTheaterViewController: ViewController<MovieTheaterViewModel> {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        fetchData()
+        setupLocationService()
+    }
+
+    private func setupLocationService() {
+        let service = LocationService.shared
+        service.delegate = self
+
+        guard service.locationServiceEnabled else {
+            // Should show popup
+            return
+        }
+
+        guard service.isReady else {
+            // Should open Settings
+            service.requestLocationService()
+            return
+        }
     }
 
     private func fetchData() {
-        guard viewModel.shouldFetchData() else {
-            stopLoading()
-            return
-        }
-        startLoading()
+//        startLoading()
         viewModel.retrieveNearMovieTheater(success: { [weak self] in
             self?.updateView()
             self?.stopLoading()
@@ -59,6 +72,18 @@ class MovieTheaterViewController: ViewController<MovieTheaterViewModel> {
         DispatchQueue.main.async { [weak self] in
             self?.tableView.reloadData()
         }
+    }
+}
+
+extension MovieTheaterViewController: LocationServiceDelegate {
+    func locationManagerDidFetchLocation(_ location: CLLocation) {
+        print(">>>>>>>>>>>>>>>>>>>>")
+        fetchData()
+    }
+
+    func locationServiceDidChangeAuthorization(status: CLAuthorizationStatus) {
+        guard status == .authorizedAlways || status == .authorizedWhenInUse else { return }
+        LocationService.shared.startGettingLocation()
     }
 }
 
