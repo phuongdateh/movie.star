@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VideoViewController" customModule="core" customModuleProvider="target">
             <connections>
+                <outlet property="searchBar" destination="vue-Uf-DlL" id="0Da-eu-Y5m"/>
                 <outlet property="tableView" destination="VMk-iY-244" id="VGT-RQ-TxP"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -20,25 +21,37 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VMk-iY-244">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VMk-iY-244">
+                    <rect key="frame" x="0.0" y="110" width="414" height="752"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="vue-Uf-DlL">
+                    <rect key="frame" x="0.0" y="44" width="414" height="51"/>
+                    <color key="backgroundColor" systemColor="systemPinkColor"/>
+                    <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="VMk-iY-244" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="7S7-FA-dWX"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="VMk-iY-244" secondAttribute="trailing" id="Kbm-Sf-c7w"/>
+                <constraint firstItem="vue-Uf-DlL" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Sza-NE-nJh"/>
+                <constraint firstItem="VMk-iY-244" firstAttribute="top" secondItem="vue-Uf-DlL" secondAttribute="bottom" constant="15" id="TYF-Uu-7rh"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="VMk-iY-244" secondAttribute="bottom" id="W1l-aw-abf"/>
+                <constraint firstItem="vue-Uf-DlL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="gGK-D7-EXV"/>
+                <constraint firstAttribute="trailing" secondItem="vue-Uf-DlL" secondAttribute="trailing" id="iAS-FY-tqf"/>
                 <constraint firstItem="VMk-iY-244" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="pm6-bP-VI9"/>
             </constraints>
-            <point key="canvasLocation" x="139" y="116"/>
+            <point key="canvasLocation" x="137.68115942028987" y="115.84821428571428"/>
         </view>
     </objects>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

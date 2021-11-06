@@ -56,6 +56,7 @@ class LoginViewController: ViewController<LoginViewModel> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        passwordTextField.isSecureTextEntry = true
         self.title = self.type == .signIn ? "Sign In" : "SignUp"
         self.loginButton.setTitle(self.type == .signIn ? "Log in" : "SignUp", for: .normal)
         self.view.addSubview(self.stackView)
@@ -126,7 +127,7 @@ class LoginViewController: ViewController<LoginViewModel> {
     }
 
     @IBAction func signUpButtonTouchUpInside(_ sender: Any) {
-        
+        self.navigator.show(segue: type == .signIn ? .login(.signUp) : .login(.signIn), sender: self)
     }
 
     private func showTabbar() {

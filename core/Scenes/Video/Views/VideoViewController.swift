@@ -12,11 +12,14 @@ import AVKit
 
 class VideoViewController: ViewController<VideoViewModel> {
     
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        searchBar.barTintColor = .white
+        searchBar.backgroundColor = ColorPalette.background
+        searchBar.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,29 +46,35 @@ class VideoViewController: ViewController<VideoViewModel> {
     }
 }
 
+extension VideoViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar,
+                   textDidChange searchText: String) {
+        viewModel.filterVideo(by: searchText)
+    }
+}
+
 extension VideoViewController: UITableViewDelegate, UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+    func tableView(_ tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int {
+        return viewModel.numberOfRows()
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.videos.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(ofType: VideoTableViewCell.self, at: indexPath)
         cell.selectionStyle = .none
-        cell.bind(category: viewModel.videos[indexPath.row])
+        cell.bind(category: viewModel.cellData(of: indexPath))
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.navigator.show(segue: .videoPlaying(viewModel: self.viewModel.createVideoPlayingViewModel(viewModel.videos[indexPath.row])),
+        self.navigator.show(segue: .videoPlaying(viewModel: self.viewModel.createVideoPlayingViewModel(viewModel.cellData(of: indexPath))),
                             sender: self,
                             transition: .modal)
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView,
+                   heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
 }

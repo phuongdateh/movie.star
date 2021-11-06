@@ -85,6 +85,34 @@ class VideoViewModel: ViewModel {
             }
         }
     }
+
+    
+    
+    func numberOfRows() -> Int {
+        if isFiltering {
+            return videosFilter.count
+        }
+        return videos.count
+    }
+
+    func cellData(of indexPath: IndexPath) -> VideoCategory {
+        if isFiltering {
+            return videosFilter[indexPath.row]
+        }
+        return videos[indexPath.row]
+    }
+    
+    var videosFilter = [VideoCategory]() {
+        didSet {
+            didDataChange?()
+        }
+    }
+    var isFiltering: Bool = false
+
+    func filterVideo(by text: String) {
+        isFiltering = !text.isEmpty
+        videosFilter = videos.filter({$0.video.name.contains(text)})
+    }
 }
 
 extension VideoViewModel {
