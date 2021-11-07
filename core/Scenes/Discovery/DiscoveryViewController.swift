@@ -37,9 +37,15 @@ class DiscoveryViewController: ViewController<DiscoveryViewModel> {
         searchBar.backgroundColor = ColorPalette.strongBlue
         searchBar.barTintColor = ColorPalette.background
         searchBar.setImage(UIImage(named: "search_white_ic"), for: .search, state: .normal)
-        
-        let textFieldInsideSearchBar = searchBar.value(forKey: "searchField") as? UITextField
-        textFieldInsideSearchBar?.textColor = .lightGray
+        searchBar.placeholder = "Search films on TMDb"
+        if #available(iOS 13.0, *) {
+            searchBar.searchTextField.textColor = .lightGray
+            searchBar.searchTextField.font = UIFont(name: AppFont.medium.name, size: 14)
+        } else {
+            let textFieldInsideSearchBar = searchBar.value(forKey: "searchField") as? UITextField
+            textFieldInsideSearchBar?.textColor = .lightGray
+            textFieldInsideSearchBar?.font = UIFont(name: AppFont.medium.name, size: 14)
+        }
 
         view.backgroundColor = ColorPalette.background
     }

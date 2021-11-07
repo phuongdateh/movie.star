@@ -22,10 +22,16 @@ class VideoViewController: ViewController<VideoViewModel> {
         searchBar.backgroundColor = ColorPalette.strongBlue
         searchBar.barTintColor = ColorPalette.background
         searchBar.setImage(UIImage(named: "search_white_ic"), for: .search, state: .normal)
+        searchBar.placeholder = "Filter video you want"
         
-        let textFieldInsideSearchBar = searchBar.value(forKey: "searchField") as? UITextField
-        textFieldInsideSearchBar?.textColor = .lightGray
-
+        if #available(iOS 13.0, *) {
+            searchBar.searchTextField.textColor = .lightGray
+            searchBar.searchTextField.font = UIFont(name: AppFont.medium.name, size: 14)
+        } else {
+            let textFieldInsideSearchBar = searchBar.value(forKey: "searchField") as? UITextField
+            textFieldInsideSearchBar?.textColor = .lightGray
+            textFieldInsideSearchBar?.font = UIFont(name: AppFont.medium.name, size: 14)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
