@@ -21,6 +21,11 @@ class DiscoveryViewModel: ViewModel {
     func retrieveMovies(by keyword: String,
                         success: (() -> Void)?,
                         failure: (() -> Void)?) {
+        guard keyword.isEmpty == false else {
+            movies.removeAll()
+            success?()
+            return
+        }
         apiService.searchMovie(query: keyword,
                                page: currentPage) { [weak self] result in
             switch result {

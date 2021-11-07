@@ -10,6 +10,7 @@ import UIKit
 
 class DiscoveryViewController: ViewController<DiscoveryViewModel> {
 
+    @IBOutlet weak var emptyView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
 
@@ -59,6 +60,17 @@ class DiscoveryViewController: ViewController<DiscoveryViewModel> {
         super.viewWillDisappear(animated)
         navigationController?.isNavigationBarHidden = true
     }
+
+    private func updateView() {
+        if viewModel.numberOfRows() > 0 {
+            view.bringSubviewToFront(collectionView)
+            emptyView.alpha = 0
+        } else {
+            view.bringSubviewToFront(emptyView)
+            emptyView.alpha = 1
+        }
+        collectionView.reloadData()
+    }
 }
 
 extension DiscoveryViewController: UISearchBarDelegate {
@@ -66,7 +78,7 @@ extension DiscoveryViewController: UISearchBarDelegate {
                    textDidChange searchText: String) {
         viewModel.retrieveMovies(by: searchText,
                                  success: { [weak self] in
-            self?.collectionView.reloadData()
+            self?.updateView()
         }, failure: {
             print("ZFailure")
         })
