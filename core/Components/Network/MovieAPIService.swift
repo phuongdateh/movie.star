@@ -82,6 +82,12 @@ final class MovieAPIService: MovieAPIProtocol {
         self.request(target: .movieTheater(pageToken: pageToken),
                      completion)
     }
+
+    func searchMovie(query: String, page: Int, completion: @escaping CompletionResult<ResultsResponse<Movie>>) {
+        self.request(target: .searchMovie(query: query,
+                                          page: page),
+                     completion)
+    }
 }
 
 extension MovieAPIProtocol {

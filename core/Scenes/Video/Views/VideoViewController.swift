@@ -17,9 +17,15 @@ class VideoViewController: ViewController<VideoViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        searchBar.barTintColor = .white
-        searchBar.backgroundColor = ColorPalette.background
         searchBar.delegate = self
+        searchBar.tintColor = .lightGray
+        searchBar.backgroundColor = ColorPalette.strongBlue
+        searchBar.barTintColor = ColorPalette.background
+        searchBar.setImage(UIImage(named: "search_white_ic"), for: .search, state: .normal)
+        
+        let textFieldInsideSearchBar = searchBar.value(forKey: "searchField") as? UITextField
+        textFieldInsideSearchBar?.textColor = .lightGray
+
     }
     
     override func viewWillAppear(_ animated: Bool) {

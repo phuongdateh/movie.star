@@ -164,6 +164,9 @@
 		A4AC289326B6E2D400FCA700 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AC289126B6E2D400FCA700 /* ProfileViewController.swift */; };
 		A4AC289426B6E2D400FCA700 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4AC289226B6E2D400FCA700 /* ProfileViewController.xib */; };
 		A4AC289726B6E2EB00FCA700 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AC289626B6E2EB00FCA700 /* ProfileViewModel.swift */; };
+		E93DDAB827376B9000B7D6B4 /* DiscoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93DDAB627376B9000B7D6B4 /* DiscoveryViewController.swift */; };
+		E93DDAB927376B9000B7D6B4 /* DiscoveryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E93DDAB727376B9000B7D6B4 /* DiscoveryViewController.xib */; };
+		E93DDABB27376BB100B7D6B4 /* DiscoveryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93DDABA27376BB100B7D6B4 /* DiscoveryViewModel.swift */; };
 		E9C9148527364CA200C2ABCD /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C9148427364CA200C2ABCD /* LocationService.swift */; };
 /* End PBXBuildFile section */
 
@@ -342,6 +345,9 @@
 		A4AC289626B6E2EB00FCA700 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		ACE97803C125677BA06BB32C /* Pods-core.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-core.release.xcconfig"; path = "Target Support Files/Pods-core/Pods-core.release.xcconfig"; sourceTree = "<group>"; };
 		B08AEFCB4B6BCB39E305CEBB /* Pods-core.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-core.debug.xcconfig"; path = "Target Support Files/Pods-core/Pods-core.debug.xcconfig"; sourceTree = "<group>"; };
+		E93DDAB627376B9000B7D6B4 /* DiscoveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryViewController.swift; sourceTree = "<group>"; };
+		E93DDAB727376B9000B7D6B4 /* DiscoveryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiscoveryViewController.xib; sourceTree = "<group>"; };
+		E93DDABA27376BB100B7D6B4 /* DiscoveryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryViewModel.swift; sourceTree = "<group>"; };
 		E9C9148427364CA200C2ABCD /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -951,6 +957,7 @@
 		A41E748826909728006E7D0F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				E93DDAB527376B6700B7D6B4 /* Discovery */,
 				75E7809127324EC30094B201 /* MovieTheater */,
 				75C18D9E2709EC7D00C7561D /* About */,
 				75301B082706BE83003A4F1D /* CreditsDetail */,
@@ -1232,6 +1239,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E93DDAB527376B6700B7D6B4 /* Discovery */ = {
+			isa = PBXGroup;
+			children = (
+				E93DDAB627376B9000B7D6B4 /* DiscoveryViewController.swift */,
+				E93DDAB727376B9000B7D6B4 /* DiscoveryViewController.xib */,
+				E93DDABA27376BB100B7D6B4 /* DiscoveryViewModel.swift */,
+			);
+			path = Discovery;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1314,6 +1331,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E93DDAB927376B9000B7D6B4 /* DiscoveryViewController.xib in Resources */,
 				75C18D8B2707F64B00C7561D /* MovieListViewController.xib in Resources */,
 				75B054EB270350BF00FC2712 /* MovieDetailViewController.xib in Resources */,
 				003771FA26F1886300105A0A /* Proxima Nova Medium.ttf in Resources */,
@@ -1442,6 +1460,7 @@
 				75301B102706D0B0003A4F1D /* CreditsDetailViewModel.swift in Sources */,
 				7501129326FE27F400B08B3D /* HomeMovieTableViewCell.swift in Sources */,
 				75E7809E273269910094B201 /* MovieTheaterResponse.swift in Sources */,
+				E93DDABB27376BB100B7D6B4 /* DiscoveryViewModel.swift in Sources */,
 				00C0E3D526E8F9D900CD560C /* MovieAPIService.swift in Sources */,
 				75C18D9827097A3500C7561D /* UIScrollView.swift in Sources */,
 				75F886C926F8C3F70050B384 /* VideoPlayingHeaderTableViewCell.swift in Sources */,
@@ -1510,6 +1529,7 @@
 				00F2B3BE26EB6860001F2497 /* MovieTarget.swift in Sources */,
 				75CBB6CA26FB75CD0078A1C6 /* VideoPlayingTableViewCell.swift in Sources */,
 				00EA997B26EE05BF003DCA4E /* BMPlayerClearityChooseButton.swift in Sources */,
+				E93DDAB827376B9000B7D6B4 /* DiscoveryViewController.swift in Sources */,
 				75B054F427035BE000FC2712 /* HomeViewController+Delegate.swift in Sources */,
 				A44D5EE826A4763200D8E87B /* NavigationController.swift in Sources */,
 				75CACDEC2704C5CD00758D05 /* UILabel.swift in Sources */,

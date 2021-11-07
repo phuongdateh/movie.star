@@ -52,6 +52,8 @@ extension MovieTarget: TargetType {
             return "/trending/person/\(time.rawValue)"
         case .movieTheater:
             return "/maps/api/place/nearbysearch/json"
+        case .searchMovie:
+            return "/search/movie"
         }
     }
 
@@ -102,6 +104,11 @@ extension MovieTarget: TargetType {
             parameters["key"] = config?.googleApiKey
             parameters["radius"] = 10000
             parameters["types"] = "movie_theater"
+        case .searchMovie(let query,
+                          let page):
+            parameters["include_adult"] = false
+            parameters["query"] = query
+            parameters["page"] = page
         }
         return parameters
     }

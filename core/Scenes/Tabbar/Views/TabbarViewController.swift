@@ -63,8 +63,14 @@ class TabbarViewController: UITabBarController {
         theaterVC.tabBarItem.image = UIImage(named: "theater_ic")
         let theaterNav = UINavigationController(rootViewController: theaterVC)
 
+        let searchVC = DiscoveryViewController.fromNib()
+        searchVC.set(viewModel: DiscoveryViewModel(), navigator: self.navigator)
+        searchVC.tabBarItem.image = UIImage(named: "search_ic")
+        let searchNav = UINavigationController(rootViewController: searchVC)
+
         self.viewControllers = [homeNav,
                                 videoNav,
+                                searchNav,
                                 theaterNav,
                                 profileNav]
     }
