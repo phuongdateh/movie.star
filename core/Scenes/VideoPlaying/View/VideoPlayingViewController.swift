@@ -63,7 +63,7 @@ class VideoPlayingViewController: ViewController<VideoPlayingViewModel> {
                 streamURL = video.streamURL
             }
             
-            let asset = BMPlayerResource(url: streamURL,
+            let asset = BMPlayerResource(url: video.streamURL!,
                                          name: video.title)
             self.player.setVideo(resource: asset)
             self.isSeemore = false
